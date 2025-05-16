@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-multimetri-page',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './multimetri-page.component.scss'
 })
 export class MultimetriPageComponent {
-
+  @Input()
+  selectedMulti: string | null = null;
+  
+  selectMulti(item: string) {
+    this.selectedMulti = item;
+  }
 }

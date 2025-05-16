@@ -1,6 +1,18 @@
 <div class="menuBox">
-    <div class="menu-section" *ngIf="selectedMenuItem">
-        <h2>Hai selezionato: {{ selectedMenuItem }}</h2>
+    <div class="menu-section" *ngIf="selectedMenuItem === 'Multimetri'">
+        <h2>Componenti {{ selectedMenuItem }}</h2>
         <app-multimetri-page></app-multimetri-page>
     </div>
-</div>
+    <div class="menu-section" *ngIf="selectedMenuItem === 'Fotovoltaici'">
+        <h2>Componenti {{ selectedMenuItem }}</h2>
+    </div>
+    <div class="menu-section" *ngIf="selectedMenuItem === 'Pompe di Calore'">
+        <h2>Componenti {{ selectedMenuItem }}</h2>
+    </div>
+    <div class="menu-section" *ngIf="selectedMenuItem === 'Caldaie Gas'">
+        <h2>Componenti {{ selectedMenuItem }}</h2>
+    </div>
+    <div class="menu-section" *ngIf="selectedMenuItem === 'Caldaie Pellet'">
+        <h2>Componenti {{ selectedMenuItem }}</h2>
+    </div>
+</div>  
