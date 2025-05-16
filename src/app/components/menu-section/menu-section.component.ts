@@ -9,6 +9,4 @@ import { Component, Input } from '@angular/core';
 export class MenuSectionComponent {
   @Input()
   selectedMenuItem: string | null = null;
-
-  
 }

@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuSectionComponent } from './components/menu-section/menu-section.component';
+import { MultimetriPageComponent } from './pages/multimetri/multimetri-page/multimetri-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MenuSectionComponent } from './components/menu-section/menu-section.com
     HomeComponent,
     NavbarComponent,
     MenuSectionComponent,
+    MultimetriPageComponent,
   ],
   imports: [
     BrowserModule,
