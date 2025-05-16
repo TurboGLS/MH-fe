@@ -1,0 +1,116 @@
+@import '../../../styles/variables'; // Importa le variabili di design
+
+// Stile Globale
+* {
+    padding: 0; // Rimuove il padding
+    margin: 0; // Rimuove il margin
+    box-sizing: border-box; // Rende tutto all'interno del div
+}
+
+#header {
+    display: flex; // Utilizza Flexbox per allineare gli elementi
+    align-items: center; // Allinea verticalmente al centro
+    justify-content: space-between; // Spazia gli elementi
+    padding: 16px 24px; // Padding per il contenitore
+    background-color: $light-gray; // Colore di sfondo della navbar
+    box-shadow: $box-shadow-global; // Ombra globale
+    transition: $transition-property; // Transizione per gli effetti hover
+
+    .logoBox {
+        width: 20%;
+
+        img {
+            height: 40px; // Altezza del logo
+            width: auto; // Mantiene le proporzioni
+        }
+    }
+
+    .titleBox {
+        display: flex; // Definisci lo spazio interno
+        width: 60%; // Percentuale utilizzata
+        justify-content: center; // Allinea orizzontalmente
+        align-items: center; // Allinea items al centro verticalmente
+
+        h1 {
+            width: fit-content; // Si adatta alla larghezza dell'elemento
+            text-align: center; 
+            font-size: 1.5rem; // Dimensione del font
+            color: $black-primary; // Colore del testo
+        }
+    }
+
+    .dropdownBox {
+        width: 20%;
+        justify-content: end;
+        display: flex;
+        position: relative; // Per gestire il posizionamento assoluto del menu
+
+        // Stile del pulsante del menu
+        .btn {
+            background: none; // Rimuove lo sfondo del pulsante
+            border: none; // Rimuove il bordo
+            cursor: pointer; // Cambia il cursore al passaggio del mouse
+            transition: $transition-property; // Transizione per il pulsante
+            padding: 8px; // Aggiunge spazio cliccabile
+            display: flex; // Flexbox per centrare l'icona
+            align-items: center; // Centra verticalmente
+            justify-content: center; // Centra orizzontalmente
+
+            &::after {
+                display: none !important; // Rimuove la freccetta del dropdown
+            }
+
+            &:hover {
+                color: $black-primary-hover; // Colore al passaggio del mouse
+            }
+
+            fa-icon {
+                font-size: 1.5rem; // Dimensione dell'icona
+                color: $red-brand; // Colore dell'icona
+            }
+
+            min-height: 40px; // Evita lo spostamento dell'intestazione
+        }
+
+        .dropdown-menu {
+            position: absolute; // Posiziona il menu in modo assoluto
+            right: 0; // Allinea a destra
+            top: 100%; // Sotto il pulsante
+            background-color: white; // Sfondo
+            box-shadow: $box-shadow-global; // Ombra
+            border-radius: 8px; // Angoli arrotondati
+            z-index: 1000;
+            min-width: 220px;
+            margin-top: 8px;
+
+            opacity: 0;
+            transform: scaleY(0.95) translateY(-8px);
+            transform-origin: top;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: block !important; // Evita che venga nascosto
+            pointer-events: none;
+
+            &.show {
+                opacity: 1;
+                transform: scaleY(1) translateY(0);
+                pointer-events: auto;
+            }
+
+            button[ngbDropdownItem] {
+                width: 100%;
+                padding: 10px 20px;
+                text-align: left;
+                border: none;
+                border-radius: 8px;
+                background: transparent;
+                color: $black-primary;
+                transition: $transition-property;
+
+                &:hover {
+                    background-color: $red-brand-hover;
+                    color: white;
+                }
+            }
+        }
+    }
+}

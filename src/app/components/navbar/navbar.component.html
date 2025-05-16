@@ -1,0 +1,24 @@
+<div id="header">
+    <div class="logoBox">
+        <img src="assets/img/VeilLogo.png" alt="Veil Logo">
+    </div>
+    <div class="titleBox">
+        <h1>Catalogo Impianti e Componenti</h1>
+    </div>
+
+    <!-- Div Contenitore del dropdown-->
+    <div ngbDropdown class="dropdownBox" #menuDropdown="ngbDropdown">
+        <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+            <fa-icon [icon]="(menuDropdown.isOpen() ? faTimes : faBars)"></fa-icon> <!-- Cambia Icona -->
+        </button>
+        <!-- Menu a discesa -->
+        <div class="dropdown-menu" ngbDropdownMenu>
+            <button ngbDropdownItem (click)="onMenuItemClick('Multimetri')">Multimetri</button>
+            <button ngbDropdownItem (click)="onMenuItemClick('Fotovoltaici')">Fotovoltaici</button>
+            <button ngbDropdownItem (click)="onMenuItemClick('Pompe di calore')">Pompe di calore</button>
+            <button ngbDropdownItem (click)="onMenuItemClick('Caldaie Gas')">Caldaie Gas</button>
+            <button ngbDropdownItem (click)="onMenuItemClick('Caldaie Pellet')">Caldaie Pellet</button>
+        </div>
+    </div>
+</div>
+<app-menu-section *ngIf="selectedMenuItem" [selectedMenuItem]="selectedMenuItem"></app-menu-section>
