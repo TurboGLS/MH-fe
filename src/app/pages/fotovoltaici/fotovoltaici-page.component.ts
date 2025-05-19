@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-multimetri-page',
+  selector: 'app-fotovoltaici-page',
   standalone: false,
-  templateUrl: './multimetri-page.component.html',
-  styleUrl: './multimetri-page.component.scss'
+  templateUrl: './fotovoltaici-page.component.html',
+  styleUrl: './fotovoltaici-page.component.scss'
 })
-export class MultimetriPageComponent {
+export class FotovoltaiciPageComponent {
   @Input()
   selectedMulti: string | null = null;
-  
+
   selectMulti(item: string) {
     this.selectedMulti = item;
   }

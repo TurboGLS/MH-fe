@@ -1,0 +1,51 @@
+<div>
+  <button 
+    (click)="selectMulti('STP 3.0 - 6.0')" 
+    [ngClass]="{ 'active': selectedMulti === 'STP 3.0 - 6.0' }">
+    STP 3.0 - 6.0
+  </button>
+
+  <button 
+    (click)="selectMulti('STP 5.0 - 10.0')" 
+    [ngClass]="{ 'active': selectedMulti === 'STP 5.0 - 10.0' }">
+    STP 5.0 - 10.0
+  </button>
+
+  <button 
+    (click)="selectMulti('STP 110-60')" 
+    [ngClass]="{ 'active': selectedMulti === 'STP 110-60' }">
+    STP 110-60
+  </button>
+
+  <button 
+    (click)="selectMulti('SPT -50')" 
+    [ngClass]="{ 'active': selectedMulti === 'SPT -50' }">
+    SPT -50
+  </button>
+</div>
+
+<div class="menuBox">
+  <div class="menuLink">
+    <ul>
+      <li *ngIf="selectedMulti === 'STP 3.0 - 6.0'">
+        <h3>STP3.0-3AV-40 / STP4.0-3AV-40 / STP5.0-3AV-40 / STP6.0-3AV-40</h3>
+        <app-stp3456></app-stp3456>
+      </li>
+
+      <li *ngIf="selectedMulti === 'STP 5.0 - 10.0'">
+        <h3>STP5.0-3SE-40 / STP6.0-3SE-40 / STP8.0-3SE-40 / STP10.0-3SE-40</h3>
+        <app-stp810></app-stp810>
+      </li>
+
+      <li *ngIf="selectedMulti === 'STP 110-60'">
+        <h3>STP 110-60 Sunspec Modbus</h3>
+        <app-stp110-60></app-stp110-60>
+      </li>
+
+      <li *ngIf="selectedMulti === 'SPT -50'">
+        <h3>STP 12-50 / STP 15-50 / STP 20-50 / STP 25-50 (Sunny Tripower X 12 / Sunny Tripower X 15 / Sunny Tripower X 20 / Sunny Tripower X 25)</h3>
+        <app-stp-50></app-stp-50>
+      </li>
+    </ul>
+  </div>
+</div>
