@@ -1,59 +1,44 @@
-# MHFe
+# 📘 Manuale Tecnico – Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+Questo progetto è un sito web dedicato alla documentazione tecnica di diversi dispositivi di misura, come multimetri, dispositivi fotovoltaici e altri modelli correlati. Attualmente realizzato interamente in **HTML/CSS**, il sito offre un'interfaccia semplice e accessibile per consultare dati tecnici, tabelle di registri Modbus e informazioni fondamentali per ogni dispositivo.
 
-## Development server
+🔗 **Link al sito:** [https://mh-fe.onrender.com](https://mh-fe.onrender.com)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## ✅ Funzionalità attuali
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 📄 Visualizzazione dei manuali tecnici per diversi dispositivi
+- 📊 Tabelle dettagliate dei registri Modbus per ogni modello supportato
+- 🧭 Navigazione chiara tramite barra superiore
+- 📱 Design responsivo per dispositivi mobili
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Tecnologie utilizzate
 
-```bash
-ng generate component component-name
-```
+- HTML5
+- CSS3 / SCSS
+- *(Possibile estensione futura con Angular o JavaScript)*
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🚧 Sviluppi futuri
 
-## Building
+Il progetto è in continua evoluzione. Sono previsti sviluppi con l’introduzione di un backend per:
 
-To build the project run:
+- 🔍 Ricerca e filtri avanzati per dispositivo e registro
+- 📝 Pannello amministrativo per la gestione dinamica dei contenuti
+- 💾 Archiviazione e gestione dati su database
+- 📤 Upload e visualizzazione di manuali PDF e documentazione aggiuntiva
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📂 Struttura del progetto
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```text
+📁 src/
+ ├── assets/
+ ├── components/
+ ├── pages/
+ └── styles/
