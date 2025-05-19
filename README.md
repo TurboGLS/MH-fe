@@ -11,12 +11,14 @@ Questo progetto è un sito web dedicato alla documentazione tecnica di diversi d
 - 📄 Visualizzazione dei manuali tecnici per diversi dispositivi
 - 📊 Tabelle dettagliate dei registri Modbus per ogni modello supportato
 - 🧭 Navigazione chiara tramite barra superiore
-- 📱 Design responsivo per dispositivi mobili
+- 📱 Design responsivo per dispositivi mobili (a breve)
 
 ---
 
 ## 🛠️ Tecnologie utilizzate
 
+- Angular
+- Bootstrap
 - HTML5
 - CSS3 / SCSS
 - *(Possibile estensione futura con Angular o JavaScript)*
