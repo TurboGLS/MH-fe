@@ -9,7 +9,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuSectionComponent } from './components/menu-section/menu-section.component';
 import { MultimetriPageComponent } from './pages/multimetri/multimetri-page.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { PAC2200Component } from './pages/multimetri/pac2200/pac2200.component';
 import { P20A000TComponent } from './pages/multimetri/p20-a000-t/p20-a000-t.component';
 import { P21A000TComponent } from './pages/multimetri/p21-a000-t/p21-a000-t.component';
