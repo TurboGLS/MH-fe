@@ -21,7 +21,7 @@ Questo progetto è un sito web dedicato alla documentazione tecnica di diversi d
 - Bootstrap
 - HTML5
 - CSS3 / SCSS
-- *(Possibile estensione futura con Angular o JavaScript)*
+- *(Possibile estensione futura con un lato Backend)*
 
 ---
 
