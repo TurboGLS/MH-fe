@@ -1,6 +1,6 @@
 # 📘 Manuale Tecnico – Frontend
 
-Questo progetto è un sito web dedicato alla documentazione tecnica di diversi dispositivi di misura, come multimetri, dispositivi fotovoltaici e altri modelli correlati. Attualmente realizzato interamente in **HTML/CSS**, il sito offre un'interfaccia semplice e accessibile per consultare dati tecnici, tabelle di registri Modbus e informazioni fondamentali per ogni dispositivo.
+Questo progetto è un sito web dedicato alla documentazione tecnica di diversi dispositivi di misura, come multimetri, dispositivi fotovoltaici e altri modelli correlati. Attualmente realizzato interamente in **Angular, Bootstrap e SCSS**, il sito offre un'interfaccia semplice e accessibile per consultare dati tecnici, tabelle di registri Modbus e informazioni fondamentali per ogni dispositivo.
 
 🔗 **Link al sito:** [https://mh-fe.onrender.com](https://mh-fe.onrender.com)
 
