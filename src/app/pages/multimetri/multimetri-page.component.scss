@@ -11,14 +11,14 @@
 @media screen and (min-width: 920px) {
     // Contenitore principale dei pulsanti di selezione
     div {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
 
         button {
             padding: 8px 16px;
-            font-size: 16px;
+            font-size: 14px;
             border: 2px solid $red-brand;
             background-color: white;
             color: $black-primary;
@@ -45,7 +45,7 @@
     .menuBox {
         width: 100%;
         // si espande a tutta la larghezza del contenitore
-        padding: 24px;
+        padding: 12px;
         background-color: transparent;
         border: none;
         box-shadow: none;
@@ -57,7 +57,7 @@
 
     // Lista di link o contenuti
     .menuLink {
-        width: 0%;
+        width: 100%;
 
         ul {
             width: 100%;
