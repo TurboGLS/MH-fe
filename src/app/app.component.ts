@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,6 @@ export class AppComponent {
   }
 
   pingpong() {
-    return this.http.get('/api/ping');
+    return this.http.get(`${environment.apiUrl}/endpoint`);
   }
 }
