@@ -1,11 +1,73 @@
-.menuBox {
-  padding: 15px;
-  background-color: white;
+@import '../../../styles/variables'; // Importa le variabili di design
+
+// Stile Globale
+* {
+  padding: 0; // Rimuove il padding
+  margin: 0; // Rimuove il margin
+  box-sizing: border-box; // Rende tutto all'interno del div
 }
 
-.menu-section {
-  h2 {
-    font-size: 27px;
-    color: #333;
+// Desktop
+@media screen and (min-width: 920px) {
+  .menuBox {
+    padding: 15px;
+    background-color: white;
+  }
+
+  .menu-section {
+    h2 {
+      padding-bottom: 10px;
+      font-size: 28px;
+      color: #333;
+    }
+  }
+}
+
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+  .menuBox {
+    padding: 15px;
+    background-color: white;
+  }
+
+  .menu-section {
+    h2 {
+      font-size: 25px;
+      color: #333;
+      padding-bottom: 10px;
+
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+  .menuBox {
+    padding: 15px;
+    background-color: white;
+  }
+
+  .menu-section {
+    h2 {
+      font-size: 20px;
+      color: #333;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+  .menuBox {
+    padding: 15px;
+    background-color: white;
+  }
+
+  .menu-section {
+    h2 {
+      font-size: 18px;
+      color: #333;
+      padding-bottom: 10px;
+    }
   }
 }
