@@ -19,6 +19,6 @@ export class AppComponent {
   }
 
   pingpong() {
-    return this.http.get(`${environment.apiUrl}/endpoint`);
+    return this.http.get(`${environment.apiUrl}/ping`);
   }
 }
