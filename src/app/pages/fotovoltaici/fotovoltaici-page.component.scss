@@ -1,85 +1,364 @@
 @import '../../../styles/variables';
 
-/* Contenitore principale dei pulsanti di selezione */
-div {
-    margin-bottom: 16px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+// Stile Globale
+* {
+    padding: 0; // Rimuove il padding
+    margin: 0; // Rimuove il margin
+    box-sizing: border-box; // Rende tutto all'interno del div
+}
 
-    button {
-        padding: 8px 16px;
-        font-size: 16px;
-        border: 2px solid $red-brand;
-        background-color: white;
-        color: $black-primary;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
+// Desktop
+@media screen and (min-width: 920px) {
+    // Contenitore principale dei pulsanti di selezione
+    div {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
 
-        &:hover,
-        &:focus {
-            background-color: $red-brand;
-            color: white;
-            outline: none;
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            border: 2px solid $red-brand;
+            background-color: white;
+            color: $black-primary;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover,
+            &:focus {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
+
+            &.active {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
         }
+    }
 
-        &.active {
-            background-color: $red-brand;
-            color: white;
-            outline: none;
+    // Sezione che compare sotto il menu
+    .menuBox {
+        width: 100%;
+        // si espande a tutta la larghezza del contenitore
+        padding: 24px;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        /* in alto */
+    }
+
+    // Lista di link o contenuti
+    .menuLink {
+        width: 80%;
+
+        ul {
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                width: 100%;
+                margin-bottom: 12px;
+                padding: 6px 0;
+
+                h3 {
+                    margin: 0 0 4px 0;
+                    color: #222;
+                    font-weight: 600;
+                    font-size: 19px;
+                }
+
+                a {
+                    color: $red-brand;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: darken($red-brand, 10%);
+                        text-decoration: underline;
+                    }
+
+                    &.active {
+                        background-color: $red-brand;
+                        color: white;
+                    }
+                }
+            }
         }
     }
 }
 
-/* Sezione che compare sotto il menu */
-.menuBox {
-    width: 100%;
-    /* si espande a tutta la larghezza del contenitore */
-    padding: 24px;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /* in alto */
-}
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+    // Contenitore principale dei pulsanti di selezione
+    div {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
 
-/* Lista di link o contenuti */
-.menuLink {
-    width: 80%;
-    ul {
-        width: 100%;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            border: 2px solid $red-brand;
+            background-color: white;
+            color: $black-primary;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
 
-        li {
-            width: 100%;
-            margin-bottom: 12px;
-            padding: 6px 0;
-
-            h3 {
-                margin: 0 0 4px 0;
-                color: #222;
-                font-weight: 600;
-                font-size: 19px;
+            &:hover,
+            &:focus {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
             }
 
-            a {
-                color: $red-brand;
-                text-decoration: none;
-                transition: color 0.2s ease;
+            &.active {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
+        }
+    }
 
-                &:hover {
-                    color: darken($red-brand, 10%);
-                    text-decoration: underline;
+    // Sezione che compare sotto il menu
+    .menuBox {
+        width: 100%;
+        // si espande a tutta la larghezza del contenitore
+        padding: 24px;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        /* in alto */
+    }
+
+    // Lista di link o contenuti
+    .menuLink {
+        width: 80%;
+
+        ul {
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                width: 100%;
+                margin-bottom: 12px;
+                padding: 6px 0;
+
+                h3 {
+                    margin: 0 0 4px 0;
+                    color: #222;
+                    font-weight: 600;
+                    font-size: 19px;
                 }
 
-                &.active {
-                    background-color: $red-brand;
-                    color: white;
+                a {
+                    color: $red-brand;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: darken($red-brand, 10%);
+                        text-decoration: underline;
+                    }
+
+                    &.active {
+                        background-color: $red-brand;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+    // Contenitore principale dei pulsanti di selezione
+    div {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 2px solid $red-brand;
+            background-color: white;
+            color: $black-primary;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover,
+            &:focus {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
+
+            &.active {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
+        }
+    }
+
+    // Sezione che compare sotto il menu
+    .menuBox {
+        width: 100%;
+        // si espande a tutta la larghezza del contenitore
+        padding: 24px;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    // Lista di link o contenuti
+    .menuLink {
+        width: 100%;
+
+        ul {
+            width: 95%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                width: 100%;
+                margin-bottom: 12px;
+                padding: 6px 0;
+
+                h3 {
+                    margin: 0 0 4px 0;
+                    color: #222;
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+
+                a {
+                    color: $red-brand;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: darken($red-brand, 10%);
+                        text-decoration: underline;
+                    }
+
+                    &.active {
+                        background-color: $red-brand;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+    // Contenitore principale dei pulsanti di selezione
+    div {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            border: 2px solid $red-brand;
+            background-color: white;
+            color: $black-primary;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover,
+            &:focus {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
+
+            &.active {
+                background-color: $red-brand;
+                color: white;
+                outline: none;
+            }
+        }
+    }
+
+    // Sezione che compare sotto il menu
+    .menuBox {
+        width: 100%;
+        // si espande a tutta la larghezza del contenitore
+        padding: 24px;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    // Lista di link o contenuti
+    .menuLink {
+        width: 100%;
+
+        ul {
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                width: 100%;
+                margin-bottom: 12px;
+                padding: 6px 0;
+
+                h3 {
+                    margin: 0 0 4px 0;
+                    color: #222;
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+
+                a {
+                    color: $red-brand;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: darken($red-brand, 10%);
+                        text-decoration: underline;
+                    }
+
+                    &.active {
+                        background-color: $red-brand;
+                        color: white;
+                    }
                 }
             }
         }
