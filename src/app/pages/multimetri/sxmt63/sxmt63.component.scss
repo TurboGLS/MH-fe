@@ -45,6 +45,44 @@
                 }
             }
 
+            .link-nice-var {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: none;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
             table {
                 width: 100%;
                 border-collapse: collapse;
@@ -123,6 +161,44 @@
                 }
             }
 
+            .link-nice-var {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: none;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
             table {
                 width: 100%;
                 border-collapse: collapse;
@@ -183,6 +259,44 @@
             }
 
             .link-nice {
+                display: none;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-var {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
                 display: inline-block;
                 margin: 0 12px 24px 12px;
                 padding: 8px 16px;
@@ -261,6 +375,27 @@
             }
 
             .link-nice {
+                display: none;
+                flex-direction: column;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                font-size: 14px;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-var {
                 display: flex;
                 flex-direction: column;
                 margin: 0 12px 24px 12px;
@@ -272,6 +407,26 @@
                 font-weight: 500;
                 transition: all 0.3s ease;
                 font-size: 14px;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: flex;
+                flex-direction: column;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
 
                 &:hover,
                 &:focus {
