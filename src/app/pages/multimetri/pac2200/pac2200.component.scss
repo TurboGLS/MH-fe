@@ -1,73 +1,475 @@
-@import '../../../../styles/variables';
+@import '../../../../styles/variables'; // Importa le variabili di design
 
-.block {
-    padding: 24px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+// Stile Globale
+* {
+    padding: 0; // Rimuove il padding
+    margin: 0; // Rimuove il margin
+    box-sizing: border-box; // Rende tutto all'interno del div
+}
 
-    .page {
-        width: 100%;
-        margin: 0;
-        text-align: center;
+// Desktop
+@media screen and (min-width: 920px) {
+    .block {
+        padding: 24px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
-        img {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 8px;
-        }
-
-        .link-nice {
-            display: inline-block;
-            margin: 0 12px 24px 12px;
-            padding: 8px 16px;
-            color: $red-brand;
-            border: 2px solid $red-brand;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-
-            &:hover,
-            &:focus {
-                background-color: $red-brand;
-                color: white;
-                text-decoration: none;
-            }
-        }
-
-        table {
+        .page {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            margin: 0;
+            text-align: center;
 
-            thead {
-                background-color: $red-brand;
-                color: white;
+            img {
+                max-width: 180px;
+                height: auto;
+                margin-bottom: 9px;
+            }
 
-                th {
-                    padding: 12px;
-                    font-size: 16px;
-                    text-align: left;
-                    text-align: center;
+            .link-nice {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
                 }
             }
 
-            tbody {
-                tr {
-                    &:nth-child(even) {
-                        background-color: #f3f3f3;
-                    }
+            .link-nice-var {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
 
-                    td {
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: none;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 16px;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                thead {
+                    background-color: $red-brand;
+                    color: white;
+
+                    th {
                         padding: 12px;
-                        font-size: 15px;
-                        color: #333;
+                        font-size: 16px;
+                        text-align: left;
                         text-align: center;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:nth-child(even) {
+                            background-color: #f3f3f3;
+                        }
+
+                        td {
+                            padding: 12px;
+                            font-size: 15px;
+                            color: #333;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+    .block {
+        padding: 24px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        .page {
+            width: 100%;
+            margin: 0;
+            text-align: center;
+
+            img {
+                max-width: 160px;
+                height: auto;
+                margin-bottom: 9px;
+            }
+
+            .link-nice {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-var {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: none;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 16px;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                thead {
+                    background-color: $red-brand;
+                    color: white;
+
+                    th {
+                        padding: 12px;
+                        font-size: 16px;
+                        text-align: left;
+                        text-align: center;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:nth-child(even) {
+                            background-color: #f3f3f3;
+                        }
+
+                        td {
+                            padding: 12px;
+                            font-size: 15px;
+                            color: #333;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+    .block {
+        padding: 24px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        .page {
+            width: 100%;
+            margin: 0;
+            text-align: center;
+
+            img {
+                max-width: 140px;
+                height: auto;
+                margin-bottom: 9px;
+            }
+
+            .link-nice {
+                display: none;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-var {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: inline-block;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 16px;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                thead {
+                    background-color: $red-brand;
+                    color: white;
+
+                    th {
+                        padding: 12px;
+                        font-size: 16px;
+                        text-align: left;
+                        text-align: center;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:nth-child(even) {
+                            background-color: #f3f3f3;
+                        }
+
+                        td {
+                            padding: 12px;
+                            font-size: 15px;
+                            color: #333;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+    .block {
+        padding: 24px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        .page {
+            width: 100%;
+            margin: 0;
+            text-align: center;
+
+            img {
+                max-width: 140px;
+                height: auto;
+                margin-bottom: 9px;
+            }
+
+            .link-nice {
+                display: none;
+                flex-direction: column;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                font-size: 14px;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-var {
+                display: flex;
+                flex-direction: column;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                font-size: 14px;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .link-nice-Resp {
+                display: flex;
+                flex-direction: column;
+                margin: 0 12px 24px 12px;
+                padding: 8px 16px;
+                color: $red-brand;
+                border: 2px solid $red-brand;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    background-color: $red-brand;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 16px;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-sizing: border-box;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                thead {
+                    background-color: $red-brand;
+                    color: white;
+
+                    th {
+                        padding: 12px;
+                        font-size: 12px;
+                        text-align: left;
+                        text-align: center;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:nth-child(even) {
+                            background-color: #f3f3f3;
+                        }
+
+                        td {
+                            padding: 12px;
+                            font-size: 10px;
+                            color: #333;
+                            text-align: center;
+                        }
                     }
                 }
             }
