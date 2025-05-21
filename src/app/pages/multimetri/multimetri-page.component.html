@@ -18,9 +18,9 @@
   </button>
 
   <button 
-    (click)="selectMulti('MFD4ORFCDT1')" 
-    [ngClass]="{ 'active': selectedMulti === 'MFD4ORFCDT1' }">
-    MFD4ORFCDT1
+    (click)="selectMulti('SXMM63')" 
+    [ngClass]="{ 'active': selectedMulti === 'SXMM63' }">
+    SXMM63
   </button>
   
   <button 
@@ -45,12 +45,12 @@
         <app-p21-a000-t></app-p21-a000-t>
       </li>
 
-      <li *ngIf="selectedMulti === 'MFD4ORFCDT1'">
-        <app-mfd4-orfcdt1></app-mfd4-orfcdt1>
+      <li *ngIf="selectedMulti === 'SXMM63'">
+        <app-sxmm63></app-sxmm63>
       </li>
 
       <li *ngIf="selectedMulti === 'SXMT63'">
-        <app-sxmt63></app-sxmt63>
+        <app-sxmt63></app-sxmt63>  
       </li>
     </ul>
   </div>
