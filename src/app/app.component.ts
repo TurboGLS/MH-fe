@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
+import { map } from 'rxjs';
+import { TestService } from './services/test-service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +11,18 @@ import { environment } from '../environments/environment';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  protected http = inject(HttpClient);
+  protected testSrv = inject(TestService);
+  risposta: string = '';
 
    ngOnInit() {
-    this.pingpong().subscribe({
-      next: res => console.log('Risposta backend:', res),
+    this.testSrv.ping().pipe(
+      map(res => res.message)
+    ).subscribe({
+      next: res => {  
+        console.log('Risposta backend:', res);
+        this.risposta = res;
+      },
       error: err => console.error('Errore chiamata:', err)
     });
-  }
-
-  pingpong() {
-    return this.http.get(`${environment.apiUrl}/ping`);
   }
 }
