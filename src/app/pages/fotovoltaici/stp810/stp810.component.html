@@ -1,81 +1,87 @@
 <div class="block">
     <div class="page">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_SMA.svg/2560px-Logo_SMA.svg.png" alt="SMA Logo">
-        <a class="link-nice" href="assets/manuals/Fotovoltaici/PARAMETER-HTML_STPxx-3SE-40_30109R_V11/parameterlist_it.html" target="_blank">Manuale di Riferimento</a>
-        <a class="link-nice-Resp" href="assets/manuals/Fotovoltaici/PARAMETER-HTML_STPxx-3SE-40_30109R_V11/parameterlist_it.html">Manuale di Riferimento</a>
-        <a class="link-nice-var" href="#">Var List</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Misurazioni</th>
-                    <th>ModBus usato e funzionante</th>
-                    <th>ModBus da Manuale</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--Potenza-->
-                <tr>
-                    <td>Potenza (W)</td>
-                    <td>430776M</td>
-                    <td>30775</td>
-                </tr>
-                <!--Energia-->
-                <tr>
-                    <td>Energia Attiva Assorbita (WH)</td>
-                    <td>430530E</td>
-                    <td>30529</td>
-                </tr>
-                <!--Potenza Reattiva-->
-                <tr>
-                    <td>Potenza Reattiva Trifase (WH)</td>
-                    <td>431278L</td>
-                    <td>31277</td>
-                </tr>
-                <!--Current Phase-->
-                <tr>
-                    <td>Corrente Fase 1</td>
-                    <td>430978M</td>
-                    <td>30977</td>
-                </tr>
-                <tr>
-                    <td>Corrente Fase 2</td>
-                    <td>430980M</td>
-                    <td>30979</td>
-                </tr>
-                <tr>
-                    <td>Corrente Fase 3</td>
-                    <td>430982M</td>
-                    <td>30981</td>
-                </tr>
-                <!--Voltage-->
-                <tr>
-                    <td>Tensione tra Fase 1 e neutro (V)</td>
-                    <td>430784M</td>
-                    <td>30783</td>
-                </tr>
-                <tr>
-                    <td>Tensione tra Fase 2 e neutro (V)</td>
-                    <td>430786M</td>
-                    <td>30785</td>
-                </tr>
-                <tr>
-                    <td>Tensione tra Fase 3 e neutro (V)</td>
-                    <td>430788M</td>
-                    <td>30787</td>
-                </tr>
-                <!--Battery Capacity-->
-                <tr>
-                    <td>Capacità della Batteria attuale</td>
-                    <td>430848M</td>
-                    <td>30847</td>
-                </tr>
-                <!--Cosphi-->
-                <tr>
-                    <td>Cosphi Fattore di Potenza</td>
-                    <td>431434E</td>
-                    <td>31433</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_SMA.svg/2560px-Logo_SMA.svg.png" alt="SMA Logo">
+            <div class="btnBox">
+                <button class="button-nice" (click)="openLink('assets/manuals/Fotovoltaici/PARAMETER-HTML_STPxx-3SE-40_30109R_V11/parameterlist_it.html')">Manuale di Riferimento</button>
+                <button class="button-nice-Resp" onclick="window.location.href='assets/manuals/Fotovoltaici/PARAMETER-HTML_STPxx-3SE-40_30109R_V11/parameterlist_it.html'">Manuale di Riferimento</button>
+                <button class="button-nice-var" href="#">Var List</button>
+            </div>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Misurazioni</th>
+                        <th>ModBus usato e funzionante</th>
+                        <th>ModBus da Manuale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Potenza-->
+                    <tr>
+                        <td>Potenza (W)</td>
+                        <td>430776M</td>
+                        <td>30775</td>
+                    </tr>
+                    <!--Energia-->
+                    <tr>
+                        <td>Energia Attiva Assorbita (WH)</td>
+                        <td>430530E</td>
+                        <td>30529</td>
+                    </tr>
+                    <!--Potenza Reattiva-->
+                    <tr>
+                        <td>Potenza Reattiva Trifase (WH)</td>
+                        <td>431278L</td>
+                        <td>31277</td>
+                    </tr>
+                    <!--Current Phase-->
+                    <tr>
+                        <td>Corrente Fase 1</td>
+                        <td>430978M</td>
+                        <td>30977</td>
+                    </tr>
+                    <tr>
+                        <td>Corrente Fase 2</td>
+                        <td>430980M</td>
+                        <td>30979</td>
+                    </tr>
+                    <tr>
+                        <td>Corrente Fase 3</td>
+                        <td>430982M</td>
+                        <td>30981</td>
+                    </tr>
+                    <!--Voltage-->
+                    <tr>
+                        <td>Tensione tra Fase 1 e neutro (V)</td>
+                        <td>430784M</td>
+                        <td>30783</td>
+                    </tr>
+                    <tr>
+                        <td>Tensione tra Fase 2 e neutro (V)</td>
+                        <td>430786M</td>
+                        <td>30785</td>
+                    </tr>
+                    <tr>
+                        <td>Tensione tra Fase 3 e neutro (V)</td>
+                        <td>430788M</td>
+                        <td>30787</td>
+                    </tr>
+                    <!--Battery Capacity-->
+                    <tr>
+                        <td>Capacità della Batteria attuale</td>
+                        <td>430848M</td>
+                        <td>30847</td>
+                    </tr>
+                    <!--Cosphi-->
+                    <tr>
+                        <td>Cosphi Fattore di Potenza</td>
+                        <td>431434E</td>
+                        <td>31433</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './stp110-60.component.scss'
 })
 export class STP11060Component {
-
 }

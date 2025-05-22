@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './stp-50.component.scss'
 })
 export class STP50Component {
-
+  openLink(url: string) {
+    window.open(url, '_blank');
+  }
 }

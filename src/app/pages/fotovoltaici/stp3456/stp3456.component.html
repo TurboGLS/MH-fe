@@ -1,24 +1,30 @@
 <div class="block">
     <div class="page">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_SMA.svg/2560px-Logo_SMA.svg.png" alt="SMA Logo">
-        <a class="link-nice" href="assets\manuals\Fotovoltaici\Parameter-STP3-6-3AV-40_V13\parameterlist_it.html" target="_blank">Manuale di Riferimento</a>
-        <a class="link-nice-Resp" href="assets\manuals\Fotovoltaici\Parameter-STP3-6-3AV-40_V13\parameterlist_it.html">Manuale di Riferimento</a>
-        <a class="link-nice-var" href="#">Var List</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Misurazioni</th>
-                    <th>ModBus usato e funzionante</th>
-                    <th>ModBus da Manuale</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_SMA.svg/2560px-Logo_SMA.svg.png" alt="SMA Logo">
+            <div class="btnBox">
+                <button class="button-nice" (click)="openLink('assets/manuals/Fotovoltaici/Parameter-STP3-6-3AV-40_V13/parameterlist_it.html')">Manuale di Riferimento</button>
+                <button class="button-nice-Resp" onclick="window.location.href='assets/manuals/Fotovoltaici/Parameter-STP3-6-3AV-40_V13/parameterlist_it.html'">Manuale di Riferimento</button>
+                <button class="button-nice-var" href="#">Var List</button>
+            </div>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Misurazioni</th>
+                        <th>ModBus usato e funzionante</th>
+                        <th>ModBus da Manuale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

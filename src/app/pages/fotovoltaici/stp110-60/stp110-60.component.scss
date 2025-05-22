@@ -17,105 +17,103 @@
 
         .page {
             width: 100%;
-            margin: 0;
             text-align: center;
 
-            img {
-                max-width: 100px;
-                height: auto;
-                padding-bottom: 5px;
-                margin: 10px;
-            }
-
-            .link-nice {
+            .header {
                 display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-Resp {
-                display: none;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
-                display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 100px;
+                    height: auto;
+                    margin: 10px;
+                    float: left;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 16px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+                    float: right;
+                    align-items: center;
+
+                    .button-nice {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 15px;
-                            color: #333;
+                            font-size: 16px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 15px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }
@@ -137,102 +135,101 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 100px;
-                height: auto;
-                padding-bottom: 5px;
-                margin: 10px;
-            }
-
-            .link-nice {
+            .header {
                 display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-Resp {
-                display: none;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
-                display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 100px;
+                    height: auto;
+                    margin: 10px;
+                    float: left;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 16px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+                    float: right;
+                    align-items: center;
+
+                    .button-nice {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 15px;
-                            color: #333;
+                            font-size: 16px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 15px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }
@@ -254,85 +251,104 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 100px;
-                height: auto;
-                padding-bottom: 5px;
-                margin: 10px;
-            }
-
-            .link-nice {
-                display: flex;
-                flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
-                display: flex;
-                flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
+            .header {
+                display: inline-block;
+                align-items: center;
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 100px;
+                    height: auto;
+                    margin: 10px;
+                    float: left;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 16px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+                    float: right;
+                    align-items: center;
+
+                    .button-nice {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        background-color: transparent;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+                        font-size: 14px;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+                        font-size: 14px;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 15px;
-                            color: #333;
+                            font-size: 16px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 15px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }
@@ -354,50 +370,66 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 100px;
-                height: auto;
-                padding-bottom: 5px;
-                margin: 10px;
-            }
-
-            .link-nice {
+            .header {
                 display: flex;
                 flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
+                width: 100%;
+                align-items: center;
 
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
+                img {
+                    max-width: 100px;
+                    height: auto;
                 }
-            }
 
-            .link-nice-var {
-                display: flex;
-                flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
+                .btnBox {
+                    text-align: center;
 
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
+                    .button-nice {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 12px auto 12px auto;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 12px auto 12px auto;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
 
