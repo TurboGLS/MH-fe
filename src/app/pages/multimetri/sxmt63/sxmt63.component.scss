@@ -20,101 +20,120 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 180px;
-                height: auto;
-                margin-bottom: 9px;
-            }
-
-            .link-nice {
+            .header {
                 display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
-                display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-Resp {
-                display: none;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 180px;
+                    height: auto;
+                    float: left;
+                    margin: 24px 0 24px 0;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 16px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+                    float: right;
+
+                    .button-nice {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        background-color: transparent;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        background-color: transparent;
+                        border: 2px solid $red-brand;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-Resp {
+                        display: none;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 15px;
-                            color: #333;
+                            font-size: 16px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 15px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }
@@ -136,101 +155,120 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 160px;
-                height: auto;
-                margin-bottom: 9px;
-            }
-
-            .link-nice {
+            .header {
                 display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
-                display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-Resp {
-                display: none;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 160px;
+                    height: auto;
+                    margin: 24px 0 24px 0;
+                    float: left;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 16px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+                    float: right;
+
+                    .button-nice {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-Resp {
+                        display: none;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 15px;
-                            color: #333;
+                            font-size: 16px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 15px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }
@@ -252,101 +290,120 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 140px;
-                height: auto;
-                margin-bottom: 9px;
-            }
-
-            .link-nice {
-                display: none;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
+            .header {
                 display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-Resp {
-                display: inline-block;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 140px;
+                    height: auto;
+                    margin: 24px 0 24px 0;
+                    float: left;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 16px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+                    float: right;
+
+                    .button-nice {
+                        display: none;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-Resp {
+                        display: inline-block;
+                        margin: 24px 12px 24px 12px;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 15px;
-                            color: #333;
+                            font-size: 16px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 15px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }
@@ -368,107 +425,131 @@
             margin: 0;
             text-align: center;
 
-            img {
-                max-width: 140px;
-                height: auto;
-                margin-bottom: 9px;
-            }
-
-            .link-nice {
-                display: none;
-                flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-                font-size: 14px;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-var {
+            .header {
                 display: flex;
                 flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-                font-size: 14px;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            .link-nice-Resp {
-                display: flex;
-                flex-direction: column;
-                margin: 0 12px 24px 12px;
-                padding: 8px 16px;
-                color: $red-brand;
-                border: 2px solid $red-brand;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0s ease;
-
-                &:hover,
-                &:focus {
-                    background-color: $red-brand;
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            table {
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 16px;
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-sizing: border-box;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                align-items: center;
 
-                thead {
-                    background-color: $red-brand;
-                    color: white;
+                img {
+                    max-width: 140px;
+                    height: auto;
+                }
 
-                    th {
-                        padding: 12px;
-                        font-size: 12px;
-                        text-align: left;
-                        text-align: center;
+                .btnBox {
+
+                    .button-nice {
+                        box-sizing: border-box;
+                        margin: 12px auto 12px auto;
+                        width: 100%;
+                        max-width: 100%;
+                        display: none;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-var {
+                        box-sizing: border-box;
+                        margin: 12px auto 12px auto;
+                        width: 100%;
+                        max-width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .button-nice-Resp {
+                        box-sizing: border-box;
+                        margin: 12px auto 12px auto;
+                        width: 100%;
+                        max-width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 8px 16px;
+                        color: $red-brand;
+                        border: 2px solid $red-brand;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all 0s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $red-brand;
+                            color: white;
+                            text-decoration: none;
+                        }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        &:nth-child(even) {
-                            background-color: #f3f3f3;
-                        }
+            .tableBox {
+                box-sizing: border-box;
+                align-items: center;
+                width: 100%;
 
-                        td {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 16px;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                    thead {
+                        background-color: $red-brand;
+                        color: white;
+
+                        th {
                             padding: 12px;
-                            font-size: 10px;
-                            color: #333;
+                            font-size: 12px;
+                            text-align: left;
                             text-align: center;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: #f3f3f3;
+                            }
+
+                            td {
+                                padding: 12px;
+                                font-size: 10px;
+                                color: #333;
+                                text-align: center;
+                            }
                         }
                     }
                 }

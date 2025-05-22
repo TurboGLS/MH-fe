@@ -1,69 +1,75 @@
 <div class="block">
     <div class="page">
-        <img src="https://www.emu-metering.com/media/d3/92/1f/1641741623/EMU%20Metering%20Logo.jpg?ts=1641741623" alt="EMU Logo">
-        <a class="link-nice" href="assets/manuals/Multimetri/P21-Manual/1485_Manual_Modbus-Interface_Professional-II_EN.pdf" target="_blank">Manuale di Riferimento</a>
-        <a class="link-nice-Resp" href="assets/manuals/Multimetri/P21-Manual/1485_Manual_Modbus-Interface_Professional-II_EN.pdf">Manuale di Riferimento</a>        
-        <a class="link-nice-var" href="#">Var List</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Misurazioni</th>
-                    <th>ModBus usato e funzionante</th>
-                    <th>ModBus da Manuale</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--Potenza Attiva L123-->
-                <tr>
-                    <td>Potenza Attiva Trifase</td>
-                    <td>49000H</td>
-                    <td>9000</td>
-                </tr>
-                <!--Energia Attiva Assorbita L123-->
-                <tr>
-                    <td>Totale Energia Attiva Assorbita (kWh)</td>
-                    <td>48000M</td>
-                    <td>8000</td>
-                </tr>
-                <!--Cosphi-->
-                <tr>
-                    <td>Cosphi Fattore di Potenza</td>
-                    <td>49300H</td>
-                    <td>9300</td>
-                </tr>
-                <!--Current Phase-->
-                <tr>
-                    <td>Corrente Fase 1</td>
-                    <td>49102H</td>
-                    <td>9102</td>
-                </tr>
-                <tr>
-                    <td>Corrente Fase 2</td>
-                    <td>49104H</td>
-                    <td>9104</td>
-                </tr>
-                <tr>
-                    <td>Corrente Fase 3</td>
-                    <td>49106H</td>
-                    <td>9106</td>
-                </tr>
-                <!--Voltage Phase-->
-                <tr>
-                    <td>Tensione tra fase 1 e neutro</td>
-                    <td>49200H</td>
-                    <td>9200</td>
-                </tr>
-                <tr>
-                    <td>Tensione tra fase 2 e neutro</td>
-                    <td>49202H</td>
-                    <td>9202</td>
-                </tr>
-                <tr>
-                    <td>Tensione tra fase 3 e neutro</td>
-                    <td>49204H</td>
-                    <td>9204</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="header">
+            <img src="https://www.emu-metering.com/media/d3/92/1f/1641741623/EMU%20Metering%20Logo.jpg?ts=1641741623" alt="EMU Logo">
+            <div class="btnBox">
+                <a class="button-nice" (click)="openLink('assets/manuals/Multimetri/P21-Manual/1485_Manual_Modbus-Interface_Professional-II_EN.pdf')">Manuale di Riferimento</a>
+                <a class="button-nice-Resp" onclick="windown.location.href='assets/manuals/Multimetri/P21-Manual/1485_Manual_Modbus-Interface_Professional-II_EN.pdf'">Manuale di Riferimento</a>        
+                <button class="button-nice-var" href="#">Var List</button>
+            </div>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Misurazioni</th>
+                        <th>ModBus usato e funzionante</th>
+                        <th>ModBus da Manuale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Potenza Attiva L123-->
+                    <tr>
+                        <td>Potenza Attiva Trifase</td>
+                        <td>49000H</td>
+                        <td>9000</td>
+                    </tr>
+                    <!--Energia Attiva Assorbita L123-->
+                    <tr>
+                        <td>Totale Energia Attiva Assorbita (kWh)</td>
+                        <td>48000M</td>
+                        <td>8000</td>
+                    </tr>
+                    <!--Cosphi-->
+                    <tr>
+                        <td>Cosphi Fattore di Potenza</td>
+                        <td>49300H</td>
+                        <td>9300</td>
+                    </tr>
+                    <!--Current Phase-->
+                    <tr>
+                        <td>Corrente Fase 1</td>
+                        <td>49102H</td>
+                        <td>9102</td>
+                    </tr>
+                    <tr>
+                        <td>Corrente Fase 2</td>
+                        <td>49104H</td>
+                        <td>9104</td>
+                    </tr>
+                    <tr>
+                        <td>Corrente Fase 3</td>
+                        <td>49106H</td>
+                        <td>9106</td>
+                    </tr>
+                    <!--Voltage Phase-->
+                    <tr>
+                        <td>Tensione tra fase 1 e neutro</td>
+                        <td>49200H</td>
+                        <td>9200</td>
+                    </tr>
+                    <tr>
+                        <td>Tensione tra fase 2 e neutro</td>
+                        <td>49202H</td>
+                        <td>9202</td>
+                    </tr>
+                    <tr>
+                        <td>Tensione tra fase 3 e neutro</td>
+                        <td>49204H</td>
+                        <td>9204</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

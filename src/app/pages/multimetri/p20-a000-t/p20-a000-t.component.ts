@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './p20-a000-t.component.scss'
 })
 export class P20A000TComponent {
-
+  openLink(url: string) {
+    window.open(url, '_black');
+  }
 }

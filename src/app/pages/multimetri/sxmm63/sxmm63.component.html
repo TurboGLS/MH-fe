@@ -1,29 +1,35 @@
 <div class="block">
     <div class="page">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/BTicino_logo.svg/2560px-BTicino_logo.svg.png" alt="Bticino Logo">
-        <a class="link-nice" href="assets/manuals/Multimetri/SXMM63/05_tipo4_PR160_SXMM63.pdf" target="_blank">Manuale di Riferimento</a>
-        <a class="link-nice-Resp" href="assets/manuals/Multimetri/SXMM63/05_tipo4_PR160_SXMM63.pdf">Manuale di Riferimento</a>
-        <a class="link-nice-var" href="#">Var List</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Misurazioni</th>
-                    <th>ModBus usato e funzionante</th>
-                    <th>ModBus da Manaule</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/BTicino_logo.svg/2560px-BTicino_logo.svg.png" alt="Bticino Logo">
+            <div class="btnBox">
+                <button class="button-nice" (click)="openLink('assets/manuals/Multimetri/SXMM63/05_tipo4_PR160_SXMM63.pdf')">Manuale di Riferimento</button>
+                <button class="button-nice-Resp" onclick="window.location.href='assets/manuals/Multimetri/SXMM63/05_tipo4_PR160_SXMM63.pdf'">Manuale di Riferimento</button>
+                <button class="button-nice-var" href="#">Var List</button>
+            </div>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Misurazioni</th>
+                        <th>ModBus usato e funzionante</th>
+                        <th>ModBus da Manaule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

@@ -7,9 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './pac2200.component.scss'
 })
 export class PAC2200Component {
-  selected: string = '';
-
-  select(item: string) {
-    this.selected = item;
+  openLink(url: string) {
+    window.open(url, '_black');
   }
 }
