@@ -9,6 +9,6 @@ export class TestService {
   protected http = inject(HttpClient);
 
   ping() {
-    return this.http.get<{ message: string }>(`${environment.apiUrl}/ping`);
+    return this.http.get<{ message: string }>(`${environment.apiUrl}/source/ping`);
   }
 }
