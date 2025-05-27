@@ -26,6 +26,7 @@ import { authInterceptor } from './interceptors/auth.interceptor';
 import { logoutInterceptor } from './interceptors/logout.interceptor';
 import { VarlistContainerComponent } from './pages/varlist-container/varlist-container.component';
 import { IfAuthenticatedDirective } from './directives/if-authenticated.directive';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { IfAuthenticatedDirective } from './directives/if-authenticated.directiv
     LoginComponent,
     VarlistContainerComponent,
     IfAuthenticatedDirective,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

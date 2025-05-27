@@ -1,0 +1,8 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input formControlName="username" placeholder="Username" />
+    <input formControlName="email" placeholder="Email" type="email" />
+    <input formControlName="password" placeholder="Password" type="password" />
+    <button type="submit">Registrati</button>
+</form>
+
+<div *ngIf="registerError" class="error">{{ registerError }}</div>

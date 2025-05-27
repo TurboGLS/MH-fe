@@ -1,1 +1,5 @@
+<div *ngIf="message" class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3" role="alert" style="z-index: 1050; min-width: 300px;">
+  {{ message }}
+  <button type="button" class="btn-close" aria-label="Close" (click)="clearMessage()"></button>
+</div>
 <router-outlet></router-outlet>
