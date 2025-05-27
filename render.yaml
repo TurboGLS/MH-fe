@@ -1,8 +1,0 @@
-staticSites:
-  - name: MH-fe
-    path: dist/mh-fe/browser
-    buildCommand: npm run build -- --prod
-    startCommand: ''
-    routes:
-      - path: /*
-        rewrite: /index.html
