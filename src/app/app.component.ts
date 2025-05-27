@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
-import { environment } from '../environments/environment';
-import { map } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +6,6 @@ import { map } from 'rxjs';
   standalone: false,
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent{
+
 }

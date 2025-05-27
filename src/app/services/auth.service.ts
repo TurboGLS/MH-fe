@@ -23,32 +23,37 @@ export class AuthService {
       distinctUntilChanged()
     );
 
-    constructor() {
+  constructor() {
+    if (this.jwtSrv.hasToken()) {
       this.fetchUser().subscribe();
     }
-
-    login(username: string, password: string) {
-      return this.http.post<any>(`${environment.apiUrl}/login`, {username, password})
-        .pipe(
-          tap(res => this.jwtSrv.setToken(res.token)),
-          tap(res => this._currentUser$.next(res.user)),
-          map(res => res.user)  
-        );
-    }
-
-    fetchUser() {
-      return this.http.get<User>(`${environment.apiUrl}/users/me`)
-        .pipe(
-          catchError(_ => {
-            return of (null);
-          }),
-          tap(user => this._currentUser$.next(user))
-        );
-    }
-
-    logout() {
-      this.jwtSrv.removeToken();
+    else {
       this._currentUser$.next(null);
     }
+  }
+
+  login(username: string, password: string) {
+    return this.http.post<any>(`${environment.apiUrl}/login`, { username, password })
+      .pipe(
+        tap(res => this.jwtSrv.setToken(res.token)),
+        tap(res => this._currentUser$.next(res.user)),
+        map(res => res.user)
+      );
+  }
+
+  fetchUser() {
+    return this.http.get<User>(`${environment.apiUrl}/users/me`)
+      .pipe(
+        catchError(_ => {
+          return of(null);
+        }),
+        tap(user => this._currentUser$.next(user))
+      );
+  }
+
+  logout() {
+    this.jwtSrv.removeToken();
+    this._currentUser$.next(null);
+  }
 }
 

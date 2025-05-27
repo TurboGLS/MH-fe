@@ -25,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptor } from './interceptors/auth.interceptor';
 import { logoutInterceptor } from './interceptors/logout.interceptor';
 import { VarlistContainerComponent } from './pages/varlist-container/varlist-container.component';
+import { IfAuthenticatedDirective } from './directives/if-authenticated.directive';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { VarlistContainerComponent } from './pages/varlist-container/varlist-con
     SXMM63Component,
     LoginComponent,
     VarlistContainerComponent,
+    IfAuthenticatedDirective,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { VarlistContainerComponent } from './pages/varlist-container/varlist-con
     ReactiveFormsModule
   ],
   providers: [provideHttpClient(
-    withInterceptors([authInterceptor, logoutInterceptor])
+    withInterceptors([authInterceptor])
   )],
   bootstrap: [AppComponent]
 })
