@@ -8,18 +8,29 @@
         <h1>Catalogo Impianti e Componenti</h1>
     </div>
 
-    <!-- Div Contenitore del dropdown-->
-    <div ngbDropdown class="dropdownBox" #menuDropdown="ngbDropdown">
-        <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
-            <fa-icon [icon]="(menuDropdown.isOpen() ? faTimes : faBars)"></fa-icon> <!-- Cambia Icona -->
-        </button>
-        <!-- Menu a discesa -->
-        <div class="dropdown-menu" ngbDropdownMenu>
-            <button ngbDropdownItem (click)="onMenuItemClick('Multimetri')">Multimetri</button>
-            <button ngbDropdownItem (click)="onMenuItemClick('Fotovoltaici')">Fotovoltaici</button>
-            <button ngbDropdownItem (click)="onMenuItemClick('Pompe di Calore')">Pompe di Calore</button>
-            <button ngbDropdownItem (click)="onMenuItemClick('Caldaie Gas')">Caldaie Gas</button>
-            <button ngbDropdownItem (click)="onMenuItemClick('Caldaie Pellet')">Caldaie Pellet</button>
+    <!--Div Contenitore dei due bottoni-->
+    <div class="btnBox">
+        <!--Div Contenitore dell'icona di login e logout-->
+        <div class="loginBtnBox">
+            <!--Bottone icona che cambia secondo la logica richiamata in authSrv-->
+            <button class="btnLog" (click)="onLoginLogoutClick()">
+                <fa-icon [icon]="authSrv.isLoggedIn() ? faUserOut : faUserIn"></fa-icon>
+            </button>
+        </div>
+        <!-- Div Contenitore del dropdown-->
+        <div ngbDropdown class="dropdownBox" #menuDropdown="ngbDropdown">
+            <!--Bottone per il menu a discesa-->
+            <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                <fa-icon [icon]="(menuDropdown.isOpen() ? faTimes : faBars)"></fa-icon> <!-- Cambia Icona -->
+            </button>
+            <!-- Menu a discesa -->
+            <div class="dropdown-menu" ngbDropdownMenu>
+                <button ngbDropdownItem (click)="onMenuItemClick('Multimetri')">Multimetri</button>
+                <button ngbDropdownItem (click)="onMenuItemClick('Fotovoltaici')">Fotovoltaici</button>
+                <button ngbDropdownItem (click)="onMenuItemClick('Pompe di Calore')">Pompe di Calore</button>
+                <button ngbDropdownItem (click)="onMenuItemClick('Caldaie Gas')">Caldaie Gas</button>
+                <button ngbDropdownItem (click)="onMenuItemClick('Caldaie Pellet')">Caldaie Pellet</button>
+            </div>
         </div>
     </div>
 </div>

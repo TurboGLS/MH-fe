@@ -24,7 +24,8 @@
             img {
                 height: 40px; // Altezza del logo
                 width: auto; // Mantiene le proporzioni
-                max-width: 100%;;
+                max-width: 100%;
+                ;
             }
         }
 
@@ -42,76 +43,120 @@
             }
         }
 
-        .dropdownBox {
+        .btnBox {
             width: 20%;
             justify-content: end;
             display: flex;
             position: relative; // Per gestire il posizionamento assoluto del menu
 
-            // Stile del pulsante del menu
-            .btn {
-                background: none; // Rimuove lo sfondo del pulsante
-                border: none; // Rimuove il bordo
-                cursor: pointer; // Cambia il cursore al passaggio del mouse
-                transition: $transition-property; // Transizione per il pulsante
-                padding: 8px; // Aggiunge spazio cliccabile
-                display: flex; // Flexbox per centrare l'icona
-                align-items: center; // Centra verticalmente
-                justify-content: center; // Centra orizzontalmente
+            .loginBtnBox {
+                width: 50%; // Prende metà dello spazio disponibile nella btnBox
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
 
-                &::after {
-                    display: none !important; // Rimuove la freccetta del dropdown
-                }
-
-                &:hover {
-                    color: $black-primary-hover; // Colore al passaggio del mouse
-                }
-
-                fa-icon {
-                    font-size: 1.5rem; // Dimensione dell'icona
-                    color: $red-brand; // Colore dell'icona
-                }
-
-                min-height: 40px; // Evita lo spostamento dell'intestazione
-            }
-
-            .dropdown-menu {
-                position: absolute; // Posiziona il menu in modo assoluto
-                right: 0; // Allinea a destra
-                top: 100%; // Sotto il pulsante
-                background-color: white; // Sfondo
-                box-shadow: $box-shadow-global; // Ombra
-                border-radius: 8px; // Angoli arrotondati
-                z-index: 1000;
-                min-width: 220px;
-                margin-top: 8px;
-
-                opacity: 0;
-                transform: scaleY(0.95) translateY(-8px);
-                transform-origin: top;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                display: block !important; // Evita che venga nascosto
-                pointer-events: none;
-
-                &.show {
-                    opacity: 1;
-                    transform: scaleY(1) translateY(0);
-                    pointer-events: auto;
-                }
-
-                button[ngbDropdownItem] {
-                    width: 100%;
-                    padding: 10px 20px;
-                    text-align: left;
+                .btnLog {
+                    background: none;
                     border: none;
-                    border-radius: 8px;
-                    background: transparent;
-                    color: $black-primary;
+                    cursor: pointer;
                     transition: $transition-property;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 40px;
+
+                    fa-icon {
+                        font-size: 25px;
+                        color: $red-brand;
+                    }
 
                     &:hover {
-                        background-color: $red-brand-hover;
-                        color: white;
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
+                }
+            }
+
+            .dropdownBox {
+                box-sizing: border-box;
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                // Stile del pulsante del menu
+                .btn {
+                    background: none; // Rimuove lo sfondo del pulsante
+                    border: none; // Rimuove il bordo
+                    cursor: pointer; // Cambia il cursore al passaggio del mouse
+                    transition: $transition-property; // Transizione per il pulsante
+                    padding: 8px; // Aggiunge spazio cliccabile
+                    display: flex; // Flexbox per centrare l'icona
+                    align-items: center; // Centra verticalmente
+                    justify-content: center; // Centra orizzontalmente
+
+                    &::after {
+                        display: none !important; // Rimuove la freccetta del dropdown
+                    }
+
+                    &:hover {
+                        color: $red-brand-hover; // Colore al passaggio del mouse
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
+
+                    fa-icon {
+                        font-size: 25px; // Dimensione dell'icona
+                        color: $red-brand; // Colore dell'icona
+                    }
+
+                    min-height: 40px; // Evita lo spostamento dell'intestazione
+                }
+
+                .dropdown-menu {
+                    position: absolute; // Posiziona il menu in modo assoluto
+                    right: 0; // Allinea a destra
+                    top: 100%; // Sotto il pulsante
+                    background-color: white; // Sfondo
+                    box-shadow: $box-shadow-global; // Ombra
+                    border-radius: 8px; // Angoli arrotondati
+                    z-index: 1000;
+                    min-width: 220px;
+                    margin-top: 8px;
+
+                    opacity: 0;
+                    transform: scaleY(0.95) translateY(-8px);
+                    transform-origin: top;
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                    display: block !important; // Evita che venga nascosto
+                    pointer-events: none;
+
+                    &.show {
+                        opacity: 1;
+                        transform: scaleY(1) translateY(0);
+                        pointer-events: auto;
+                    }
+
+                    button[ngbDropdownItem] {
+                        width: 100%;
+                        padding: 10px 20px;
+                        text-align: left;
+                        border: none;
+                        border-radius: 8px;
+                        background: transparent;
+                        color: $black-primary;
+                        transition: $transition-property;
+
+                        &:hover {
+                            background-color: $red-brand-hover;
+                            color: white;
+                        }
                     }
                 }
             }
@@ -125,102 +170,144 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 22px; // leggermente meno padding rispetto al desktop
+        padding: 14px 22px;
         background-color: $light-gray;
         box-shadow: $box-shadow-global;
         transition: $transition-property;
 
         .logoBox {
-            width: 20%; // ridotto rispetto al desktop
+            width: 20%;
 
             img {
-                height: 36px; // logo più piccolo rispetto al desktop
+                height: 36px;
                 width: auto;
                 max-width: 100%;
             }
         }
 
         .titleBox {
-            flex: 1;
             display: flex;
-            width: 60%; // mantenuto simile al desktop
+            width: 60%;
             justify-content: center;
             align-items: center;
 
             h1 {
-                font-size: 32px; // font leggermente più piccolo per laptop
+                font-size: 32px;
                 color: $black-primary;
                 text-align: center;
             }
         }
 
-        .dropdownBox {
+        .btnBox {
             width: 20%;
+            justify-content: end;
             display: flex;
-            justify-content: flex-end;
             position: relative;
 
-            .btn {
-                background: none;
-                border: none;
-                cursor: pointer;
-                transition: $transition-property;
-                padding: 6px;
+            .loginBtnBox {
+                width: 50%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                min-height: 38px;
+                justify-content: flex-end;
 
-                &::after {
-                    display: none !important;
-                }
+                .btnLog {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: $transition-property;
+                    padding: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 38px;
 
-                &:hover {
-                    color: $black-primary-hover;
-                }
+                    fa-icon {
+                        font-size: 22px;
+                        color: $red-brand;
+                    }
 
-                fa-icon {
-                    font-size: 1.4rem;
-                    color: $red-brand;
+                    &:hover {
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
                 }
             }
 
-            .dropdown-menu {
-                position: absolute;
-                right: 0;
-                top: 100%;
-                background-color: white;
-                box-shadow: $box-shadow-global;
-                border-radius: 8px;
-                z-index: 1000;
-                min-width: 180px;
-                margin-top: 8px;
-                opacity: 0;
-                transform: scaleY(0.95) translateY(-8px);
-                transform-origin: top;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                display: block !important;
-                pointer-events: none;
+            .dropdownBox {
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
 
-                &.show {
-                    opacity: 1;
-                    transform: scaleY(1) translateY(0);
-                    pointer-events: auto;
-                }
-
-                button[ngbDropdownItem] {
-                    width: 100%;
-                    padding: 10px 18px;
-                    text-align: left;
+                .btn {
+                    background: none;
                     border: none;
-                    border-radius: 8px;
-                    background: transparent;
-                    color: $black-primary;
+                    cursor: pointer;
                     transition: $transition-property;
+                    padding: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 38px;
+
+                    &::after {
+                        display: none !important;
+                    }
 
                     &:hover {
-                        background-color: $red-brand-hover;
-                        color: white;
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
+
+                    fa-icon {
+                        font-size: 22px;
+                        color: $red-brand;
+                    }
+                }
+
+                .dropdown-menu {
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    background-color: white;
+                    box-shadow: $box-shadow-global;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    min-width: 180px;
+                    margin-top: 8px;
+                    opacity: 0;
+                    transform: scaleY(0.95) translateY(-8px);
+                    transform-origin: top;
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                    display: block !important;
+                    pointer-events: none;
+
+                    &.show {
+                        opacity: 1;
+                        transform: scaleY(1) translateY(0);
+                        pointer-events: auto;
+                    }
+
+                    button[ngbDropdownItem] {
+                        width: 100%;
+                        padding: 10px 18px;
+                        text-align: left;
+                        border: none;
+                        border-radius: 8px;
+                        background: transparent;
+                        color: $black-primary;
+                        transition: $transition-property;
+
+                        &:hover {
+                            background-color: $red-brand-hover;
+                            color: white;
+                        }
                     }
                 }
             }
@@ -243,14 +330,13 @@
             width: 20%;
 
             img {
-                height: 36px;
+                height: 34px;
                 width: auto;
                 max-width: 100%;
             }
         }
 
         .titleBox {
-            flex: 1; // occuperà lo spazio centrale
             display: flex;
             width: 60%;
             justify-content: center;
@@ -263,73 +349,116 @@
             }
         }
 
-        .dropdownBox {
+        .btnBox {
             width: 20%;
+            justify-content: end;
             display: flex;
-            justify-content: flex-end;
             position: relative;
 
-            .btn {
-                background: none;
-                border: none;
-                cursor: pointer;
-                transition: $transition-property;
-                padding: 6px;
+            .loginBtnBox {
+                width: 50%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                min-height: 40px;
+                justify-content: flex-end;
 
-                &::after {
-                    display: none !important;
-                }
+                .btnLog {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: $transition-property;
+                    padding: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 36px;
 
-                &:hover {
-                    color: $black-primary-hover;
-                }
+                    fa-icon {
+                        font-size: 20px;
+                        color: $red-brand;
+                    }
 
-                fa-icon {
-                    font-size: 1.4rem;
-                    color: $red-brand;
+                    &:hover {
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
                 }
             }
 
-            .dropdown-menu {
-                position: absolute;
-                right: 0;
-                top: 100%;
-                background-color: white;
-                box-shadow: $box-shadow-global;
-                border-radius: 8px;
-                z-index: 1000;
-                min-width: 180px;
-                margin-top: 8px;
-                opacity: 0;
-                transform: scaleY(0.95) translateY(-8px);
-                transform-origin: top;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                display: block !important;
-                pointer-events: none;
+            .dropdownBox {
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
 
-                &.show {
-                    opacity: 1;
-                    transform: scaleY(1) translateY(0);
-                    pointer-events: auto;
-                }
-
-                button[ngbDropdownItem] {
-                    width: 100%;
-                    padding: 10px 20px;
-                    text-align: left;
+                .btn {
+                    background: none;
                     border: none;
-                    border-radius: 8px;
-                    background: transparent;
-                    color: $black-primary;
+                    cursor: pointer;
                     transition: $transition-property;
+                    padding: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 36px;
+
+                    &::after {
+                        display: none !important;
+                    }
 
                     &:hover {
-                        background-color: $red-brand-hover;
-                        color: white;
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
+
+                    fa-icon {
+                        font-size: 20px;
+                        color: $red-brand;
+                    }
+                }
+
+                .dropdown-menu {
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    background-color: white;
+                    box-shadow: $box-shadow-global;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    min-width: 160px;
+                    margin-top: 8px;
+                    opacity: 0;
+                    transform: scaleY(0.95) translateY(-8px);
+                    transform-origin: top;
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                    display: block !important;
+                    pointer-events: none;
+
+                    &.show {
+                        opacity: 1;
+                        transform: scaleY(1) translateY(0);
+                        pointer-events: auto;
+                    }
+
+                    button[ngbDropdownItem] {
+                        width: 100%;
+                        padding: 10px 16px;
+                        text-align: left;
+                        border: none;
+                        border-radius: 8px;
+                        background: transparent;
+                        color: $black-primary;
+                        transition: $transition-property;
+
+                        &:hover {
+                            background-color: $red-brand-hover;
+                            color: white;
+                        }
                     }
                 }
             }
@@ -359,7 +488,6 @@
         }
 
         .titleBox {
-            flex: 1;
             display: flex;
             width: 50%;
             justify-content: center;
@@ -372,73 +500,116 @@
             }
         }
 
-        .dropdownBox {
+        .btnBox {
             width: 20%;
+            justify-content: end;
             display: flex;
-            justify-content: flex-end;
             position: relative;
 
-            .btn {
-                background: none;
-                border: none;
-                cursor: pointer;
-                transition: $transition-property;
-                padding: 4px;
+            .loginBtnBox {
+                width: 50%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                min-height: 36px;
+                justify-content: flex-end;
 
-                &::after {
-                    display: none !important;
-                }
+                .btnLog {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: $transition-property;
+                    padding: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 36px;
 
-                &:hover {
-                    color: $black-primary-hover;
-                }
+                    fa-icon {
+                        font-size: 18px;
+                        color: $red-brand;
+                    }
 
-                fa-icon {
-                    font-size: 1.3rem;
-                    color: $red-brand;
+                    &:hover {
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
                 }
             }
 
-            .dropdown-menu {
-                position: absolute;
-                right: 0;
-                top: 100%;
-                background-color: white;
-                box-shadow: $box-shadow-global;
-                border-radius: 8px;
-                z-index: 1000;
-                min-width: 150px; // più stretto per smartphone
-                margin-top: 8px;
-                opacity: 0;
-                transform: scaleY(0.95) translateY(-8px);
-                transform-origin: top;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                display: block !important;
-                pointer-events: none;
+            .dropdownBox {
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
 
-                &.show {
-                    opacity: 1;
-                    transform: scaleY(1) translateY(0);
-                    pointer-events: auto;
-                }
-
-                button[ngbDropdownItem] {
-                    width: 100%;
-                    padding: 10px 16px;
-                    text-align: left;
+                .btn {
+                    background: none;
                     border: none;
-                    border-radius: 8px;
-                    background: transparent;
-                    color: $black-primary;
+                    cursor: pointer;
                     transition: $transition-property;
+                    padding: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 36px;
+
+                    &::after {
+                        display: none !important;
+                    }
 
                     &:hover {
-                        background-color: $red-brand-hover;
-                        color: white;
+                        color: $red-brand-hover;
+
+                        fa-icon {
+                            color: $red-brand-hover;
+                        }
+                    }
+
+                    fa-icon {
+                        font-size: 18px;
+                        color: $red-brand;
+                    }
+                }
+
+                .dropdown-menu {
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    background-color: white;
+                    box-shadow: $box-shadow-global;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    min-width: 150px;
+                    margin-top: 8px;
+                    opacity: 0;
+                    transform: scaleY(0.95) translateY(-8px);
+                    transform-origin: top;
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                    display: block !important;
+                    pointer-events: none;
+
+                    &.show {
+                        opacity: 1;
+                        transform: scaleY(1) translateY(0);
+                        pointer-events: auto;
+                    }
+
+                    button[ngbDropdownItem] {
+                        width: 100%;
+                        padding: 10px 16px;
+                        text-align: left;
+                        border: none;
+                        border-radius: 8px;
+                        background: transparent;
+                        color: $black-primary;
+                        transition: $transition-property;
+
+                        &:hover {
+                            background-color: $red-brand-hover;
+                            color: white;
+                        }
                     }
                 }
             }

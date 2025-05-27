@@ -55,5 +55,8 @@ export class AuthService {
     this.jwtSrv.removeToken();
     this._currentUser$.next(null);
   }
-}
 
+  isLoggedIn(): boolean {
+    return this.jwtSrv.hasToken();
+  }
+}
