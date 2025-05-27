@@ -1,11 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { VarlistContainerComponent } from './pages/varlist-container/varlist-container.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'varlist',
+    component: VarlistContainerComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: '', 
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
 ];
 
