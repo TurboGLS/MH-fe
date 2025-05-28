@@ -20,14 +20,15 @@ export class RegisterComponent implements OnDestroy {
 
   registerForm = this.fb.group({
     username: ['', Validators.required],
-    email: ['', Validators.required, Validators.email],
-    password: ['', Validators.required]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]]
   });
 
   registerError = '';
 
   onSubmit() {
     if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
       return;
     }
 
@@ -49,6 +50,13 @@ export class RegisterComponent implements OnDestroy {
         },
         error: err => {
           console.error('Errore durante la registrazione', err);
+
+          if (err.error?.message) {
+            this.registerError = err.error.message;
+          }
+          else {
+            this.registerError = 'Email o Password non valida'
+          }
         }
       });
   }
