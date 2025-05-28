@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sxmm63',
@@ -7,7 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './sxmm63.component.scss'
 })
 export class SXMM63Component {
+  protected router = inject(Router);
+  
   openLink(url: string) {
     window.open(url, '_black');
+  }
+
+  goToVarList() {
+    this.router.navigate(['/varlist']);
   }
 }
