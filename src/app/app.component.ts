@@ -18,15 +18,21 @@ export class AppComponent implements OnInit {
   private timerSubscription?: Subscription;
   message = '';
 
+  wasLoggedIn = false;
+
   ngOnInit() {
-    // Controllo periodico ogni 60 secondi
+    this.wasLoggedIn = this.authSrv.isLoggedIn();
+
     this.timerSubscription = timer(0, 300000).subscribe(() => {
-      if (!this.authSrv.isLoggedIn()) {
-        // Se il token è scaduto fai logout e redirigi
+      const loggedInNow = this.authSrv.isLoggedIn();
+
+      if (this.wasLoggedIn && !loggedInNow) {
         this.authSrv.logout();
         this.notificationSrv.setMessage('Sessione scaduta, effettua nuovamente il login.');
         this.router.navigate(['/home']);
       }
+
+      this.wasLoggedIn = loggedInNow;
     });
 
     // Gestione messaggi di notifica
