@@ -27,6 +27,7 @@ import { logoutInterceptor } from './interceptors/logout.interceptor';
 import { VarlistContainerComponent } from './pages/varlist-container/varlist-container.component';
 import { IfAuthenticatedDirective } from './directives/if-authenticated.directive';
 import { RegisterComponent } from './pages/register/register.component';
+import { VarlistComponent } from './components/varlist/varlist.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { RegisterComponent } from './pages/register/register.component';
     SXMM63Component,
     LoginComponent,
     VarlistContainerComponent,
+    VarlistComponent,
     IfAuthenticatedDirective,
     RegisterComponent,
   ],
@@ -59,7 +61,7 @@ import { RegisterComponent } from './pages/register/register.component';
     ReactiveFormsModule
   ],
   providers: [provideHttpClient(
-    withInterceptors([authInterceptor])
+    withInterceptors([authInterceptor/*, logoutInterceptor*/])
   )],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,41 @@
-<p>varlist works!</p>
+<form [formGroup]="varlistForm" (ngSubmit)="onSubmit()" class="form">
+  <div class="form-group">
+    <label for="type">Modello</label>
+    <input id="type" type="text" formControlName="type" />
+    <div *ngIf="varlistForm.get('type')?.invalid && varlistForm.get('type')?.touched" class="error">
+      Il campo modello è obbligatorio.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Quantità</label>
+    <input id="quantity" type="number" formControlName="quantity" />
+    <div *ngIf="varlistForm.get('quantity')?.invalid && varlistForm.get('quantity')?.touched" class="error">
+      Inserisci un numero maggiore di 0.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="device">Device</label>
+    <input id="device" type="number" formControlName="device" />
+    <div *ngIf="varlistForm.get('device')?.invalid && varlistForm.get('device')?.touched" class="error">
+      Inserisci un numero valido.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="ipAddress">IP Address</label>
+    <input id="ipAddress" type="text" formControlName="ipAddress" />
+    <div *ngIf="varlistForm.get('ipAddress')?.invalid && varlistForm.get('ipAddress')?.touched" class="error">
+      Inserisci un indirizzo IP valido (es. 192.168.1.100).
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Generazione in corso...' : 'Genera CSV' }}
+  </button>
+
+  <div *ngIf="error" class="global-error">
+    {{ error }}
+  </div>
+</form>

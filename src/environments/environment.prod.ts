@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://peculiar-marjie-manualproject-4840f10a.koyeb.app/api'  // URL backend reale
+  apiUrl: 'https://united-karrie-turbogls-fcc74bb8.koyeb.app/api'  // URL backend reale
 };
