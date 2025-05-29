@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // Controllo periodico ogni 60 secondi
-    this.timerSubscription = timer(0, 60000).subscribe(() => {
+    this.timerSubscription = timer(0, 300000).subscribe(() => {
       if (!this.authSrv.isLoggedIn()) {
         // Se il token è scaduto fai logout e redirigi
         this.authSrv.logout();
