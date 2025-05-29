@@ -54,3 +54,5 @@ export class AppComponent implements OnInit {
     this.timerSubscription?.unsubscribe();
   }
 }
+
+// qualcosa verrà rotto
