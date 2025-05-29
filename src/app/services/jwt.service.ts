@@ -5,37 +5,48 @@ import { jwtDecode, JwtPayload } from 'jwt-decode';
   providedIn: 'root'
 })
 export class JwtService {
-  protected storageKey = 'authToken';
+  protected tokenStorageKey = 'authToken';
+  protected refreshStorageKey = 'authRefreshToken';
 
-  hasToken() {
-    return !!this.getToken();
+  getPayload<T>() {
+    const authTokens = this.getToken();
+    if (!authTokens) {
+      return null;
+    }
+    return jwtDecode<T>(authTokens.token);
   }
 
-  getToken() {
-    return localStorage.getItem(this.storageKey);
+  areTokensValid() {
+    const authTokens = this.getToken();
+    if (!authTokens) {
+      return false;
+    }
+    const decoded = jwtDecode(authTokens.refreshToken);
+    return !decoded.exp || decoded.exp * 1000 > Date.now();
   }
 
-  setToken(value: string) {
-    localStorage.setItem(this.storageKey, value);
+  getToken(): { token: string, refreshToken: string } | null {
+    const token = localStorage.getItem(this.tokenStorageKey);
+    const refreshToken = localStorage.getItem(this.refreshStorageKey);
+
+    if (!(token && refreshToken)) {
+      this.removeToken();
+      return null;
+    }
+
+    return {
+      token,
+      refreshToken
+    }
+  }
+
+  setToken(value: string, refreshToken: string) {
+    localStorage.setItem(this.tokenStorageKey, value);
+    localStorage.setItem(this.refreshStorageKey, refreshToken);
   }
 
   removeToken() {
-    localStorage.removeItem(this.storageKey);
-  }
-
-  // funzione per controllare se il token è valido e non scaduto
-  isTokenValid(): boolean {
-    const token = this.getToken();
-    if (!token) return false;
-
-    try {
-      const decoded = jwtDecode<JwtPayload>(token);
-      if (!decoded.exp) return false; // se non c’è exp, consideralo non valido
-
-      const currentTime = Math.floor(Date.now() / 1000);
-      return decoded.exp > currentTime;
-    } catch {
-      return false;
-    }
+    localStorage.removeItem(this.tokenStorageKey);
+    localStorage.removeItem(this.refreshStorageKey);
   }
 }

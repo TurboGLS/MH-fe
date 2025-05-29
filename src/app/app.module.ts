@@ -61,7 +61,7 @@ import { VarlistComponent } from './components/varlist/varlist.component';
     ReactiveFormsModule
   ],
   providers: [provideHttpClient(
-    withInterceptors([authInterceptor/*, logoutInterceptor*/])
+    withInterceptors([authInterceptor, logoutInterceptor])
   )],
   bootstrap: [AppComponent]
 })

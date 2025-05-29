@@ -24,21 +24,37 @@ export class AuthService {
     );
 
   constructor() {
-    if (this.jwtSrv.hasToken()) {
-      this.fetchUser().subscribe();
-    }
-    else {
-      this._currentUser$.next(null);
+    const tokenValid = this.jwtSrv.areTokensValid();
+    if (!tokenValid) {
+      this.logout();
+    } else {
+      const user = this.jwtSrv.getPayload<User>();
+      this._currentUser$.next(user);
     }
   }
 
   login(username: string, password: string) {
     return this.http.post<any>(`${environment.apiUrl}/login`, { username, password })
       .pipe(
-        tap(res => this.jwtSrv.setToken(res.token)),
+        tap(res => this.jwtSrv.setToken(res.token, res.refreshToken)),
         tap(res => this._currentUser$.next(res.user)),
         map(res => res.user)
       );
+  }
+
+  refresh() {
+    const authTokens = this.jwtSrv.getToken();
+    if (!authTokens) {
+      throw new Error('Missing refresh token');
+    }
+    return this.http.post<{token: string, refreshToken: string}>(`${environment.apiUrl}/refresh`, {refreshToken: authTokens.refreshToken})
+      .pipe(
+        tap(res => this.jwtSrv.setToken(res.token, res.refreshToken)),
+        tap(_ => {
+          const user = this.jwtSrv.getPayload<User>();
+          this._currentUser$.next(user);
+        })
+      )
   }
 
   fetchUser() {
@@ -57,6 +73,6 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return this.jwtSrv.hasToken();
+    return this.jwtSrv.areTokensValid();
   }
 }

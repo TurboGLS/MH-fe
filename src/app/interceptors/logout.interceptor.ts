@@ -1,19 +1,35 @@
-import { HttpInterceptorFn, HttpErrorResponse } from "@angular/common/http";
+import { HttpInterceptorFn, HttpErrorResponse, HttpClient } from "@angular/common/http";
 import { inject } from "@angular/core";
-import { throwError, catchError } from "rxjs";
+import { throwError, catchError, switchMap } from "rxjs";
 import { AuthService } from "../services/auth.service";
-import { JwtService } from "../services/jwt.service";
+import { environment } from '../../environments/environment';
 
 export const logoutInterceptor: HttpInterceptorFn = (req, next) => {
-  const authService = inject(AuthService);
-  const jwtSrv = inject(JwtService);
+  const authSrv = inject(AuthService);
+  const http = inject(HttpClient);
+
+  // Entra in gioco sulla risposta delle API
+  const excludedRequests = [`${environment.apiUrl}/login`, `${environment.apiUrl}/refresh`];
+  if (excludedRequests.includes(req.url)) {
+    return next(req);
+  }
 
   return next(req).pipe(
-    catchError((error: any) => {
-      if (error instanceof HttpErrorResponse && error.status === 401) {
-        authService.logout();
+    catchError((response: any) => {
+      if (response instanceof HttpErrorResponse && response.status === 401) {
+        // se la chiamata originale torna 401 faccio al chiamata refresh
+        return authSrv.refresh()
+          .pipe(
+            catchError(_ => {
+              authSrv.logout();
+              return throwError(() => response)
+            }),
+            switchMap(_ => {
+              return http.request(req.clone());
+            })
+          )
       }
-      return throwError(() => error);
+      return throwError(() => response);
     })
   );
 };

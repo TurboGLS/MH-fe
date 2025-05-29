@@ -1,6 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { NotificationService } from './services/notification.service';
 import { Subscription, timer } from 'rxjs';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,26 +10,41 @@ import { Subscription, timer } from 'rxjs';
   standalone: false,
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
-  protected NotificationSrv = inject(NotificationService);
-  protected subscription?: Subscription;
+export class AppComponent implements OnInit {
+  private authSrv = inject(AuthService);
+  private router = inject(Router);
+  private notificationSrv = inject(NotificationService);
 
+  private timerSubscription?: Subscription;
   message = '';
 
   ngOnInit() {
-    this.NotificationSrv.message$.subscribe(msg => {
-      this.message = msg;
+    // Controllo periodico ogni 60 secondi
+    this.timerSubscription = timer(0, 60000).subscribe(() => {
+      if (!this.authSrv.isLoggedIn()) {
+        // Se il token è scaduto fai logout e redirigi
+        this.authSrv.logout();
+        this.notificationSrv.setMessage('Sessione scaduta, effettua nuovamente il login.');
+        this.router.navigate(['/home']);
+      }
+    });
 
+    // Gestione messaggi di notifica
+    this.notificationSrv.message$.subscribe(msg => {
+      this.message = msg;
       if (msg) {
-        // qui mettiamo l'auto dismiss dopo 3 secondi
-        this.subscription?.unsubscribe();
-        this.subscription = timer(3000).subscribe(() => this.clearMessage());
+        // auto dismiss dopo 3 secondi
+        setTimeout(() => this.clearMessage(), 3000);
       }
     });
   }
 
   clearMessage() {
     this.message = '';
-    this.NotificationSrv.clearMessage();
+    this.notificationSrv.clearMessage();
+  }
+
+  ngOnDestroy() {
+    this.timerSubscription?.unsubscribe();
   }
 }
