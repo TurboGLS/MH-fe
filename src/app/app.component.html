@@ -1,1 +1,10 @@
+<ngb-toast
+  *ngIf="message"
+  [autohide]="true"
+  [delay]="4000"
+  [animation]="true"
+  class="text-white bg-danger position-fixed top-0 start-50 translate-middle-x mt-3 shadow rounded"
+  (hidden)="clearMessage()">
+  {{ message }}
+</ngb-toast>
 <router-outlet></router-outlet>

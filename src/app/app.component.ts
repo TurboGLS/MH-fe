@@ -11,6 +11,46 @@ import { switchMap, tap } from 'rxjs/operators';
   standalone: false,
   styleUrl: './app.component.scss'
 })
-export class AppComponent  {
-  
+export class AppComponent implements OnInit, OnDestroy {
+  protected authSrv = inject(AuthService);
+  protected router = inject(Router);
+  protected notifySrv = inject(NotificationService);
+
+  protected timerSubscription?: Subscription;
+  message = '';
+
+  wasLoggedIn = false;
+
+  ngOnInit() {
+    this.wasLoggedIn = this.authSrv.isLoggedIn();
+
+    this.timerSubscription = timer(0, 300000).subscribe(() => {
+      const loggedInNow = this.authSrv.isLoggedIn();
+
+      if (this.wasLoggedIn && !loggedInNow) {
+        this.authSrv.logout();
+        this.notifySrv.setMessage('Sessione scaduta, effettua nuovamente il login.');
+        this.router.navigate(['/home'])
+      }
+      this.wasLoggedIn = loggedInNow;
+    });
+
+    // Gestione messaggi di notifica
+    this.notifySrv.message$.subscribe(msg => {
+      this.message = msg;
+      if (msg) {
+        // auto dismiss dopo 3 secondi
+        setTimeout(() => this.clearMessage(), 4000);
+      }
+    });
+  }
+
+  clearMessage() {
+    this.message = '';
+    this.notifySrv.clearMessage();
+  }
+
+  ngOnDestroy() {
+      this.timerSubscription?.unsubscribe();
+  }
 }
