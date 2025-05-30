@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { jwtDecode, JwtPayload } from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -25,11 +25,11 @@ export class JwtService {
     return !decoded.exp || decoded.exp * 1000 > Date.now();
   }
 
-  getToken(): { token: string, refreshToken: string } | null {
-    const token = localStorage.getItem(this.tokenStorageKey);
-    const refreshToken = localStorage.getItem(this.refreshStorageKey);
+  getToken(): {token: string, refreshToken: string} | null {
+    const token =  localStorage.getItem(this.tokenStorageKey);
+    const refreshToken =  localStorage.getItem(this.refreshStorageKey);
 
-    if (!(token && refreshToken)) {
+    if (!(token && refreshToken)){
       this.removeToken();
       return null;
     }
@@ -37,11 +37,11 @@ export class JwtService {
     return {
       token,
       refreshToken
-    }
+    };
   }
 
-  setToken(value: string, refreshToken: string) {
-    localStorage.setItem(this.tokenStorageKey, value);
+  setToken(token: string, refreshToken: string) {
+    localStorage.setItem(this.tokenStorageKey, token);
     localStorage.setItem(this.refreshStorageKey, refreshToken);
   }
 

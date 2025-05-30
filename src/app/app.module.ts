@@ -60,9 +60,11 @@ import { VarlistComponent } from './components/varlist/varlist.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [provideHttpClient(
-    withInterceptors([authInterceptor, logoutInterceptor])
-  )],
+  providers: [
+    provideHttpClient(
+      withInterceptors([authInterceptor, logoutInterceptor])
+    )
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

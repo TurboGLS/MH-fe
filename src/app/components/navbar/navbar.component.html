@@ -14,7 +14,7 @@
         <div class="loginBtnBox">
             <!--Bottone icona che cambia secondo la logica richiamata in authSrv-->
             <button class="btnLog" (click)="onLoginLogoutClick()">
-                <fa-icon [icon]="authSrv.isLoggedIn() ? faUserOut : faUserIn"></fa-icon>
+                <fa-icon [icon]="(authSrv.isAuthenticated$ | async) ? faUserOut : faUserIn"></fa-icon>
             </button>
         </div>
         <!-- Div Contenitore del dropdown-->

@@ -23,6 +23,8 @@ export class NavbarComponent implements OnInit {
 
   selectedMenuItem: string | null = null;
 
+  isAuthenticated: boolean = false;
+
   @ViewChild('menuDropdown') menuDropdown!: NgbDropdown;
 
   onMenuItemClick(item: string) {
@@ -35,21 +37,25 @@ export class NavbarComponent implements OnInit {
     this.menuDropdown.close();
   }
 
-  onLoginLogoutClick() {
-    if (this.authSrv.isLoggedIn()) {
-      this.authSrv.logout();
-      this.router.navigate(['/home']);
-    }
-    else {
-      this.router.navigate(['/login']);
-    }
-  }
-
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
       if (params['menu']) {
         this.selectedMenuItem = params['menu'];
       }
     });
+
+    this.authSrv.isAuthenticated$.subscribe(auth => {
+      this.isAuthenticated = auth;
+    });
+  }
+
+  onLoginLogoutClick() {
+    if (this.isAuthenticated) {
+      this.authSrv.logout();
+      this.router.navigate(['/home']);
+    }
+    else {
+      this.router.navigate(['/login']);
+    }
   }
 }

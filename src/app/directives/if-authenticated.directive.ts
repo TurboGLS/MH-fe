@@ -3,13 +3,14 @@ import { AuthService } from '../services/auth.service';
 import { Subject, takeUntil } from 'rxjs';
 
 @Directive({
-  selector: '[appIfAuthenticated]',
+  selector: '[ifAuthenticated]',
   standalone: false
 })
 export class IfAuthenticatedDirective implements OnInit, OnDestroy {
+
   protected authSrv = inject(AuthService);
   protected viewContainer = inject(ViewContainerRef);
-  protected templatedRef = inject<TemplateRef<any>>(TemplateRef);
+  protected templatedRef = inject<TemplateRef<any>>(TemplateRef)
 
   protected destroyed$ = new Subject<void>();
 
@@ -21,8 +22,7 @@ export class IfAuthenticatedDirective implements OnInit, OnDestroy {
       .subscribe(isAuthenticated => {
         if (isAuthenticated) {
           this.viewContainer.createEmbeddedView(this.templatedRef);
-        }
-        else {
+        } else {
           this.viewContainer.clear();
         }
       });

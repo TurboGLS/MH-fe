@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { JwtService } from './jwt.service';
-import { Router } from '@angular/router';
 import { catchError, distinctUntilChanged, map, of, ReplaySubject, tap } from 'rxjs';
+import { JwtService } from './jwt.service';
 import { User } from '../entities/user.entity';
+import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -18,10 +18,10 @@ export class AuthService {
   currentUser$ = this._currentUser$.asObservable();
 
   isAuthenticated$ = this.currentUser$
-    .pipe(
-      map(user => !!user),
-      distinctUntilChanged()
-    );
+                       .pipe(
+                        map(user => !!user),
+                        distinctUntilChanged()
+                      );
 
   constructor() {
     const tokenValid = this.jwtSrv.areTokensValid();
@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${environment.apiUrl}/login`, { username, password })
+    return this.http.post<any>(`${environment.apiUrl}/login`, {username, password})
       .pipe(
         tap(res => this.jwtSrv.setToken(res.token, res.refreshToken)),
         tap(res => this._currentUser$.next(res.user)),
@@ -54,7 +54,7 @@ export class AuthService {
           const user = this.jwtSrv.getPayload<User>();
           this._currentUser$.next(user);
         })
-      )
+      );
   }
 
   fetchUser() {
@@ -70,9 +70,5 @@ export class AuthService {
   logout() {
     this.jwtSrv.removeToken();
     this._currentUser$.next(null);
-  }
-
-  isLoggedIn(): boolean {
-    return this.jwtSrv.areTokensValid();
   }
 }
