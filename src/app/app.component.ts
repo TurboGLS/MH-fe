@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
       if (this.wasLoggedIn && !loggedInNow) {
         this.authSrv.logout();
         this.notifySrv.setMessage('Sessione scaduta, effettua nuovamente il login.');
-        this.router.navigate(['/home'])
+        this.router.navigate(['/login'])
       }
       this.wasLoggedIn = loggedInNow;
     });
