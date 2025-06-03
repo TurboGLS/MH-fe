@@ -5,11 +5,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { VarlistContainerComponent } from './pages/varlist-container/varlist-container.component';
 import { authGuard } from './guards/auth.guard';
 import { RegisterComponent } from './pages/register/register.component';
+import { loginGuard } from './guards/login.guard';
+import { roleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [loginGuard]
   },
   {
     path: 'register',
@@ -22,7 +25,7 @@ const routes: Routes = [
   {
     path: 'varlist',
     component: VarlistContainerComponent,
-    canActivate: [authGuard]
+    canActivate: [authGuard, roleGuard] // prima check login, poi check ruolo
   },
   {
     path: '', 

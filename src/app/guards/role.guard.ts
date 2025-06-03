@@ -4,19 +4,19 @@ import { AuthService } from '../services/auth.service';
 import { NotificationService } from '../services/notification.service';
 import { map, tap } from 'rxjs';
 
-export const loginGuard: CanActivateFn = (route, state) => {
+export const roleGuard: CanActivateFn = (route, state) => {
   const authSrv = inject(AuthService);
   const router = inject(Router);
   const notifySrv = inject(NotificationService);
 
-  return authSrv.isAuthenticated$
+  return authSrv.currentUser$
     .pipe(
-      tap(isAuthenticated => {
-        if (isAuthenticated) {
-          notifySrv.setMessage('Utente già loggato.');
+      tap(user => {
+        if (user && user.role !== 'admin') {
+          notifySrv.setMessage('Non hai i permessi per accedere a questa pagina.');
           router.navigate(['/home']);
         }
       }),
-      map(isAuthenticated => !isAuthenticated) // consenti accesso solo se NON loggato
+      map(user => !!user && user.role === 'admin')
     );
 };
