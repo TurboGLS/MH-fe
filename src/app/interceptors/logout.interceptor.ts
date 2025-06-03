@@ -19,7 +19,7 @@ export const logoutInterceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(
     catchError((response: any) => {
       if (response instanceof HttpErrorResponse && response.status === 401) {
-        //se la chiamata originale torna 401 faccio la chiamata di refresh
+        // se la chiamata originale torna 401 faccio la chiamata di refresh
         return authSrv.refresh()
           .pipe(
             catchError(_ => {

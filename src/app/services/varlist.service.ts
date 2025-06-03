@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 export class VarlistService {
   protected http = inject(HttpClient);
 
+  // richiamo api per generare il csv
   generate(data: { type: string, quantity: number, device: number, ipAddress: string }) {
     return this.http.post<any>(`${environment.apiUrl}/varlist/download`, data);
   }

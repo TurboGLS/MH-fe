@@ -24,7 +24,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.wasLoggedIn = this.authSrv.isLoggedIn();
 
+    // Check del timer ogni 5 minuti
     this.timerSubscription = timer(0, 300000).subscribe(() => {
+      // check se l'utente era già loggato prima
       const loggedInNow = this.authSrv.isLoggedIn();
 
       if (this.wasLoggedIn && !loggedInNow) {
@@ -39,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.notifySrv.message$.subscribe(msg => {
       this.message = msg;
       if (msg) {
-        // auto dismiss dopo 3 secondi
+        // auto dismiss dopo 4 secondi
         setTimeout(() => this.clearMessage(), 4000);
       }
     });
