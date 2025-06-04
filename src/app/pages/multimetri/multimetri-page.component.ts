@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-multimetri-page',
   standalone: false,
   templateUrl: './multimetri-page.component.html',
-  styleUrl: './multimetri-page.component.scss'
+  styleUrls: ['./multimetri-page.component.scss']
 })
 export class MultimetriPageComponent implements OnInit {
   protected router = inject(Router);

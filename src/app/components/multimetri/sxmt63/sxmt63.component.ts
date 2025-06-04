@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-sxmt63',
   standalone: false,
   templateUrl: './sxmt63.component.html',
-  styleUrl: './sxmt63.component.scss'
+  styleUrls: ['./sxmt63.component.scss']
 })
 export class SXMT63Component {
   protected router = inject(Router);

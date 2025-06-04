@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-pac2200',
   standalone: false,
   templateUrl: './pac2200.component.html',
-  styleUrl: './pac2200.component.scss'
+  styleUrls: ['./pac2200.component.scss']
 })
 export class PAC2200Component {
   protected router = inject(Router);

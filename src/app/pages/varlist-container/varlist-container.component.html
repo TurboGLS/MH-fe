@@ -1,5 +1,12 @@
+<button class="home-button" (click)="goToHome()" aria-label="Torna alla home">
+  <fa-icon [icon]="faHouse"></fa-icon>
+</button>
 <app-varlist
   [loading]="loading"
   [error]="error"
-  (generate)="onGenerate($event)">
+  [categories]="categories"
+  [models]="models"
+  (generate)="onGenerate($event)"
+  (categoryChanged)="onCategoryChange($event)">
 </app-varlist>
+

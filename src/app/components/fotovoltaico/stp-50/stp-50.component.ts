@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-stp-50',
   standalone: false,
   templateUrl: './stp-50.component.html',
-  styleUrl: './stp-50.component.scss'
+  styleUrls: ['./stp-50.component.scss']
 })
 export class STP50Component {
   protected router = inject(Router);

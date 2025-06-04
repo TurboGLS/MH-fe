@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-p20-a000-t',
   standalone: false,
   templateUrl: './p20-a000-t.component.html',
-  styleUrl: './p20-a000-t.component.scss'
+  styleUrls: ['./p20-a000-t.component.scss']
 })
 export class P20A000TComponent {
   protected router = inject(Router);

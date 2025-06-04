@@ -3,13 +3,12 @@ import { faBars, faTimes, faUser, faRightFromBracket } from '@fortawesome/free-s
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { JwtService } from '../../services/jwt.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: false,
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
   faBars = faBars;

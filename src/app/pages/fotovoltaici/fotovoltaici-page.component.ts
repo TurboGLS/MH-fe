@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-fotovoltaici-page',
   standalone: false,
   templateUrl: './fotovoltaici-page.component.html',
-  styleUrl: './fotovoltaici-page.component.scss'
+  styleUrls: ['./fotovoltaici-page.component.scss']
 })
 export class FotovoltaiciPageComponent implements OnInit {
   protected router = inject(Router);

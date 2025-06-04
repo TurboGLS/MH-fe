@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-menu-section',
   standalone: false,
   templateUrl: './menu-section.component.html',
-  styleUrl: './menu-section.component.scss'
+  styleUrls: ['./menu-section.component.scss']
 })
 export class MenuSectionComponent {
   @Input()

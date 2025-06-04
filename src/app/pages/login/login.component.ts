@@ -8,7 +8,7 @@ import { catchError, map, Subject, take, takeUntil, throwError } from 'rxjs';
   selector: 'app-login',
   standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
   protected fb = inject(FormBuilder);

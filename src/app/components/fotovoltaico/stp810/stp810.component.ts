@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-stp810',
   standalone: false,
   templateUrl: './stp810.component.html',
-  styleUrl: './stp810.component.scss'
+  styleUrls: ['./stp810.component.scss']
 })
 export class STP810Component {
   protected router = inject(Router);
