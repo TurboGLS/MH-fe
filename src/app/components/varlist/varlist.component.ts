@@ -42,8 +42,20 @@ export class VarlistComponent implements OnInit {
     this.varlistForm.get('deviceModel')?.valueChanges.subscribe(selectedCategory => {
       if (selectedCategory) {
         this.categoryChanged.emit(selectedCategory);
+
+        // Se ci sono modelli, viene abilitato il campo
+        if (this.models.length > 0) {
+          this.varlistForm.get('model')?.enable();
+        } else {
+          this.varlistForm.get('model')?.disable();
+        }
+      } else {
+        this.varlistForm.get('model')?.disable();
       }
     });
+
+    // Allo start il campo model è disabilitato
+    this.varlistForm.get('model')?.disable();
   }
 
   isInvalid(controlName: string): boolean {

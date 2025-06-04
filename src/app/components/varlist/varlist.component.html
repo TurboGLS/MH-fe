@@ -10,7 +10,7 @@
   <!-- Modello -->
   <div class="form-group">
     <label for="model">Modello</label>
-    <select id="model" formControlName="model" [disabled]="models.length === 0">
+    <select id="model" formControlName="model">
       <option value="" disabled selected *ngIf="models.length === 0">Seleziona una categoria prima</option>
       <option *ngFor="let model of models" [value]="model.Modello">{{ model.Modello }}</option>
     </select>
@@ -73,5 +73,7 @@
   </div>
 
   <!-- Generator Button -->
-
+  <div class="form-group">
+    <button type="sumbit">Genera VarList</button>
+  </div>
 </form>
