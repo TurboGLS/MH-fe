@@ -9,7 +9,7 @@ import { switchMap, tap } from 'rxjs/operators';
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
   protected authSrv = inject(AuthService);
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
       if (this.wasLoggedIn && !loggedInNow) {
         this.authSrv.logout();
         this.notifySrv.setMessage('Sessione scaduta, effettua nuovamente il login.');
-        this.router.navigate(['/login'])
+        this.router.navigate(['/login']);
       }
       this.wasLoggedIn = loggedInNow;
     });

@@ -79,6 +79,6 @@ export class AuthService {
   // funzione che mi richiama una funzione nel jwtService e che fa un check se i tokens sono presenti
   // quindi se l'utente è ancora loggato e restituise un valore booleano
   isLoggedIn(): boolean {
-    return this.jwtSrv.areTokensValid();
+    return this.jwtSrv.isTokenValid();
   }
 }

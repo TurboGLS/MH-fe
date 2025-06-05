@@ -32,13 +32,13 @@ export class JwtService {
     return !decoded.exp || decoded.exp * 1000 > Date.now();
   }
 
-  getToken(): {token: string, refreshToken: string} | null {
+  getToken(): { token: string, refreshToken: string } | null {
     // mi prendo i due token dal local storage se presenti
-    const token =  localStorage.getItem(this.tokenStorageKey);
-    const refreshToken =  localStorage.getItem(this.refreshStorageKey);
+    const token = localStorage.getItem(this.tokenStorageKey);
+    const refreshToken = localStorage.getItem(this.refreshStorageKey);
 
     // faccio un check per verificare se i token sono presenti, se non ci sono return null
-    if (!(token && refreshToken)){
+    if (!(token && refreshToken)) {
       this.removeToken();
       return null;
     }
@@ -60,5 +60,27 @@ export class JwtService {
   removeToken() {
     localStorage.removeItem(this.tokenStorageKey);
     localStorage.removeItem(this.refreshStorageKey);
+  }
+
+  isTokenValid(): boolean {
+    const tokens = this.getToken();
+    if (!tokens) {
+      return false;
+    }
+
+    try {
+      const decoded: { exp?: number } = jwtDecode(tokens.refreshToken);
+
+      // Se il token non ha campo exp consideralo valido
+      if (!decoded.exp) {
+        return true;
+      }
+
+      // Se ha exp, verifica se non è scaduto
+      return decoded.exp * 1000 > Date.now();
+    } catch (e) {
+      // Se il token è malformato o jwtDecode fallisce, ritorna false
+      return false;
+    }
   }
 }
