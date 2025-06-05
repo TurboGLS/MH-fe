@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { VarlistService } from '../../services/varlist.service';
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { Device } from '../../entities/device.entity';
 
@@ -41,17 +41,17 @@ export class VarlistContainerComponent implements OnInit {
         this.models = data;
       },
       error: (err) => {
-        this.error = 'Errore nel caricamento dei modell';
+        this.error = 'Errore nel caricamento dei modelli';
         console.error(err);
       }
-    })
+    });
   }
 
-  onGenerate(event: { model: string, auxNumber: string, description: string, device: string, ipAddress: string }) {
+  onGenerate(rows: { model: string, auxNumber: string, description: string, device: string, ipAddress: string }[]) {
     this.loading = true;
     this.error = null;
 
-    this.varlistSrv.generate([event]).subscribe({
+    this.varlistSrv.generate(rows).subscribe({
       next: (csvText) => {
         this.loading = false;
 
@@ -62,7 +62,7 @@ export class VarlistContainerComponent implements OnInit {
         const link = document.createElement('a');
         const url = window.URL.createObjectURL(blob);
         link.href = url;
-        link.setAttribute('download', 'var_lst.csv');
+        link.setAttribute('download', 'varlist.csv');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

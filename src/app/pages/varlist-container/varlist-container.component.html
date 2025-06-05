@@ -1,11 +1,17 @@
-<button class="home-button" (click)="goToHome()" aria-label="Torna alla home">
-  <fa-icon [icon]="faHouse"></fa-icon>
-</button>
-<app-varlist
-  [loading]="loading"
-  [error]="error"
-  [categories]="categories"
-  [models]="models"
-  (generate)="onGenerate($event)"
-  (categoryChanged)="onCategoryChange($event)">
-</app-varlist>
+<div class="pageBlock">
+  <div class="header-box">
+    <button class="homeBtn" (click)="goToHome()" aria-label="Torna alla home">
+      <fa-icon [icon]="faHouse"></fa-icon>
+    </button>
+  </div>
+  <div class="formBox">
+    <app-varlist
+      [loading]="loading"
+      [error]="error"
+      [categories]="categories"
+      [models]="models"
+      (generate)="onGenerate($event)"
+      (categoryChanged)="onCategoryChange($event)">
+    </app-varlist>
+  </div>
+</div>

@@ -1,81 +1,62 @@
-<form [formGroup]="varlistForm" (ngSubmit)="onSubmit()" class="form">
-  <!-- Categoria -->
-  <div class="form-group">
-    <label for="deviceModel">Categoria Dispositivo</label>
-    <select id="deviceModel" formControlName="deviceModel">
-      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
-    </select>
-  </div>
+<form [formGroup]="varlistForm" (ngSubmit)="onSubmit()">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Categoria</th>
+        <th>Modello</th>
+        <th>Aux Number</th>
+        <th>Descrizione</th>
+        <th>Dispositivo</th>
+        <th>IP Address</th>
+      </tr>
+    </thead>
+    <tbody formArrayName="rows">
+      <tr *ngFor="let row of rows.controls; let i = index" [formGroupName]="i">
+        <td>
+          <select formControlName="deviceModel">
+            <option value="">-- Seleziona categoria --</option>
+            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+          </select>
+          <div *ngIf="isInvalid(i, 'deviceModel')" class="text-danger">
+            {{ getErrorMessage(i, 'deviceModel') }}
+          </div>
+        </td>
+        <td>
+          <select formControlName="model" [disabled]="rows.at(i).get('model')?.disabled ?? false">
+            <option value="">-- Seleziona modello --</option>
+            <option *ngFor="let m of modelsPerRow[i]" [value]="m.Modello">{{ m.Modello }}</option>
+          </select>
+          <div *ngIf="isInvalid(i, 'model')" class="text-danger">
+            {{ getErrorMessage(i, 'model') }}
+          </div>
+        </td>
+        <td>
+          <input type="text" formControlName="auxNumber" />
+          <div *ngIf="isInvalid(i, 'auxNumber')" class="text-danger">
+            {{ getErrorMessage(i, 'auxNumber') }}
+          </div>
+        </td>
+        <td>
+          <input type="text" formControlName="description" />
+        </td>
+        <td>
+          <input type="text" formControlName="device" />
+          <div *ngIf="isInvalid(i, 'device')" class="text-danger">
+            {{ getErrorMessage(i, 'device') }}
+          </div>
+        </td>
+        <td>
+          <input type="text" formControlName="ipAddress" />
+          <div *ngIf="isInvalid(i, 'ipAddress')" class="text-danger">
+            {{ getErrorMessage(i, 'ipAddress') }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- Modello -->
-  <div class="form-group">
-    <label for="model">Modello</label>
-    <select id="model" formControlName="model">
-      <option value="" disabled selected *ngIf="models.length === 0">Seleziona una categoria prima</option>
-      <option *ngFor="let model of models" [value]="model.Modello">{{ model.Modello }}</option>
-    </select>
-  </div>
-
-  <!-- Aux -->
-  <div class="form-group">
-    <label for="auxNumber">Aux</label>
-    <input 
-      id="auxNumber" 
-      type="text" 
-      formControlName="auxNumber" 
-      placeholder="Inserisci Aux" 
-    />
-    <div *ngIf="isInvalid('auxNumber')" class="error">
-      <small>{{ getErrorMessage('auxNumber') }}</small>
-    </div>
-  </div>
-
-  <!-- Descrizione -->
-  <div class="form-group">
-    <label for="description">Descrizione</label>
-    <input 
-      id="description" 
-      type="text" 
-      formControlName="description" 
-      placeholder="Inserisci Descrizione" 
-    />
-    <div *ngIf="isInvalid('description')" class="error">
-      <small>{{ getErrorMessage('description') }}</small>
-    </div>
-  </div>
-
-  <!-- Device Address -->
-  <div class="form-group">
-    <label for="deviceAddress">Device Address</label>
-    <input
-      id="device"
-      type="text"
-      formControlName="device"
-      placeholder="Inserisci il numero del Device"
-    />
-    <div *ngIf="isInvalid('device')" class="error">
-      <small>{{ getErrorMessage('device') }}</small>
-    </div>
-  </div>
-
-  <!-- Indirizzo IP -->
-  <div class="form-group">
-    <label for="ipAddress">Ip Address</label>
-    <input
-      id="ipAddress"
-      type="text"
-      formControlName="ipAddress"
-      placeholder="Inserisci l'indirizzo IP"
-    />
-    <div *ngIf="isInvalid('ipAddress')" class="error">
-      <small>{{ getErrorMessage('ipAddress') }}</small>
-    </div>
-  </div>
-
-  <!-- Generator Button -->
-  <div class="form-group">
-    <form [formGroup]="varlistForm" (ngSubmit)="onSubmit()">
-      <button type="submit">Genera VarList</button>
-    </form>
-  </div>
+  <button type="button" (click)="addRow()" class="btn btn-secondary">Aggiungi Riga</button>
+  <button type="button" (click)="removeRow()" class="btn btn-warning" [disabled]="rows.length <= 1">Rimuovi Ultima
+    Riga</button>
+  <button type="submit" class="btn btn-primary">Genera</button>
 </form>

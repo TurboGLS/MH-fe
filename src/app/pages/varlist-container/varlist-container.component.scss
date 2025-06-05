@@ -1,0 +1,40 @@
+@import "../../../styles/variables";
+
+* {
+    font-family: "SMA Futura Global", Arial, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.pageBlock {
+    background-color: $light-gray;
+    min-height: 100vh;
+    padding: 20px;
+
+    .headerBox {
+        background-color: transparent;
+        color: $black-primary;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.homeBtn {
+    background-color: transparent;
+    color: $veil-primary;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: $transition-property;
+
+    &:hover {
+        background-color: $veil-primary-hover;
+    }
+
+    fa-icon {
+        font-size: 20px;
+    }
+}
