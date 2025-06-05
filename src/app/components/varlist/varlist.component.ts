@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Device } from '../../entities/device.entity';
 
@@ -8,7 +8,7 @@ import { Device } from '../../entities/device.entity';
   templateUrl: './varlist.component.html',
   styleUrls: ['./varlist.component.scss']
 })
-export class VarlistComponent implements OnInit {
+export class VarlistComponent implements OnInit, OnChanges {
   @Input()
   loading = false;
 
@@ -22,7 +22,7 @@ export class VarlistComponent implements OnInit {
   models: Device[] = [];
 
   @Output()
-  generate = new EventEmitter<{ deviceModel: string, model: string, auxNumber: string, description: string, deviceAddress: string, ipAddress: string }>();
+  generate = new EventEmitter<{ model: string, auxNumber: string, description: string, device: string, ipAddress: string }>();
 
   @Output()
   categoryChanged = new EventEmitter<string>();
@@ -33,29 +33,33 @@ export class VarlistComponent implements OnInit {
     deviceModel: ['', Validators.required],
     model: ['', Validators.required],
     auxNumber: ['', Validators.required],
-    description: ['', Validators.required],
-    deviceAddress: ['', Validators.required],
+    description: [''],
+    device: ['', Validators.required],
     ipAddress: ['', [Validators.required, Validators.pattern(/^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/)]]
   });
 
   ngOnInit() {
-    this.varlistForm.get('deviceModel')?.valueChanges.subscribe(selectedCategory => {
+    // Inizialmente il campo modello è disabilitato
+    this.varlistForm.get('model')?.disable();
+
+    // Quando l'utente seleziona una categoria, emetti l'evento
+    this.varlistForm.get('deviceModel')?.valueChanges.subscribe((selectedCategory) => {
       if (selectedCategory) {
         this.categoryChanged.emit(selectedCategory);
-
-        // Se ci sono modelli, viene abilitato il campo
-        if (this.models.length > 0) {
-          this.varlistForm.get('model')?.enable();
-        } else {
-          this.varlistForm.get('model')?.disable();
-        }
       } else {
         this.varlistForm.get('model')?.disable();
       }
     });
+  }
 
-    // Allo start il campo model è disabilitato
-    this.varlistForm.get('model')?.disable();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['models']) {
+      if (this.models.length > 0) {
+        this.varlistForm.get('model')?.enable();
+      } else {
+        this.varlistForm.get('model')?.disable();
+      }
+    }
   }
 
   isInvalid(controlName: string): boolean {
@@ -89,11 +93,10 @@ export class VarlistComponent implements OnInit {
       const formValue = this.varlistForm.value;
 
       this.generate.emit({
-        deviceModel: formValue.deviceModel!,
         model: formValue.model!,
         auxNumber: formValue.auxNumber!,
         description: formValue.description!,
-        deviceAddress: formValue.deviceAddress!,
+        device: formValue.device!,
         ipAddress: formValue.ipAddress!,
       });
     }

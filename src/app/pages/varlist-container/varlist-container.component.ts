@@ -10,7 +10,7 @@ import { Device } from '../../entities/device.entity';
   templateUrl: './varlist-container.component.html',
   styleUrls: ['./varlist-container.component.scss']
 })
-export class VarlistContainerComponent implements OnInit{
+export class VarlistContainerComponent implements OnInit {
   protected varlistSrv = inject(VarlistService);
   protected router = inject(Router);
 
@@ -23,15 +23,15 @@ export class VarlistContainerComponent implements OnInit{
   models: Device[] = [];
 
   ngOnInit() {
-      this.varlistSrv.category().subscribe({
-        next: (data) => {
-          this.categories = data;
-        },
-        error: (err) => {
-          this.error = 'Errore nel caricamento delle categorie';
-          console.error(err);
-        }
-      });
+    this.varlistSrv.category().subscribe({
+      next: (data) => {
+        this.categories = data;
+      },
+      error: (err) => {
+        this.error = 'Errore nel caricamento delle categorie';
+        console.error(err);
+      }
+    });
   }
 
   onCategoryChange(category: string) {
@@ -47,13 +47,26 @@ export class VarlistContainerComponent implements OnInit{
     })
   }
 
-  onGenerate(event: { deviceModel: string, model: string, auxNumber: string, description: string, deviceAddress: string, ipAddress: string }) {
+  onGenerate(event: { model: string, auxNumber: string, description: string, device: string, ipAddress: string }) {
     this.loading = true;
     this.error = null;
 
-    this.varlistSrv.generate(event).subscribe({
-      next: (response) => {
+    this.varlistSrv.generate([event]).subscribe({
+      next: (csvText) => {
         this.loading = false;
+
+        // Creo un blob con il CSV
+        const blob = new Blob([csvText], { type: 'text/csv;charset=utf-8;' });
+
+        // Creo un URL temporaneo e forza il download
+        const link = document.createElement('a');
+        const url = window.URL.createObjectURL(blob);
+        link.href = url;
+        link.setAttribute('download', 'varlist.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
       },
       error: (err) => {
         this.loading = false;

@@ -10,8 +10,8 @@ export class VarlistService {
   protected http = inject(HttpClient);
 
   // richiamo api per generare il csv
-  generate(data: { deviceModel: string, model: string, auxNumber: string, description: string, deviceAddress: string, ipAddress: string }) {
-    return this.http.post<any>(`${environment.apiUrl}/varlist/download`, data);
+  generate(data: { model: string, auxNumber: string, description: string, device: string, ipAddress: string }[]) {
+    return this.http.post(`${environment.apiUrl}/varlist/download`, data, { responseType: 'text' });
   }
 
   // richiamo api per ottenere le categorie

@@ -48,13 +48,13 @@
   <div class="form-group">
     <label for="deviceAddress">Device Address</label>
     <input
-      id="deviceAddress"
+      id="device"
       type="text"
-      formControlName="deviceAddress"
+      formControlName="device"
       placeholder="Inserisci il numero del Device"
     />
-    <div *ngIf="isInvalid('deviceAddress')" class="error">
-      <small>{{ getErrorMessage('deviceAddress') }}</small>
+    <div *ngIf="isInvalid('device')" class="error">
+      <small>{{ getErrorMessage('device') }}</small>
     </div>
   </div>
 
@@ -74,6 +74,8 @@
 
   <!-- Generator Button -->
   <div class="form-group">
-    <button type="sumbit">Genera VarList</button>
+    <form [formGroup]="varlistForm" (ngSubmit)="onSubmit()">
+      <button type="submit">Genera VarList</button>
+    </form>
   </div>
 </form>
