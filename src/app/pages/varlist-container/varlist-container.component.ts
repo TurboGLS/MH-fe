@@ -62,7 +62,7 @@ export class VarlistContainerComponent implements OnInit {
         const link = document.createElement('a');
         const url = window.URL.createObjectURL(blob);
         link.href = url;
-        link.setAttribute('download', 'varlist.csv');
+        link.setAttribute('download', 'var_lst.csv');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
