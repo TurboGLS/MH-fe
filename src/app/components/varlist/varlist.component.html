@@ -22,7 +22,7 @@
           </div>
         </td>
         <td>
-          <select formControlName="model" [disabled]="rows.at(i).get('model')?.disabled ?? false">
+          <select formControlName="model">
             <option value="">-- Seleziona modello --</option>
             <option *ngFor="let m of modelsPerRow[i]" [value]="m.Modello">{{ m.Modello }}</option>
           </select>
