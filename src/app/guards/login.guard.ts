@@ -13,7 +13,7 @@ export const loginGuard: CanActivateFn = (route, state) => {
     .pipe(
       tap(isAuthenticated => {
         if (isAuthenticated) {
-          notifySrv.setMessage('Utente già loggato.');
+          notifySrv.setMessage('Impossibile accedere alla pagina Login. Utente già loggato.');
           router.navigate(['/home']);
         }
       }),
