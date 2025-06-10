@@ -34,6 +34,7 @@ export class VarlistContainerComponent implements OnInit {
     });
   }
 
+/*
   onCategoryChange(category: string) {
     this.models = [];
     this.varlistSrv.deviceInfo(category).subscribe({
@@ -46,6 +47,7 @@ export class VarlistContainerComponent implements OnInit {
       }
     });
   }
+*/
 
   onGenerate(rows: { model: string, auxNumber: string, description: string, device: string, ipAddress: string }[]) {
     this.loading = true;

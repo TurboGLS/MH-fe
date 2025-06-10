@@ -13,12 +13,12 @@
     <tbody formArrayName="rows">
       <tr *ngFor="let row of rows.controls; let i = index" [formGroupName]="i">
         <td>
-          <select formControlName="deviceModel">
+          <select formControlName="categoria">
             <option value="">-- Seleziona categoria --</option>
             <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
           </select>
-          <div *ngIf="isInvalid(i, 'deviceModel')" class="text-danger">
-            {{ getErrorMessage(i, 'deviceModel') }}
+          <div *ngIf="isInvalid(i, 'categoria')" class="text-danger">
+            {{ getErrorMessage(i, 'categoria') }}
           </div>
         </td>
         <td>

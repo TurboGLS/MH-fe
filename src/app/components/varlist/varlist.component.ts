@@ -1,7 +1,8 @@
-import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Device } from '../../entities/device.entity';
 import { VarlistService } from '../../services/varlist.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-varlist',
@@ -9,17 +10,19 @@ import { VarlistService } from '../../services/varlist.service';
   templateUrl: './varlist.component.html',
   styleUrls: ['./varlist.component.scss']
 })
-export class VarlistComponent implements OnInit {
+export class VarlistComponent implements OnInit, OnDestroy {
   @Input() loading = false;
   @Input() error: string | null = null;
   @Input() categories: string[] = [];
   @Input() models: Device[] = [];
 
-  @Output() generate = new EventEmitter<{ model: string, auxNumber: string, description: string, device: string, ipAddress: string }[]>();
+  @Output() generate = new EventEmitter<{ categoria: string, model: string, auxNumber: string, description: string, device: string, ipAddress: string }[]>();
   @Output() categoryChanged = new EventEmitter<string>();
 
   protected fb = inject(FormBuilder);
-  private varlistSrv = inject(VarlistService);
+  protected varlistSrv = inject(VarlistService);
+
+  protected destroyed$ = new Subject<void>();
 
   varlistForm = this.fb.group({
     rows: this.fb.array([])
@@ -36,46 +39,53 @@ export class VarlistComponent implements OnInit {
     this.addRow();
   }
 
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
+  }
+
   createRow(): FormGroup {
-    return this.fb.group({
-      deviceModel: ['', Validators.required],
+    const newRow = this.fb.group({
+      categoria: ['', Validators.required],
       model: [{ value: '', disabled: true }, Validators.required],
       auxNumber: ['', Validators.required],
       description: [''],
       device: ['', Validators.required],
       ipAddress: ['', [Validators.required, Validators.pattern(/^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/)]]
     });
+
+    const rowIndex = this.rows.length;
+    this.modelsPerRow[rowIndex] = [];
+
+    newRow.get('categoria')?.valueChanges
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(selectedCategory => {
+        if (selectedCategory !== null && selectedCategory !== '') {
+          this.categoryChanged.emit(selectedCategory);
+        }
+        if (selectedCategory) {
+          this.varlistSrv.deviceInfo(selectedCategory).subscribe({
+            next: (data) => {
+              this.modelsPerRow[rowIndex] = data;
+              newRow.get('model')?.enable();
+            },
+            error: () => {
+              this.modelsPerRow[rowIndex] = [];
+              newRow.get('model')?.disable();
+            }
+          });
+        } else {
+          this.modelsPerRow[rowIndex] = [];
+          newRow.get('model')?.disable();
+        }
+        newRow.get('model')?.setValue('');
+      });
+
+    return newRow;
   }
 
   addRow() {
-    const newRow = this.createRow();
-    const rowIndex = this.rows.length;
-
-    // Inizializzo modello vuoto per la riga
-    this.modelsPerRow[rowIndex] = [];
-
-    newRow.get('deviceModel')?.valueChanges.subscribe(selectedCategory => {
-      if (selectedCategory) {
-        // Carico i modelli per la categoria selezionata SOLO per questa riga
-        this.varlistSrv.deviceInfo(selectedCategory).subscribe({
-          next: (data) => {
-            this.modelsPerRow[rowIndex] = data;
-            newRow.get('model')?.enable();
-          },
-          error: () => {
-            this.modelsPerRow[rowIndex] = [];
-            newRow.get('model')?.disable();
-          }
-        });
-      } else {
-        this.modelsPerRow[rowIndex] = [];
-        newRow.get('model')?.disable();
-      }
-      // Resetto il valore di model al cambio categoria
-      newRow.get('model')?.setValue('');
-    });
-
-    this.rows.push(newRow);
+    this.rows.push(this.createRow());
   }
 
   removeRow() {
