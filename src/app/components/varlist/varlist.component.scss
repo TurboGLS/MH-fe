@@ -28,3 +28,9 @@
   font-style: italic;
   font-size: 12px;
 }
+
+button:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+  opacity: 0.6;
+}
