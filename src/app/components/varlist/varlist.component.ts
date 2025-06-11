@@ -161,4 +161,27 @@ export class VarlistComponent implements OnInit, OnDestroy {
     const filteredRows = nonEmptyRowsIndices.map(i => this.rows.at(i).value);
     this.generate.emit(filteredRows);
   }
+
+  resetRows() {
+    // Rimuovo tutte le righe eccetto la prima che la svuoto
+    while (this.rows.length > 1) {
+      this.rows.removeAt(this.rows.length - 1);
+      this.modelsPerRow.pop();
+    }
+
+    // Svuota e ricrea la prima riga
+    this.rows.setControl(0, this.createRow());
+
+    // Pulisco manualmente lo stato del form
+    this.varlistForm.markAsUntouched();
+    this.varlistForm.markAsPristine();
+  }
+
+  // Funzione (proprietà virtuale) che mi attiva il bottono solo in caso di completamente di almeno un campo del form
+  get isResetDisabled(): boolean {
+    return !this.rows.controls.some(ctrl => {
+      const val = ctrl.value;
+      return Object.values(val).some(v => v !== null && v !== '');
+    });
+  }
 }

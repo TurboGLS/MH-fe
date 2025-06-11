@@ -55,7 +55,10 @@
     </tbody>
   </table>
 
-  <button type="button" (click)="addRow()" class="btn btn-secondary">Aggiungi Riga</button>
-  <button type="button" (click)="removeRow()" class="btn btn-warning" [disabled]="rows.length <= 1">Rimuovi Ultima Riga</button>
-  <button type="submit" class="btn btn-primary">Genera</button>
+  <div class="btnBlock">
+    <button type="button" (click)="addRow()" class="btn btn-secondary">Aggiungi Riga</button>
+    <button type="button" (click)="removeRow()" class="btn btn-warning" [disabled]="rows.length <= 1">Rimuovi Ultima Riga</button>
+    <button type="button" (click)="resetRows()" class="btn btn-warning" [disabled]="isResetDisabled">Reset</button>
+    <button type="submit" class="btn btn-primary">Genera</button>
+  </div>
 </form>
