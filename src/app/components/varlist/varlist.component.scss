@@ -27,7 +27,7 @@
         color: white;
         text-align: left;
         padding: 12px;
-        font-weight: 600;
+        font-weight: 580;
       }
 
       td {
@@ -125,10 +125,10 @@
 
 // Laptop
 @media screen and (min-width: 730px) and (max-width: 919px) {
-
   // Contenitore del form
   form {
     padding: 16px;
+    font-size: 14px;
 
     .table {
       width: 100%;
@@ -245,6 +245,7 @@
   // Contenitore del form
   form {
     padding: 16px;
+    font-size: 10px;
 
     .table {
       width: 100%;
@@ -357,10 +358,10 @@
 
 // Smartphone
 @media screen and (max-width: 599px) {
-
   // Contenitore del form
   form {
     padding: 16px;
+    font-size: 8px;
 
     .table {
       width: 100%;

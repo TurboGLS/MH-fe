@@ -34,7 +34,7 @@ export class VarlistContainerComponent implements OnInit {
     });
   }
 
-/*
+/* Deprecated (non più necessario)
   onCategoryChange(category: string) {
     this.models = [];
     this.varlistSrv.deviceInfo(category).subscribe({
