@@ -1,36 +1,472 @@
-.form-table table {
-  width: 100%;
-  border-collapse: collapse;
+@import '../../../styles/variables'; // Importa le variabili di design
+
+// Stile Globale
+* {
+  padding: 0; // Rimuove il padding
+  margin: 0; // Rimuove il margin
+  box-sizing: border-box; // Rende tutto all'interno del div
 }
 
-.form-table th, .form-table td {
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  text-align: left;
-  vertical-align: top;
+// Desktop
+@media screen and (min-width: 920px) {
+
+  // Contenitore del form
+  form {
+    padding: 16px;
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: $form-input-bg;
+      box-shadow: $box-shadow-global;
+      border-radius: 8px;
+      overflow: hidden;
+
+      th {
+        background-color: $black-primary;
+        color: white;
+        text-align: left;
+        padding: 12px;
+        font-weight: 600;
+      }
+
+      td {
+        padding: 8px;
+        vertical-align: top;
+
+        select,
+        input[type="text"] {
+          width: 100%;
+          padding: 8px 12px;
+          border: 1px solid $light-gray-disabled;
+          border-radius: 4px;
+          background-color: $form-input-bg;
+          font-size: 14px;
+          transition: $transition-property;
+
+          &:focus {
+            outline: none;
+            border-color: $veil-primary;
+            box-shadow: 0 0 0 2px rgba($veil-primary, 0.2);
+          }
+        }
+
+        .text-danger {
+          margin-top: 4px;
+          font-size: 12px;
+          color: $red-brand;
+        }
+      }
+    }
+
+    // Bottoni
+    .btnBlock {
+      padding: 20px 0px;
+
+      button {
+        margin: 5px;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: $transition-property;
+
+        &:disabled {
+          background-color: $light-gray-disabled;
+          color: white;
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+
+      .btn-secondary {
+        background-color: $black-primary;
+        color: white;
+
+        &:hover {
+          background-color: $black-primary-hover;
+        }
+      }
+
+      .btn-warning {
+        background-color: $veil-primary;
+        color: white;
+
+        &:hover {
+          background-color: $veil-primary-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+
+      .btn-primary {
+        background-color: $red-brand;
+        color: white;
+        float: right;
+
+        &:hover {
+          background-color: $red-brand-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+    }
+  }
 }
 
-.form-table th {
-  background-color: #f0f0f0;
-  font-weight: 700;
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+
+  // Contenitore del form
+  form {
+    padding: 16px;
+
+    .table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      background-color: $form-input-bg;
+      box-shadow: $box-shadow-global;
+      border-radius: 8px;
+      overflow: hidden;
+
+      th {
+        background-color: $black-primary;
+        color: white;
+        text-align: left;
+        padding: 12px;
+        font-weight: 600;
+      }
+
+      td {
+        padding: 8px;
+        vertical-align: top;
+
+        select,
+        input[type="text"] {
+          width: 100%;
+          padding: 8px 12px;
+          border: 1px solid $light-gray-disabled;
+          border-radius: 4px;
+          background-color: $form-input-bg;
+          font-size: 14px;
+          transition: $transition-property;
+
+          &:focus {
+            outline: none;
+            border-color: $veil-primary;
+            box-shadow: 0 0 0 2px rgba($veil-primary, 0.2);
+          }
+        }
+
+        .text-danger {
+          margin-top: 4px;
+          font-size: 12px;
+          color: $red-brand;
+        }
+      }
+    }
+
+    // Bottoni
+    .btnBlock {
+      padding: 20px 0px;
+
+      button {
+        margin: 5px;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: $transition-property;
+
+        &:disabled {
+          background-color: $light-gray-disabled;
+          color: white;
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+
+      .btn-secondary {
+        background-color: $black-primary;
+        color: white;
+
+        &:hover {
+          background-color: $black-primary-hover;
+        }
+      }
+
+      .btn-warning {
+        background-color: $veil-primary;
+        color: white;
+
+        &:hover {
+          background-color: $veil-primary-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+
+      .btn-primary {
+        background-color: $red-brand;
+        color: white;
+        float: right;
+
+        &:hover {
+          background-color: $red-brand-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+    }
+  }
 }
 
-.form-table select,
-.form-table input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 6px 8px;
-  font-size: 14px;
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+  // Contenitore del form
+  form {
+    padding: 16px;
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: $form-input-bg;
+      box-shadow: $box-shadow-global;
+      border-radius: 8px;
+      overflow-x: visible;
+
+      th {
+        background-color: $black-primary;
+        color: white;
+        text-align: left;
+        padding: 12px;
+        font-weight: 600;
+      }
+
+      td {
+        padding: 8px;
+        vertical-align: top;
+
+        select,
+        input[type="text"] {
+          width: 100%;
+          padding: 8px 12px;
+          border: 1px solid $light-gray-disabled;
+          border-radius: 4px;
+          background-color: $form-input-bg;
+          font-size: 14px;
+          transition: $transition-property;
+
+          &:focus {
+            outline: none;
+            border-color: $veil-primary;
+            box-shadow: 0 0 0 2px rgba($veil-primary, 0.2);
+          }
+        }
+
+        .text-danger {
+          margin-top: 4px;
+          font-size: 12px;
+          color: $red-brand;
+        }
+      }
+    }
+
+    // Bottoni
+    .btnBlock {
+      padding: 20px 0px;
+
+      button {
+        margin: 5px;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: $transition-property;
+
+        &:disabled {
+          background-color: $light-gray-disabled;
+          color: white;
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+
+      .btn-secondary {
+        background-color: $black-primary;
+        color: white;
+
+        &:hover {
+          background-color: $black-primary-hover;
+        }
+      }
+
+      .btn-warning {
+        background-color: $veil-primary;
+        color: white;
+
+        &:hover {
+          background-color: $veil-primary-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+
+      .btn-primary {
+        background-color: $red-brand;
+        color: white;
+        float: right;
+
+        &:hover {
+          background-color: $red-brand-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+    }
+  }
 }
 
-.error small {
-  color: #d9534f;
-  font-style: italic;
-  font-size: 12px;
-}
+// Smartphone
+@media screen and (max-width: 599px) {
 
-button:disabled {
-  cursor: not-allowed !important;
-  pointer-events: all !important;
-  opacity: 0.6;
+  // Contenitore del form
+  form {
+    padding: 16px;
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: $form-input-bg;
+      box-shadow: $box-shadow-global;
+      border-radius: 8px;
+      overflow: hidden;
+
+      th {
+        background-color: $black-primary;
+        color: white;
+        text-align: left;
+        padding: 12px;
+        font-weight: 600;
+      }
+
+      td {
+        padding: 8px;
+        vertical-align: top;
+
+        select,
+        input[type="text"] {
+          width: 100%;
+          padding: 8px 12px;
+          border: 1px solid $light-gray-disabled;
+          border-radius: 4px;
+          background-color: $form-input-bg;
+          font-size: 14px;
+          transition: $transition-property;
+
+          &:focus {
+            outline: none;
+            border-color: $veil-primary;
+            box-shadow: 0 0 0 2px rgba($veil-primary, 0.2);
+          }
+        }
+
+        .text-danger {
+          margin-top: 4px;
+          font-size: 12px;
+          color: $red-brand;
+        }
+      }
+    }
+
+    // Bottoni
+    .btnBlock {
+      padding: 20px 0px;
+
+      button {
+        margin: 5px;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: $transition-property;
+
+        &:disabled {
+          background-color: $light-gray-disabled;
+          color: white;
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+
+      .btn-secondary {
+        background-color: $black-primary;
+        color: white;
+
+        &:hover {
+          background-color: $black-primary-hover;
+        }
+      }
+
+      .btn-warning {
+        background-color: $veil-primary;
+        color: white;
+
+        &:hover {
+          background-color: $veil-primary-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+
+      .btn-primary {
+        background-color: $red-brand;
+        color: white;
+        float: right;
+
+        &:hover {
+          background-color: $red-brand-hover;
+        }
+
+        &:disabled {
+          cursor: not-allowed !important;
+          opacity: 0.6;
+          pointer-events: all;
+        }
+      }
+    }
+  }
 }
