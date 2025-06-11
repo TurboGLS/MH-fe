@@ -177,8 +177,20 @@ export class VarlistComponent implements OnInit, OnDestroy {
     this.varlistForm.markAsPristine();
   }
 
-  // Funzione (proprietà virtuale) che mi attiva il bottono solo in caso di completamente di almeno un campo del form
+  // Funzione che mi attiva il bottone Reset solo in caso di più righe o campi compilati
   get isResetDisabled(): boolean {
+    const moreThanOneRow = this.rows.length > 1;
+    const anyFieldFilled = this.rows.controls.some(ctrl => {
+      const val = ctrl.value;
+      return Object.values(val).some(v => v !== null && v !== '');
+    });
+
+    // Disabilita solo se non ho più righe e non ho campi compilati
+    return !(moreThanOneRow || anyFieldFilled);
+  }
+
+  // Funzione (proprietà virtuale) che mi attiva il bottone Genera solo in caso di completamente di almeno un campo del form
+  get isGenerateDisabled(): boolean {
     return !this.rows.controls.some(ctrl => {
       const val = ctrl.value;
       return Object.values(val).some(v => v !== null && v !== '');
