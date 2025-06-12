@@ -3,7 +3,6 @@ import { NotificationService } from './services/notification.service';
 import { Subscription, timer, combineLatest } from 'rxjs';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
-import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -53,6 +52,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-      this.timerSubscription?.unsubscribe();
+    this.timerSubscription?.unsubscribe();
   }
 }

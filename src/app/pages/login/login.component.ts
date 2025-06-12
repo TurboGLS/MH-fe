@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, Subject, take, takeUntil, throwError } from 'rxjs';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-login',

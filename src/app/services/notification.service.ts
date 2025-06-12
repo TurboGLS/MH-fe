@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, timer } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
-  protected messageSubject = new Subject<string>();
+  protected messageSubject = new ReplaySubject<string>(1);
 
   message$: Observable<string> = this.messageSubject.asObservable();
 
