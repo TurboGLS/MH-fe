@@ -1,8 +1,13 @@
 <div class="pageBlock">
   <div class="header-box">
-    <button class="homeBtn" (click)="goToHome()" aria-label="Torna alla home">
-      <fa-icon [icon]="faHouse"></fa-icon>
-    </button>
+    <div class="homeBtnBox">
+      <button class="homeBtn" (click)="goToHome()" aria-label="Torna alla home">
+        <fa-icon [icon]="faHouse"></fa-icon>
+      </button>
+    </div>
+    <div class="titleBox">
+      <h1>VarList Generator</h1>
+    </div>
   </div>
   <div class="formBox">
     <app-varlist

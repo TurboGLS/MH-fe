@@ -1,164 +1,277 @@
 @import "../../../styles/variables";
 
 * {
-    font-family: "SMA Futura Global", Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  font-family: "SMA Futura Global", Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 // Desktop
 @media screen and (min-width: 920px) {
-    .pageBlock {
-        background-color: $light-gray;
-        min-height: 100vh;
-        padding: 20px;
+  .pageBlock {
+    background-color: $light-gray;
+    min-height: 100vh;
+    padding: 20px;
 
-        .headerBox {
-            background-color: transparent;
-            color: $black-primary;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-        }
+    .header-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+
+      .homeBtnBox {
+        flex-shrink: 0;
 
         .homeBtn {
-            background-color: transparent;
-            color: $veil-primary;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            transition: $transition-property;
+          background-color: transparent;
+          color: $veil-primary;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+          transition: $transition-property;
 
-            &:hover {
-                color: $veil-primary-hover;
-            }
+          &:hover {
+            color: $veil-primary-hover;
+          }
 
-            fa-icon {
-                font-size: 20px;
-            }
+          fa-icon {
+            font-size: 20px;
+          }
         }
+      }
+
+      .titleBox {
+        flex-grow: 1;
+        padding-left: 16px;
+
+        h1 {
+          font-size: 40px;
+          font-weight: 700;
+          color: $black-primary;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          position: relative;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 4px;
+            width: 60px;
+            background-color: $veil-primary;
+            border-radius: 2px;
+          }
+        }
+      }
     }
 
     .formBox {
-        width: 100%;
-        display: inline-block;
+      width: 100%;
+      display: inline-block;
     }
+  }
 }
 
 // Laptop
 @media screen and (min-width: 730px) and (max-width: 919px) {
-    .pageBlock {
-        background-color: $light-gray;
-        min-height: 100vh;
-        padding: 20px;
+  .pageBlock {
+    background-color: $light-gray;
+    min-height: 100vh;
+    padding: 20px;
 
-        .headerBox {
-            background-color: transparent;
-            color: $black-primary;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-        }
+    .header-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
 
+      .homeBtnBox {
         .homeBtn {
-            background-color: transparent;
-            color: $veil-primary;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            transition: $transition-property;
+          background-color: transparent;
+          color: $veil-primary;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+          transition: $transition-property;
 
-            &:hover {
-                color: $veil-primary-hover;
-            }
+          &:hover {
+            color: $veil-primary-hover;
+          }
 
-            fa-icon {
-                font-size: 20px;
-            }
+          fa-icon {
+            font-size: 20px;
+          }
         }
+      }
+
+      .titleBox {
+        padding-left: 16px;
+
+        h1 {
+          font-size: 36px;
+          font-weight: 700;
+          color: $black-primary;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          position: relative;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 4px;
+            width: 60px;
+            background-color: $veil-primary;
+            border-radius: 2px;
+          }
+        }
+      }
     }
 
     .formBox {
-        width: 100%;
-        display: inline-block;
+      width: 100%;
+      display: inline-block;
     }
+  }
 }
 
 // Tablet
 @media screen and (min-width: 600px) and (max-width: 729px) {
-    .pageBlock {
-        background-color: $light-gray;
-        min-height: 100vh;
-        padding: 20px;
+  .pageBlock {
+    background-color: $light-gray;
+    min-height: 100vh;
+    padding: 20px;
 
-        .headerBox {
-            background-color: transparent;
-            color: $black-primary;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-        }
+    .header-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0;
+      gap: 10px;
+
+      .homeBtnBox {
+        align-self: flex-end;
 
         .homeBtn {
-            background-color: transparent;
-            color: $veil-primary;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            transition: $transition-property;
+          background-color: transparent;
+          color: $veil-primary;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+          transition: $transition-property;
 
-            &:hover {
-                color: $veil-primary-hover;
-            }
+          &:hover {
+            color: $veil-primary-hover;
+          }
 
-            fa-icon {
-                font-size: 20px;
-            }
+          fa-icon {
+            font-size: 20px;
+          }
         }
+      }
+
+      .titleBox {
+        h1 {
+          font-size: 32px;
+          font-weight: 700;
+          color: $black-primary;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          position: relative;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 4px;
+            width: 60px;
+            background-color: $veil-primary;
+            border-radius: 2px;
+          }
+        }
+      }
     }
 
     .formBox {
-        width: 100%;
-        display: inline-block;
+      width: 100%;
+      display: inline-block;
     }
+  }
 }
 
 // Smartphone
 @media screen and (max-width: 599px) {
-    .pageBlock {
-        background-color: $light-gray;
-        min-height: 100vh;
-        padding: 20px;
+  .pageBlock {
+    background-color: $light-gray;
+    min-height: 100vh;
+    padding: 20px;
 
-        .headerBox {
-            background-color: transparent;
-            color: $black-primary;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-        }
+    .header-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0;
+      gap: 10px;
+
+      .homeBtnBox {
+        align-self: flex-end;
 
         .homeBtn {
-            background-color: transparent;
-            color: $veil-primary;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            transition: $transition-property;
+          background-color: transparent;
+          color: $veil-primary;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+          transition: $transition-property;
 
-            &:hover {
-                color: $veil-primary-hover;
-            }
+          &:hover {
+            color: $veil-primary-hover;
+          }
 
-            fa-icon {
-                font-size: 20px;
-            }
+          fa-icon {
+            font-size: 20px;
+          }
         }
+      }
+
+      .titleBox {
+        h1 {
+          font-size: 28px;
+          font-weight: 700;
+          color: $black-primary;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          position: relative;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 4px;
+            width: 60px;
+            background-color: $veil-primary;
+            border-radius: 2px;
+          }
+        }
+      }
     }
 
     .formBox {
-        width: 100%;
-        display: inline-block;
+      width: 100%;
+      display: inline-block;
     }
+  }
 }
