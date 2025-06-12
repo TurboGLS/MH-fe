@@ -1,0 +1,18 @@
+<!-- verify-email.component.html -->
+<div class="verify-wrapper">
+  <h1 class="title">Verifica e-mail</h1>
+
+  <!-- Loader mentre la richiesta HTTP è in corso -->
+  <div class="spinner" *ngIf="!message">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+
+  <!-- Messaggio di esito -->
+  <p class="result" *ngIf="message">{{ message }}</p>
+
+  <!-- Pulsante di ritorno alla login (opzionale) -->
+  <a routerLink="/login" class="back- btn" *ngIf="message">Torna al login</a>
+</div>
+  

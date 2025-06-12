@@ -7,8 +7,13 @@ import { authGuard } from './guards/auth.guard';
 import { RegisterComponent } from './pages/register/register.component';
 import { loginGuard } from './guards/login.guard';
 import { roleGuard } from './guards/role.guard';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 
 const routes: Routes = [
+  {
+    path: "verify-email",
+    component: VerifyEmailComponent
+  },
   {
     path: 'login',
     component: LoginComponent,

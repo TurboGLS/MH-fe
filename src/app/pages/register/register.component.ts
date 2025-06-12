@@ -26,6 +26,8 @@ export class RegisterComponent implements OnDestroy {
 
   registerError = '';
 
+  successMessage: string | null = null;
+
   onSubmit() {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
@@ -46,7 +48,8 @@ export class RegisterComponent implements OnDestroy {
       .subscribe({
         next: res => {
           console.log('Registrazione avvenuta', res);
-          this.router.navigate(['/login']);
+          this.successMessage = "Registrazione completata! Controlla la tua email per verificare l'account.";
+          this.registerForm.reset();
         },
         error: err => {
           console.error('Errore durante la registrazione', err);
@@ -55,7 +58,7 @@ export class RegisterComponent implements OnDestroy {
             this.registerError = err.error.message;
           }
           else {
-            this.registerError = 'Email o Password non valida'
+            this.registerError = 'Email o Password non valida';
           }
         }
       });

@@ -28,6 +28,7 @@ import { VarlistContainerComponent } from './pages/varlist-container/varlist-con
 import { IfAuthenticatedDirective } from './directives/if-authenticated.directive';
 import { RegisterComponent } from './pages/register/register.component';
 import { VarlistComponent } from './components/varlist/varlist.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { VarlistComponent } from './components/varlist/varlist.component';
     VarlistComponent,
     IfAuthenticatedDirective,
     RegisterComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
