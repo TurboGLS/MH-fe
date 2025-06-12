@@ -10,6 +10,7 @@
 // Desktop
 @media screen and (min-width: 920px) {
     #header {
+        font-family: 'YourFontName', sans-serif;
         display: flex; // Utilizza Flexbox per allineare gli elementi
         align-items: center; // Allinea verticalmente al centro
         justify-content: space-between; // Spazia gli elementi
@@ -167,6 +168,7 @@
 // Laptop
 @media screen and (min-width: 730px) and (max-width: 919px) {
     #header {
+        font-family: 'YourFontName', sans-serif;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -318,6 +320,7 @@
 // Tablet 
 @media screen and (min-width: 600px) and (max-width: 729px) {
     #header {
+        font-family: 'YourFontName', sans-serif;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -366,7 +369,7 @@
                     border: none;
                     cursor: pointer;
                     transition: $transition-property;
-                    padding: 6px;
+                    padding: 5px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -398,7 +401,7 @@
                     border: none;
                     cursor: pointer;
                     transition: $transition-property;
-                    padding: 6px;
+                    padding: 5px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -447,7 +450,7 @@
 
                     button[ngbDropdownItem] {
                         width: 100%;
-                        padding: 10px 16px;
+                        padding: 8px 16px;
                         text-align: left;
                         border: none;
                         border-radius: 8px;
@@ -466,9 +469,10 @@
     }
 }
 
-// Smartphone
+// Smartphone 
 @media screen and (max-width: 599px) {
     #header {
+        font-family: 'YourFontName', sans-serif;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -478,10 +482,10 @@
         transition: $transition-property;
 
         .logoBox {
-            width: 30%;
+            width: 25%;
 
             img {
-                height: 32px;
+                height: 30px;
                 width: auto;
                 max-width: 100%;
             }
@@ -494,14 +498,14 @@
             align-items: center;
 
             h1 {
-                font-size: 21px;
+                font-size: 26px;
                 color: $black-primary;
                 text-align: center;
             }
         }
 
         .btnBox {
-            width: 20%;
+            width: 25%;
             justify-content: end;
             display: flex;
             position: relative;
@@ -521,7 +525,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    min-height: 36px;
+                    min-height: 34px;
 
                     fa-icon {
                         font-size: 18px;
@@ -553,7 +557,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    min-height: 36px;
+                    min-height: 34px;
 
                     &::after {
                         display: none !important;
@@ -581,7 +585,7 @@
                     box-shadow: $box-shadow-global;
                     border-radius: 8px;
                     z-index: 1000;
-                    min-width: 150px;
+                    min-width: 140px;
                     margin-top: 8px;
                     opacity: 0;
                     transform: scaleY(0.95) translateY(-8px);
@@ -598,7 +602,7 @@
 
                     button[ngbDropdownItem] {
                         width: 100%;
-                        padding: 10px 16px;
+                        padding: 6px 14px;
                         text-align: left;
                         border: none;
                         border-radius: 8px;
