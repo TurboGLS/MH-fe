@@ -1,68 +1,110 @@
-.registerBox {
+@import '../../../styles/variables';
+
+.pageBlock {
+  position: relative;
+  min-height: 100vh;
+  background: $light-gray;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh; // Occupare tutta l'altezza del viewport
-  box-sizing: border-box;
-  padding: 16px;
-  background-color: #f7f7f7; // opzionale: per evidenziare la form
+  justify-content: center;
+  padding: 0 16px;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    max-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    gap: 16px;
-    padding: 24px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  .btnHome {
+    position: fixed;
+    top: 16px;
+    left: 16px;
 
-    input {
-      padding: 12px 16px;
-      font-size: 16px;
-      border: 1.5px solid #ccc;
-      border-radius: 6px;
-      transition: border-color 0.3s ease;
-      outline-offset: 2px;
-
-      &:focus {
-        border-color: #3f51b5;
-        outline: none;
-        box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
-      }
-    }
-
-    button {
-      padding: 12px 16px;
-      font-size: 18px;
-      background-color: #3f51b5;
-      color: #fff;
+    .homeBtn {
+      background-color: $veil-primary;
       border: none;
+      color: #fff;
+      padding: 9.6px 14.4px;
+      font-size: 20px;
       border-radius: 6px;
       cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition-property;
 
-      &:hover {
-        background-color: #303f9f;
-      }
-
-      &:disabled {
-        background-color: #aaa;
-        cursor: not-allowed;
+      &:hover,
+      &:focus {
+        background-color: $veil-primary-hover;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
       }
     }
   }
 
-  .error {
-    max-width: 320px;
-    margin: 8px auto 0;
-    color: #d32f2f;
-    font-weight: 600;
-    font-size: 14px;
-    text-align: center;
+  .registerBox {
+    background: #fff;
+    border: 1px solid $light-gray-disabled;
+    border-radius: 8px;
+    box-shadow: $box-shadow-global;
+    padding: 32px;
+    width: 100%;
+    max-width: 400px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        color: $black-primary;
+        font-weight: 600;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      input {
+        background-color: $form-input-bg;
+        padding: 10px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid $light-gray-disabled;
+        margin-bottom: 12px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+          border-color: $veil-primary;
+          box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+          outline: none;
+          background-color: #fff;
+        }
+      }
+
+      .error {
+        color: $red-brand;
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      button {
+        background-color: $veil-primary;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        padding: 12px 0;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: $transition-property;
+        margin-top: 8px;
+
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
+          background-color: $veil-primary-hover;
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+        }
+
+        &:disabled {
+          opacity: 0.65;
+          cursor: not-allowed;
+          background-color: $light-gray-disabled;
+          color: $black-primary-hover;
+        }
+      }
+    }
   }
 }

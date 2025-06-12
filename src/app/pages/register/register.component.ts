@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +18,8 @@ export class RegisterComponent implements OnDestroy {
   protected activatedRoute = inject(ActivatedRoute);
 
   protected destroyed$ = new Subject<void>();
+
+  faHouse = faHouse;
 
   registerForm = this.fb.group({
     username: ['', Validators.required],
@@ -67,5 +70,9 @@ export class RegisterComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroyed$.next();
     this.destroyed$.complete();
+  }
+
+  backToHome() {
+    this.router.navigate(['/home']);
   }
 }

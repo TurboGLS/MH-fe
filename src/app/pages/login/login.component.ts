@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, Subject, take, takeUntil, throwError } from 'rxjs';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   protected activatedRoute = inject(ActivatedRoute);
 
   protected destroyed$ = new Subject<void>();
+
+  faHouse = faHouse;
 
   loginForm = this.fb.group({
     username: ['', Validators.required],
@@ -45,8 +48,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-      this.destroyed$.next();
-      this.destroyed$.complete();
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   login() {
@@ -59,7 +62,11 @@ export class LoginComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe(() => {
-        this.router.navigate([this.requestedUrl ? this.requestedUrl: '/']);
+        this.router.navigate([this.requestedUrl ? this.requestedUrl : '/']);
       })
+  }
+
+  backToHome() {
+    this.router.navigate(['/home']);
   }
 }
