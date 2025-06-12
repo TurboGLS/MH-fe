@@ -52,16 +52,27 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.destroyed$.complete();
   }
 
+  isLoading = false;
+
   login() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.isLoading = true; // Inizio caricamento
+
     const { username, password } = this.loginForm.value;
     this.authSrv.login(username!, password!)
       .pipe(
+        take(1),
         catchError(response => {
           this.loginError = response.error.message;
+          this.isLoading = false; // Fine caricamento con errore
           return throwError(() => response);
         })
       )
       .subscribe(() => {
+        this.isLoading = false; // Fine caricamento
         this.router.navigate([this.requestedUrl ? this.requestedUrl : '/']);
       })
   }

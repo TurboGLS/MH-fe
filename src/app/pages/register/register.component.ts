@@ -31,6 +31,8 @@ export class RegisterComponent implements OnDestroy {
 
   successMessage: string | null = null;
 
+  isLoading = false;
+
   onSubmit() {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
@@ -44,19 +46,20 @@ export class RegisterComponent implements OnDestroy {
       return;
     }
 
+    this.isLoading = true; // Inizio loading
+
     this.registerSrv.register(userData as { username: string; email: string; password: string })
       .pipe(
         takeUntil(this.destroyed$)
       )
       .subscribe({
         next: res => {
-          console.log('Registrazione avvenuta', res);
+          this.isLoading = false; // Stop loading
           this.successMessage = "Registrazione completata! Controlla la tua email per verificare l'account.";
           this.registerForm.reset();
         },
         error: err => {
-          console.error('Errore durante la registrazione', err);
-
+          this.isLoading = false; // Stop loading
           if (err.error?.message) {
             this.registerError = err.error.message;
           }

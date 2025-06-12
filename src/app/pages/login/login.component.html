@@ -33,7 +33,14 @@
         </div>
 
         <div class="btnContainer">
-          <button type="submit" [disabled]="loginForm.invalid">Sign in</button>
+          <button type="submit" [disabled]="loginForm.invalid || isLoading">
+            <ng-container *ngIf="!isLoading; else loadingTpl">
+              Sign in
+            </ng-container>
+            <ng-template #loadingTpl>
+              <span class="spinner"></span> Loading...
+            </ng-template>
+          </button>
           <small>
             Don't have an account?
             <a [routerLink]="['/register']">Register here</a>

@@ -56,26 +56,42 @@
         text-align: center;
       }
 
-      input {
-        background-color: $form-input-bg;
-        padding: 10px 12px;
-        font-size: 16px;
-        border-radius: 6px;
-        border: 1px solid $light-gray-disabled;
-        margin-bottom: 12px;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      .formGroup {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
 
-        &:focus {
-          border-color: $veil-primary;
-          box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
-          outline: none;
-          background-color: #fff;
+        label {
+          font-weight: 500;
+          color: $black-primary;
+          margin-bottom: 8px;
+        }
+
+        input {
+          background-color: $form-input-bg;
+          padding: 8px 12px;
+          font-size: 16px;
+          border-radius: 6px;
+          border: 1px solid $light-gray-disabled;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+          &:focus {
+            border-color: $veil-primary;
+            box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+            outline: none;
+            background-color: #fff;
+          }
         }
       }
 
       .error {
         color: $red-brand;
         font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      .generalError {
+        margin-top: 8px;
         margin-bottom: 16px;
       }
 
@@ -106,5 +122,23 @@
         }
       }
     }
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
