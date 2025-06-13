@@ -15,6 +15,7 @@
     left: 16px;
 
     .homeBtn {
+      // Assicurati che venga usato type="button" in HTML per evitare comportamenti inattesi
       background-color: $veil-primary;
       border: none;
       color: #fff;
@@ -26,12 +27,18 @@
       align-items: center;
       justify-content: center;
       transition: $transition-property;
+      // Rimuovi margin/padding inutili per bottone se presenti altrove
 
       &:hover,
       &:focus {
         background-color: $veil-primary-hover;
         outline: none;
-        box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+        box-shadow: 0 0 0 3px rgba(
+          red($veil-primary),
+          green($veil-primary),
+          blue($veil-primary),
+          0.5
+        );
       }
     }
   }
@@ -77,7 +84,12 @@
 
           &:focus {
             border-color: $veil-primary;
-            box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+            box-shadow: 0 0 0 3.2px rgba(
+              red($veil-primary),
+              green($veil-primary),
+              blue($veil-primary),
+              0.25
+            );
             outline: none;
             background-color: #fff;
           }
@@ -95,7 +107,8 @@
         margin-bottom: 16px;
       }
 
-      button {
+      // Qui meglio specificare button[type="submit"] per evitare conflitti
+      button[type="submit"] {
         background-color: $veil-primary;
         border: none;
         color: #fff;
@@ -111,7 +124,12 @@
         &:focus:not(:disabled) {
           background-color: $veil-primary-hover;
           outline: none;
-          box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+          box-shadow: 0 0 0 4px rgba(
+            red($veil-primary),
+            green($veil-primary),
+            blue($veil-primary),
+            0.5
+          );
         }
 
         &:disabled {
@@ -140,5 +158,30 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+.passwordInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    flex: 1;
+    padding-right: 2.5rem;
+  }
+
+  .togglePasswordBtn {
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #555;
+
+    &:hover {
+      color: #000;
+    }
   }
 }

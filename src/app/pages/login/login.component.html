@@ -19,12 +19,15 @@
           </div>
         </div>
 
-        <div class="formGroup">
+        <div class="formGroup passwordGroup">
           <label for="password">Password</label>
-          <input id="password" type="password" formControlName="password" placeholder="Enter your password" />
-          <div class="text-danger"
-            *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
-            Password is required.
+          <div class="passwordInputWrapper">
+            <input id="password" [type]="showPassword ? 'text' : 'password'" formControlName="password"
+              placeholder="Enter your password" />
+            <button type="button" class="togglePasswordBtn" (click)="togglePasswordVisibility()"
+              [attr.aria-label]="showPassword ? 'Nascondi password' : 'Mostra password'">
+              <fa-icon [icon]="showPassword ? faEyeSlash : faEye"></fa-icon>
+            </button>
           </div>
         </div>
 

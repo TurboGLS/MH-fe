@@ -182,3 +182,28 @@
         transform: rotate(360deg);
     }
 }
+
+.passwordInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        flex: 1;
+        padding-right: 2.5rem;
+    }
+
+    .togglePasswordBtn {
+        position: absolute;
+        right: 0.5rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        color: #555;
+
+        &:hover {
+            color: #000;
+        }
+    }
+}

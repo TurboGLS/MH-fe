@@ -29,7 +29,14 @@
 
             <div class="formGroup">
                 <label for="password">Password</label>
-                <input id="password" formControlName="password" placeholder="Password" type="password" />
+                <div class="passwordInputWrapper">
+                    <input id="password" [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                        placeholder="Password" />
+                    <button type="button" class="togglePasswordBtn" (click)="togglePasswordVisibility()"
+                        [attr.aria-label]="showPassword ? 'Nascondi password' : 'Mostra password'">
+                        <fa-icon [icon]="showPassword ? faEyeSlash : faEye"></fa-icon>
+                    </button>
+                </div>
                 <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid"
                     class="error">
                     <span *ngIf="registerForm.get('password')?.errors?.['required']">Password obbligatoria</span>

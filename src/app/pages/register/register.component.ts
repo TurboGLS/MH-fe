@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +20,14 @@ export class RegisterComponent implements OnDestroy {
   protected destroyed$ = new Subject<void>();
 
   faHouse = faHouse;
+
+  showPassword = false;
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
   registerForm = this.fb.group({
     username: ['', Validators.required],

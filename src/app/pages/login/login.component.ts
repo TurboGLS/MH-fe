@@ -3,8 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, Subject, take, takeUntil, throwError } from 'rxjs';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { NotificationService } from '../../services/notification.service';
+import { faHouse, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +20,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   protected destroyed$ = new Subject<void>();
 
   faHouse = faHouse;
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
+
 
   loginForm = this.fb.group({
     username: ['', Validators.required],
@@ -30,6 +32,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   loginError = '';
 
   requestedUrl: string | null = null;
+
+  showPassword = false;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
   ngOnInit() {
     this.loginForm.valueChanges
