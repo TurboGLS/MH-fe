@@ -7,6 +7,24 @@
   box-sizing: border-box; // Rende tutto all'interno del div
 }
 
+.custom-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 // Desktop
 @media screen and (min-width: 920px) {
 
@@ -125,6 +143,7 @@
 
 // Laptop
 @media screen and (min-width: 730px) and (max-width: 919px) {
+
   // Contenitore del form
   form {
     padding: 16px;
@@ -242,6 +261,7 @@
 
 // Tablet
 @media screen and (min-width: 600px) and (max-width: 729px) {
+
   // Contenitore del form
   form {
     padding: 16px;
@@ -358,6 +378,7 @@
 
 // Smartphone
 @media screen and (max-width: 599px) {
+
   // Contenitore del form
   form {
     padding: 16px;

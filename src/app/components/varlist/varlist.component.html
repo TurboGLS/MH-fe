@@ -57,8 +57,16 @@
 
   <div class="btnBlock">
     <button type="button" (click)="addRow()" class="btn btn-secondary">Aggiungi Riga</button>
-    <button type="button" (click)="removeRow()" class="btn btn-warning" [disabled]="rows.length <= 1">Rimuovi Ultima Riga</button>
+    <button type="button" (click)="removeRow()" class="btn btn-warning" [disabled]="rows.length <= 1">Rimuovi Ultima
+      Riga</button>
     <button type="button" (click)="resetRows()" class="btn btn-warning" [disabled]="isResetDisabled">Reset</button>
-    <button type="submit" class="btn btn-primary" [disabled]="isGenerateDisabled">Genera</button>
+    <button type="submit" class="btn btn-primary" [disabled]="isGenerateDisabled || loading">
+      <ng-container *ngIf="!loading; else loadingTpl">
+        Genera
+      </ng-container>
+      <ng-template #loadingTpl>
+        <span class="custom-spinner"></span> Generazione...
+      </ng-template>
+    </button>
   </div>
 </form>
