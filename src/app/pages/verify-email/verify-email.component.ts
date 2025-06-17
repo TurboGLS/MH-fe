@@ -20,7 +20,7 @@ export class VerifyEmailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     if (this.staticMode) {
       // Mostrato come info dopo la registrazione
-      this.message = 'Registrazione completata! Controlla la tua email per verificare l’account.';
+      this.message = "Registrazione completata! Controlla la tua email per verificare l'account.";
       return;
     }
 
