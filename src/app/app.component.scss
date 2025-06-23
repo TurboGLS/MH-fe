@@ -1,3 +1,53 @@
 ::ng-deep ngb-toast {
   z-index: 1050 !important;
+
+  // Stile base del toast alert
+  min-width: 280px;
+  max-width: 500px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+// Desktop 
+@media screen and (min-width: 920px) {
+  ::ng-deep ngb-toast {
+    max-width: 450px;
+    font-size: 18px;
+    padding: 19px 32px;
+  }
+}
+
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+  ::ng-deep ngb-toast {
+    max-width: 400px;
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+}
+
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+  ::ng-deep ngb-toast {
+    max-width: 350px;
+    font-size: 15px;
+    padding: 14px 21px;
+  }
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+  ::ng-deep ngb-toast {
+    width: 320px;
+    max-width: none;
+    font-size: 14px;
+    padding: 13px 16px;
+  }
 }
