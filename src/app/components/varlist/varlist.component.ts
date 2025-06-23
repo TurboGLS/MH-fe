@@ -1,8 +1,8 @@
-import { Component, EventEmitter, inject, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Device } from '../../entities/device.entity';
 import { VarlistService } from '../../services/varlist.service';
-import { Subject, takeUntil } from 'rxjs';
+import { catchError, of, Subject, switchMap, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-varlist',
@@ -57,29 +57,33 @@ export class VarlistComponent implements OnInit, OnDestroy {
     const rowIndex = this.rows.length;
     this.modelsPerRow[rowIndex] = [];
 
-    newRow.get('categoria')?.valueChanges
-      .pipe(takeUntil(this.destroyed$))
-      .subscribe(selectedCategory => {
-        if (selectedCategory !== null && selectedCategory !== '') {
-          this.categoryChanged.emit(selectedCategory);
-        }
-        if (selectedCategory) {
-          this.varlistSrv.deviceInfo(selectedCategory).subscribe({
-            next: (data) => {
-              this.modelsPerRow[rowIndex] = data;
-              newRow.get('model')?.enable();
-            },
-            error: () => {
-              this.modelsPerRow[rowIndex] = [];
-              newRow.get('model')?.disable();
-            }
-          });
-        } else {
-          this.modelsPerRow[rowIndex] = [];
-          newRow.get('model')?.disable();
-        }
-        newRow.get('model')?.setValue('');
-      });
+    newRow.get('categoria')?.valueChanges.pipe(
+      takeUntil(this.destroyed$),
+      switchMap(selectedCategory => {
+      if (selectedCategory && selectedCategory !== '') {
+        this.categoryChanged.emit(selectedCategory);
+        return this.varlistSrv.deviceInfo(selectedCategory).pipe(
+          catchError(() => {
+            this.modelsPerRow[rowIndex] = [];
+            newRow.get('model')?.disable();
+            return of([] as Device[]);
+          })
+        );
+      } else {
+        this.modelsPerRow[rowIndex] = [];
+        newRow.get('model')?.disable();
+        return of([] as Device[]);
+      }
+    })
+  ).subscribe(data => {
+      this.modelsPerRow[rowIndex] = data;
+      if (data.length > 0) {
+        newRow.get('model')?.enable();
+      } else {
+        newRow.get('model')?.disable();
+      }
+      newRow.get('model')?.setValue('');
+    });
 
     return newRow;
   }
