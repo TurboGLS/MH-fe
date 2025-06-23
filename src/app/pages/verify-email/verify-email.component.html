@@ -1,11 +1,10 @@
-<!-- verify-email.component.html -->
 <div class="verify-wrapper">
   <h1 class="title">Verifica e-mail</h1>
 
   <!-- Messaggio di esito -->
   <p class="result" *ngIf="message">{{ message }}</p>
 
-  <!-- Pulsante di ritorno alla login (opzionale) -->
+  <!-- Pulsante di ritorno alla login -->
   <a routerLink="/login" class="back-btn" *ngIf="message">Torna al login</a>
 </div>
   
