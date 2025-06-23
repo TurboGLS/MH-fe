@@ -1,187 +1,733 @@
 @import '../../../styles/variables';
 
-.pageBlock {
-  position: relative;
-  min-height: 100vh;
-  background: $light-gray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+// Desktop
+@media screen and (min-width: 920px) {
+  .pageBlock {
+    position: relative;
+    min-height: 100vh;
+    background: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
 
-  .btnHome {
-    position: fixed;
-    top: 16px;
-    left: 16px;
+    .btnHome {
+      position: fixed;
+      top: 16px;
+      left: 16px;
 
-    .homeBtn {
-      // Assicurati che venga usato type="button" in HTML per evitare comportamenti inattesi
-      background-color: $veil-primary;
-      border: none;
-      color: #fff;
-      padding: 9.6px 14.4px;
-      font-size: 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: $transition-property;
-      // Rimuovi margin/padding inutili per bottone se presenti altrove
-
-      &:hover,
-      &:focus {
-        background-color: $veil-primary-hover;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(
-          red($veil-primary),
-          green($veil-primary),
-          blue($veil-primary),
-          0.5
-        );
-      }
-    }
-  }
-
-  .registerBox {
-    background: #fff;
-    border: 1px solid $light-gray-disabled;
-    border-radius: 8px;
-    box-shadow: $box-shadow-global;
-    padding: 32px;
-    width: 100%;
-    max-width: 400px;
-
-    form {
-      display: flex;
-      flex-direction: column;
-
-      h3 {
-        color: $black-primary;
-        font-weight: 600;
-        margin-bottom: 32px;
-        text-align: center;
-      }
-
-      .formGroup {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 16px;
-
-        label {
-          font-weight: 500;
-          color: $black-primary;
-          margin-bottom: 8px;
-        }
-
-        input {
-          background-color: $form-input-bg;
-          padding: 8px 12px;
-          font-size: 16px;
-          border-radius: 6px;
-          border: 1px solid $light-gray-disabled;
-          transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
-          &:focus {
-            border-color: $veil-primary;
-            box-shadow: 0 0 0 3.2px rgba(
-              red($veil-primary),
-              green($veil-primary),
-              blue($veil-primary),
-              0.25
-            );
-            outline: none;
-            background-color: #fff;
-          }
-        }
-      }
-
-      .error {
-        color: $red-brand;
-        font-size: 14px;
-        margin-bottom: 16px;
-      }
-
-      .generalError {
-        margin-top: 8px;
-        margin-bottom: 16px;
-      }
-
-      // Qui meglio specificare button[type="submit"] per evitare conflitti
-      button[type="submit"] {
+      .homeBtn {
+        // Assicurati che venga usato type="button" in HTML per evitare comportamenti inattesi
         background-color: $veil-primary;
         border: none;
         color: #fff;
-        font-weight: 600;
-        padding: 12px 0;
-        font-size: 16px;
+        padding: 9.6px 14.4px;
+        font-size: 20px;
         border-radius: 6px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: $transition-property;
-        margin-top: 8px;
+        // Rimuovi margin/padding inutili per bottone se presenti altrove
 
-        &:hover:not(:disabled),
-        &:focus:not(:disabled) {
+        &:hover,
+        &:focus {
           background-color: $veil-primary-hover;
           outline: none;
-          box-shadow: 0 0 0 4px rgba(
-            red($veil-primary),
-            green($veil-primary),
-            blue($veil-primary),
-            0.5
-          );
+          box-shadow: 0 0 0 3px rgba(red($veil-primary),
+              green($veil-primary),
+              blue($veil-primary),
+              0.5);
+        }
+      }
+    }
+
+    .registerBox {
+      background: #fff;
+      border: 1px solid $light-gray-disabled;
+      border-radius: 8px;
+      box-shadow: $box-shadow-global;
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          color: $black-primary;
+          font-weight: 600;
+          margin-bottom: 32px;
+          text-align: center;
         }
 
-        &:disabled {
-          opacity: 0.65;
-          cursor: not-allowed;
-          background-color: $light-gray-disabled;
-          color: $black-primary-hover;
+        .formGroup {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+
+          label {
+            font-weight: 500;
+            color: $black-primary;
+            margin-bottom: 8px;
+          }
+
+          input {
+            background-color: $form-input-bg;
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid $light-gray-disabled;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+              border-color: $veil-primary;
+              box-shadow: 0 0 0 3.2px rgba(red($veil-primary),
+                  green($veil-primary),
+                  blue($veil-primary),
+                  0.25);
+              outline: none;
+              background-color: #fff;
+            }
+          }
         }
+
+        .error {
+          color: $red-brand;
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+
+        .generalError {
+          margin-top: 8px;
+          margin-bottom: 16px;
+        }
+
+        // Qui meglio specificare button[type="submit"] per evitare conflitti
+        button[type="submit"] {
+          background-color: $veil-primary;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          padding: 12px 0;
+          font-size: 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: $transition-property;
+          margin-top: 8px;
+
+          &:hover:not(:disabled),
+          &:focus:not(:disabled) {
+            background-color: $veil-primary-hover;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(red($veil-primary),
+                green($veil-primary),
+                blue($veil-primary),
+                0.5);
+          }
+
+          &:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            background-color: $light-gray-disabled;
+            color: $black-primary-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .passwordInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      flex: 1;
+      padding-right: 2.5rem;
+    }
+
+    .togglePasswordBtn {
+      position: absolute;
+      right: 0.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: #555;
+
+      &:hover {
+        color: #000;
       }
     }
   }
 }
 
-.spinner {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  vertical-align: middle;
-  margin-right: 8px;
-}
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+  .pageBlock {
+    position: relative;
+    min-height: 100vh;
+    background: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+    .btnHome {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+
+      .homeBtn {
+        // Assicurati che venga usato type="button" in HTML per evitare comportamenti inattesi
+        background-color: $veil-primary;
+        border: none;
+        color: #fff;
+        padding: 9.6px 14.4px;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-property;
+        // Rimuovi margin/padding inutili per bottone se presenti altrove
+
+        &:hover,
+        &:focus {
+          background-color: $veil-primary-hover;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(red($veil-primary),
+              green($veil-primary),
+              blue($veil-primary),
+              0.5);
+        }
+      }
+    }
+
+    .registerBox {
+      background: #fff;
+      border: 1px solid $light-gray-disabled;
+      border-radius: 8px;
+      box-shadow: $box-shadow-global;
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          color: $black-primary;
+          font-weight: 600;
+          margin-bottom: 32px;
+          text-align: center;
+        }
+
+        .formGroup {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+
+          label {
+            font-weight: 500;
+            color: $black-primary;
+            margin-bottom: 8px;
+          }
+
+          input {
+            background-color: $form-input-bg;
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid $light-gray-disabled;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+              border-color: $veil-primary;
+              box-shadow: 0 0 0 3.2px rgba(red($veil-primary),
+                  green($veil-primary),
+                  blue($veil-primary),
+                  0.25);
+              outline: none;
+              background-color: #fff;
+            }
+          }
+        }
+
+        .error {
+          color: $red-brand;
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+
+        .generalError {
+          margin-top: 8px;
+          margin-bottom: 16px;
+        }
+
+        // Qui meglio specificare button[type="submit"] per evitare conflitti
+        button[type="submit"] {
+          background-color: $veil-primary;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          padding: 12px 0;
+          font-size: 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: $transition-property;
+          margin-top: 8px;
+
+          &:hover:not(:disabled),
+          &:focus:not(:disabled) {
+            background-color: $veil-primary-hover;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(red($veil-primary),
+                green($veil-primary),
+                blue($veil-primary),
+                0.5);
+          }
+
+          &:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            background-color: $light-gray-disabled;
+            color: $black-primary-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .passwordInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      flex: 1;
+      padding-right: 2.5rem;
+    }
+
+    .togglePasswordBtn {
+      position: absolute;
+      right: 0.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: #555;
+
+      &:hover {
+        color: #000;
+      }
+    }
   }
 }
 
-.passwordInputWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+  .pageBlock {
+    position: relative;
+    min-height: 100vh;
+    background: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
 
-  input {
-    flex: 1;
-    padding-right: 2.5rem;
+    .btnHome {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+
+      .homeBtn {
+        // Assicurati che venga usato type="button" in HTML per evitare comportamenti inattesi
+        background-color: $veil-primary;
+        border: none;
+        color: #fff;
+        padding: 9.6px 14.4px;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-property;
+        // Rimuovi margin/padding inutili per bottone se presenti altrove
+
+        &:hover,
+        &:focus {
+          background-color: $veil-primary-hover;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(red($veil-primary),
+              green($veil-primary),
+              blue($veil-primary),
+              0.5);
+        }
+      }
+    }
+
+    .registerBox {
+      background: #fff;
+      border: 1px solid $light-gray-disabled;
+      border-radius: 8px;
+      box-shadow: $box-shadow-global;
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          color: $black-primary;
+          font-weight: 600;
+          margin-bottom: 32px;
+          text-align: center;
+        }
+
+        .formGroup {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+
+          label {
+            font-weight: 500;
+            color: $black-primary;
+            margin-bottom: 8px;
+          }
+
+          input {
+            background-color: $form-input-bg;
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid $light-gray-disabled;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+              border-color: $veil-primary;
+              box-shadow: 0 0 0 3.2px rgba(red($veil-primary),
+                  green($veil-primary),
+                  blue($veil-primary),
+                  0.25);
+              outline: none;
+              background-color: #fff;
+            }
+          }
+        }
+
+        .error {
+          color: $red-brand;
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+
+        .generalError {
+          margin-top: 8px;
+          margin-bottom: 16px;
+        }
+
+        // Qui meglio specificare button[type="submit"] per evitare conflitti
+        button[type="submit"] {
+          background-color: $veil-primary;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          padding: 12px 0;
+          font-size: 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: $transition-property;
+          margin-top: 8px;
+
+          &:hover:not(:disabled),
+          &:focus:not(:disabled) {
+            background-color: $veil-primary-hover;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(red($veil-primary),
+                green($veil-primary),
+                blue($veil-primary),
+                0.5);
+          }
+
+          &:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            background-color: $light-gray-disabled;
+            color: $black-primary-hover;
+          }
+        }
+      }
+    }
   }
 
-  .togglePasswordBtn {
-    position: absolute;
-    right: 0.5rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    color: #555;
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
 
-    &:hover {
-      color: #000;
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .passwordInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      flex: 1;
+      padding-right: 2.5rem;
+    }
+
+    .togglePasswordBtn {
+      position: absolute;
+      right: 0.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: #555;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+// Smartphne
+@media screen and (max-width: 599px) {
+  .pageBlock {
+    position: relative;
+    min-height: 100vh;
+    background: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+
+    .btnHome {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+
+      .homeBtn {
+        // Assicurati che venga usato type="button" in HTML per evitare comportamenti inattesi
+        background-color: $veil-primary;
+        border: none;
+        color: #fff;
+        padding: 9.6px 14.4px;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-property;
+        // Rimuovi margin/padding inutili per bottone se presenti altrove
+
+        &:hover,
+        &:focus {
+          background-color: $veil-primary-hover;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(red($veil-primary),
+              green($veil-primary),
+              blue($veil-primary),
+              0.5);
+        }
+      }
+    }
+
+    .registerBox {
+      background: #fff;
+      border: 1px solid $light-gray-disabled;
+      border-radius: 8px;
+      box-shadow: $box-shadow-global;
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          color: $black-primary;
+          font-weight: 600;
+          margin-bottom: 32px;
+          text-align: center;
+        }
+
+        .formGroup {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+
+          label {
+            font-weight: 500;
+            color: $black-primary;
+            margin-bottom: 8px;
+          }
+
+          input {
+            background-color: $form-input-bg;
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid $light-gray-disabled;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+              border-color: $veil-primary;
+              box-shadow: 0 0 0 3.2px rgba(red($veil-primary),
+                  green($veil-primary),
+                  blue($veil-primary),
+                  0.25);
+              outline: none;
+              background-color: #fff;
+            }
+          }
+        }
+
+        .error {
+          color: $red-brand;
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+
+        .generalError {
+          margin-top: 8px;
+          margin-bottom: 16px;
+        }
+
+        // Qui meglio specificare button[type="submit"] per evitare conflitti
+        button[type="submit"] {
+          background-color: $veil-primary;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          padding: 12px 0;
+          font-size: 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: $transition-property;
+          margin-top: 8px;
+
+          &:hover:not(:disabled),
+          &:focus:not(:disabled) {
+            background-color: $veil-primary-hover;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(red($veil-primary),
+                green($veil-primary),
+                blue($veil-primary),
+                0.5);
+          }
+
+          &:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            background-color: $light-gray-disabled;
+            color: $black-primary-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .passwordInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      flex: 1;
+      padding-right: 2.5rem;
+    }
+
+    .togglePasswordBtn {
+      position: absolute;
+      right: 0.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: #555;
+
+      &:hover {
+        color: #000;
+      }
     }
   }
 }

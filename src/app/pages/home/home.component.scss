@@ -1,2 +1,21 @@
 @import '../../../styles/variables';
 
+// Desktop
+@media screen and (min-width: 920px) {
+
+}
+
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+
+}
+
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+
+}

@@ -146,12 +146,12 @@
 
   // Contenitore del form
   form {
-    padding: 16px;
+    padding: 14px;
     font-size: 14px;
 
     .table {
       width: 100%;
-      min-width: 600px;
+      min-width: 100%;
       border-collapse: collapse;
       background-color: $form-input-bg;
       box-shadow: $box-shadow-global;
@@ -264,16 +264,18 @@
 
   // Contenitore del form
   form {
-    padding: 16px;
-    font-size: 10px;
+    padding: 12px;
+    font-size: 12px;
+    overflow-x: auto;
+    width: 100%;
 
     .table {
       width: 100%;
+      min-width: 100%;
       border-collapse: collapse;
       background-color: $form-input-bg;
       box-shadow: $box-shadow-global;
       border-radius: 8px;
-      overflow-x: visible;
 
       th {
         background-color: $black-primary;
@@ -381,16 +383,18 @@
 
   // Contenitore del form
   form {
-    padding: 16px;
-    font-size: 8px;
+    padding: 10px;
+    font-size: 10px;
+    overflow-x: auto;
+    width: 100%;
 
     .table {
       width: 100%;
+      min-width: 100%;
       border-collapse: collapse;
       background-color: $form-input-bg;
       box-shadow: $box-shadow-global;
       border-radius: 8px;
-      overflow: hidden;
 
       th {
         background-color: $black-primary;
@@ -398,10 +402,11 @@
         text-align: left;
         padding: 12px;
         font-weight: 600;
+        padding: 6px;
       }
 
       td {
-        padding: 8px;
+        padding: 6px;
         vertical-align: top;
 
         select,
@@ -411,7 +416,7 @@
           border: 1px solid $light-gray-disabled;
           border-radius: 4px;
           background-color: $form-input-bg;
-          font-size: 14px;
+          font-size: 13px;
           transition: $transition-property;
 
           &:focus {
@@ -435,10 +440,10 @@
 
       button {
         margin: 5px;
-        padding: 8px 20px;
+        padding: 6px 16px;
         border: none;
         border-radius: 6px;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 500;
         transition: $transition-property;
 

@@ -1,159 +1,162 @@
 @import '../../../styles/variables';
 
-.pageBlock {
-    position: relative;
-    min-height: 100vh;
-    background: $light-gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-
-    .btnHome {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-
-        .homeBtn {
-            background-color: $veil-primary;
-            border: none;
-            color: #fff;
-            padding: 9.6px 14.4px;
-            font-size: 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: $transition-property;
-
-            &:hover,
-            &:focus {
-                background-color: $veil-primary-hover;
-                outline: none;
-                box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
-            }
-        }
-    }
-
-    .container {
+// Desktop
+@media screen and (min-width: 920px) {
+    .pageBlock {
+        position: relative;
+        min-height: 1000px;
+        background: $light-gray;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        padding: 0 16px;
+        padding: 0;
 
-        .loginBox {
-            background: #fff;
-            border: 1px solid $light-gray-disabled;
-            border-radius: 8px;
-            box-shadow: $box-shadow-global;
-            padding: 32px;
+        .btnHome {
+            position: fixed;
+            top: 16px;
+            left: 16px;
 
-            width: 100%;
-            max-width: 400px;
-
-            form {
+            .homeBtn {
+                background-color: $veil-primary;
+                border: none;
+                color: #fff;
+                padding: 9.6px 14.4px;
+                font-size: 20px;
+                border-radius: 6px;
+                cursor: pointer;
                 display: flex;
-                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: $transition-property;
 
-                h3 {
-                    color: $black-primary;
-                    font-weight: 600;
-                    margin-bottom: 24px;
-                    text-align: center;
+                &:hover,
+                &:focus {
+                    background-color: $veil-primary-hover;
+                    outline: none;
+                    box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
                 }
+            }
+        }
 
-                .formGroup {
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 16px;
+
+            .loginBox {
+                background: #fff;
+                border: 1px solid $light-gray-disabled;
+                border-radius: 8px;
+                box-shadow: $box-shadow-global;
+                padding: 32px;
+
+                width: 100%;
+                max-width: 400px;
+
+                form {
                     display: flex;
                     flex-direction: column;
-                    margin-bottom: 16px;
 
-                    label {
-                        font-weight: 500;
+                    h3 {
                         color: $black-primary;
-                        margin-bottom: 8px;
-                    }
-
-                    input {
-                        background-color: $form-input-bg;
-                        padding: 8px 12px;
-                        font-size: 16px;
-                        border-radius: 6px;
-                        border: 1px solid $light-gray-disabled;
-                        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
-                        &:focus {
-                            border-color: $veil-primary;
-                            box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
-                            outline: none;
-                            background-color: #fff;
-                        }
-                    }
-
-                    .text-danger {
-                        color: $red-brand;
-                        font-size: 14px;
-                        margin-top: 4px;
-                    }
-                }
-
-                .generalError {
-                    text-align: center;
-                    margin-bottom: 16px;
-                    font-size: 14px;
-                    color: $red-brand;
-                }
-
-                .btnContainer {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    button {
-                        width: 100%;
-                        background-color: $veil-primary;
-                        border: none;
-                        color: #fff;
                         font-weight: 600;
-                        padding: 9.6px 0;
-                        font-size: 16px;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        transition: $transition-property;
+                        margin-bottom: 24px;
+                        text-align: center;
+                    }
 
-                        &:hover:not(:disabled),
-                        &:focus:not(:disabled) {
-                            background-color: $veil-primary-hover;
-                            outline: none;
-                            box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                    .formGroup {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 16px;
+
+                        label {
+                            font-weight: 500;
+                            color: $black-primary;
+                            margin-bottom: 8px;
                         }
 
-                        &:disabled {
-                            opacity: 0.65;
-                            cursor: not-allowed;
-                            background-color: $light-gray-disabled;
-                            color: $black-primary-hover;
+                        input {
+                            background-color: $form-input-bg;
+                            padding: 8px 12px;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            border: 1px solid $light-gray-disabled;
+                            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+                            &:focus {
+                                border-color: $veil-primary;
+                                box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+                                outline: none;
+                                background-color: #fff;
+                            }
+                        }
+
+                        .text-danger {
+                            color: $red-brand;
+                            font-size: 14px;
+                            margin-top: 4px;
                         }
                     }
 
-                    small {
-                        margin-top: 16px;
-                        color: $black-primary-hover;
-                        font-size: 14px;
+                    .generalError {
                         text-align: center;
+                        margin-bottom: 16px;
+                        font-size: 14px;
+                        color: $red-brand;
+                    }
 
-                        a {
-                            color: $veil-primary;
+                    .btnContainer {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            background-color: $veil-primary;
+                            border: none;
+                            color: #fff;
                             font-weight: 600;
-                            text-decoration: none;
-                            transition: color 0.3s ease;
+                            padding: 9.6px 0;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            transition: $transition-property;
 
-                            &:hover,
-                            &:focus {
-                                color: $red-brand-hover;
-                                text-decoration: underline;
+                            &:hover:not(:disabled),
+                            &:focus:not(:disabled) {
+                                background-color: $veil-primary-hover;
                                 outline: none;
+                                box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                            }
+
+                            &:disabled {
+                                opacity: 0.65;
+                                cursor: not-allowed;
+                                background-color: $light-gray-disabled;
+                                color: $black-primary-hover;
+                            }
+                        }
+
+                        small {
+                            margin-top: 16px;
+                            color: $black-primary-hover;
+                            font-size: 14px;
+                            text-align: center;
+
+                            a {
+                                color: $veil-primary;
+                                font-weight: 600;
+                                text-decoration: none;
+                                transition: color 0.3s ease;
+
+                                &:hover,
+                                &:focus {
+                                    color: $red-brand-hover;
+                                    text-decoration: underline;
+                                    outline: none;
+                                }
                             }
                         }
                     }
@@ -161,49 +164,682 @@
             }
         }
     }
-}
 
-// ===== QUI INIZIA LO STILE DELLO SPINNER =====
+    // ===== QUI INIZIA LO STILE DELLO SPINNER =====
 
-.spinner {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    vertical-align: middle;
-    margin-right: 8px;
-}
+    .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .passwordInputWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+            flex: 1;
+            padding-right: 2.5rem;
+        }
+
+        .togglePasswordBtn {
+            position: absolute;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #555;
+
+            &:hover {
+                color: #000;
+            }
+        }
     }
 }
 
-.passwordInputWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    input {
-        flex: 1;
-        padding-right: 2.5rem;
-    }
-
-    .togglePasswordBtn {
-        position: absolute;
-        right: 0.5rem;
-        background: transparent;
-        border: none;
-        cursor: pointer;
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+    .pageBlock {
+        position: relative;
+        min-height: 1000px;
+        background: $light-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 0;
-        color: #555;
 
-        &:hover {
-            color: #000;
+        .btnHome {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+
+            .homeBtn {
+                background-color: $veil-primary;
+                border: none;
+                color: #fff;
+                padding: 9.6px 14.4px;
+                font-size: 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: $transition-property;
+
+                &:hover,
+                &:focus {
+                    background-color: $veil-primary-hover;
+                    outline: none;
+                    box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                }
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 16px;
+
+            .loginBox {
+                background: #fff;
+                border: 1px solid $light-gray-disabled;
+                border-radius: 8px;
+                box-shadow: $box-shadow-global;
+                padding: 32px;
+
+                width: 100%;
+                max-width: 400px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    h3 {
+                        color: $black-primary;
+                        font-weight: 600;
+                        margin-bottom: 24px;
+                        text-align: center;
+                    }
+
+                    .formGroup {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 16px;
+
+                        label {
+                            font-weight: 500;
+                            color: $black-primary;
+                            margin-bottom: 8px;
+                        }
+
+                        input {
+                            background-color: $form-input-bg;
+                            padding: 8px 12px;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            border: 1px solid $light-gray-disabled;
+                            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+                            &:focus {
+                                border-color: $veil-primary;
+                                box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+                                outline: none;
+                                background-color: #fff;
+                            }
+                        }
+
+                        .text-danger {
+                            color: $red-brand;
+                            font-size: 14px;
+                            margin-top: 4px;
+                        }
+                    }
+
+                    .generalError {
+                        text-align: center;
+                        margin-bottom: 16px;
+                        font-size: 14px;
+                        color: $red-brand;
+                    }
+
+                    .btnContainer {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            background-color: $veil-primary;
+                            border: none;
+                            color: #fff;
+                            font-weight: 600;
+                            padding: 9.6px 0;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            transition: $transition-property;
+
+                            &:hover:not(:disabled),
+                            &:focus:not(:disabled) {
+                                background-color: $veil-primary-hover;
+                                outline: none;
+                                box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                            }
+
+                            &:disabled {
+                                opacity: 0.65;
+                                cursor: not-allowed;
+                                background-color: $light-gray-disabled;
+                                color: $black-primary-hover;
+                            }
+                        }
+
+                        small {
+                            margin-top: 16px;
+                            color: $black-primary-hover;
+                            font-size: 14px;
+                            text-align: center;
+
+                            a {
+                                color: $veil-primary;
+                                font-weight: 600;
+                                text-decoration: none;
+                                transition: color 0.3s ease;
+
+                                &:hover,
+                                &:focus {
+                                    color: $red-brand-hover;
+                                    text-decoration: underline;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== QUI INIZIA LO STILE DELLO SPINNER =====
+
+    .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .passwordInputWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+            flex: 1;
+            padding-right: 2.5rem;
+        }
+
+        .togglePasswordBtn {
+            position: absolute;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #555;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}
+
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+    .pageBlock {
+        position: relative;
+        min-height: 1000px;
+        background: $light-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        .btnHome {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+
+            .homeBtn {
+                background-color: $veil-primary;
+                border: none;
+                color: #fff;
+                padding: 9.6px 14.4px;
+                font-size: 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: $transition-property;
+
+                &:hover,
+                &:focus {
+                    background-color: $veil-primary-hover;
+                    outline: none;
+                    box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                }
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 16px;
+
+            .loginBox {
+                background: #fff;
+                border: 1px solid $light-gray-disabled;
+                border-radius: 8px;
+                box-shadow: $box-shadow-global;
+                padding: 32px;
+
+                width: 100%;
+                max-width: 400px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    h3 {
+                        color: $black-primary;
+                        font-weight: 600;
+                        margin-bottom: 24px;
+                        text-align: center;
+                    }
+
+                    .formGroup {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 16px;
+
+                        label {
+                            font-weight: 500;
+                            color: $black-primary;
+                            margin-bottom: 8px;
+                        }
+
+                        input {
+                            background-color: $form-input-bg;
+                            padding: 8px 12px;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            border: 1px solid $light-gray-disabled;
+                            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+                            &:focus {
+                                border-color: $veil-primary;
+                                box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+                                outline: none;
+                                background-color: #fff;
+                            }
+                        }
+
+                        .text-danger {
+                            color: $red-brand;
+                            font-size: 14px;
+                            margin-top: 4px;
+                        }
+                    }
+
+                    .generalError {
+                        text-align: center;
+                        margin-bottom: 16px;
+                        font-size: 14px;
+                        color: $red-brand;
+                    }
+
+                    .btnContainer {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            background-color: $veil-primary;
+                            border: none;
+                            color: #fff;
+                            font-weight: 600;
+                            padding: 9.6px 0;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            transition: $transition-property;
+
+                            &:hover:not(:disabled),
+                            &:focus:not(:disabled) {
+                                background-color: $veil-primary-hover;
+                                outline: none;
+                                box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                            }
+
+                            &:disabled {
+                                opacity: 0.65;
+                                cursor: not-allowed;
+                                background-color: $light-gray-disabled;
+                                color: $black-primary-hover;
+                            }
+                        }
+
+                        small {
+                            margin-top: 16px;
+                            color: $black-primary-hover;
+                            font-size: 14px;
+                            text-align: center;
+
+                            a {
+                                color: $veil-primary;
+                                font-weight: 600;
+                                text-decoration: none;
+                                transition: color 0.3s ease;
+
+                                &:hover,
+                                &:focus {
+                                    color: $red-brand-hover;
+                                    text-decoration: underline;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== QUI INIZIA LO STILE DELLO SPINNER =====
+
+    .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .passwordInputWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+            flex: 1;
+            padding-right: 2.5rem;
+        }
+
+        .togglePasswordBtn {
+            position: absolute;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #555;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+    .pageBlock {
+        position: relative;
+        min-height: 1000px;
+        background: $light-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        .btnHome {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+
+            .homeBtn {
+                background-color: $veil-primary;
+                border: none;
+                color: #fff;
+                padding: 9.6px 14.4px;
+                font-size: 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: $transition-property;
+
+                &:hover,
+                &:focus {
+                    background-color: $veil-primary-hover;
+                    outline: none;
+                    box-shadow: 0 0 0 3px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                }
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 16px;
+
+            .loginBox {
+                background: #fff;
+                border: 1px solid $light-gray-disabled;
+                border-radius: 8px;
+                box-shadow: $box-shadow-global;
+                padding: 32px;
+
+                width: 100%;
+                max-width: 400px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    h3 {
+                        color: $black-primary;
+                        font-weight: 600;
+                        margin-bottom: 24px;
+                        text-align: center;
+                    }
+
+                    .formGroup {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 16px;
+
+                        label {
+                            font-weight: 500;
+                            color: $black-primary;
+                            margin-bottom: 8px;
+                        }
+
+                        input {
+                            background-color: $form-input-bg;
+                            padding: 8px 12px;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            border: 1px solid $light-gray-disabled;
+                            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+                            &:focus {
+                                border-color: $veil-primary;
+                                box-shadow: 0 0 0 3.2px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.25);
+                                outline: none;
+                                background-color: #fff;
+                            }
+                        }
+
+                        .text-danger {
+                            color: $red-brand;
+                            font-size: 14px;
+                            margin-top: 4px;
+                        }
+                    }
+
+                    .generalError {
+                        text-align: center;
+                        margin-bottom: 16px;
+                        font-size: 14px;
+                        color: $red-brand;
+                    }
+
+                    .btnContainer {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            background-color: $veil-primary;
+                            border: none;
+                            color: #fff;
+                            font-weight: 600;
+                            padding: 9.6px 0;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            transition: $transition-property;
+
+                            &:hover:not(:disabled),
+                            &:focus:not(:disabled) {
+                                background-color: $veil-primary-hover;
+                                outline: none;
+                                box-shadow: 0 0 0 4px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.5);
+                            }
+
+                            &:disabled {
+                                opacity: 0.65;
+                                cursor: not-allowed;
+                                background-color: $light-gray-disabled;
+                                color: $black-primary-hover;
+                            }
+                        }
+
+                        small {
+                            margin-top: 16px;
+                            color: $black-primary-hover;
+                            font-size: 14px;
+                            text-align: center;
+
+                            a {
+                                color: $veil-primary;
+                                font-weight: 600;
+                                text-decoration: none;
+                                transition: color 0.3s ease;
+
+                                &:hover,
+                                &:focus {
+                                    color: $red-brand-hover;
+                                    text-decoration: underline;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== QUI INIZIA LO STILE DELLO SPINNER =====
+
+    .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .passwordInputWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+            flex: 1;
+            padding-right: 2.5rem;
+        }
+
+        .togglePasswordBtn {
+            position: absolute;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #555;
+
+            &:hover {
+                color: #000;
+            }
         }
     }
 }

@@ -1,89 +1,366 @@
 @import '../../../styles/variables';
 
-.verify-wrapper {
-  background: #fff;
-  border: 1px solid $light-gray-disabled;
-  border-radius: 8px;
-  box-shadow: $box-shadow-global;
-  padding: 32px;
-  max-width: 400px;
-  margin: 40px auto;
-  text-align: center;
-  font-family: inherit;
-  color: $black-primary;
-
-  .title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    color: $black-primary;
-  }
-
-  .spinner {
+// Desktop
+@media screen and (min-width: 900px) {
+  .verify-wrapper {
+    background: #fff;
+    border: 1px solid $light-gray-disabled;
+    border-radius: 8px;
+    box-shadow: $box-shadow-global;
+    padding: 32px;
+    max-width: 400px;
     margin: 40px auto;
-    width: 70px;
     text-align: center;
+    font-family: inherit;
+    color: $black-primary;
 
-    div {
-      width: 18px;
-      height: 18px;
-      background-color: $veil-primary;
-      border-radius: 100%;
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: $black-primary;
+    }
+
+    .spinner {
+      margin: 40px auto;
+      width: 70px;
+      text-align: center;
+
+      div {
+        width: 18px;
+        height: 18px;
+        background-color: $veil-primary;
+        border-radius: 100%;
+        display: inline-block;
+        animation: bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 4px;
+      }
+
+      .bounce1 {
+        animation-delay: -0.32s;
+      }
+
+      .bounce2 {
+        animation-delay: -0.16s;
+      }
+
+      .bounce3 {
+        animation-delay: 0;
+      }
+    }
+
+    @keyframes bouncedelay {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .result {
+      font-size: 16px;
+      margin: 24px 0;
+      color: $black-primary-hover;
+    }
+
+    .back-btn {
       display: inline-block;
-      animation: bouncedelay 1.4s infinite ease-in-out both;
-      margin: 0 4px;
-    }
+      margin-top: 24px;
+      padding: 8px 16px;
+      background-color: $veil-primary;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
-    .bounce1 {
-      animation-delay: -0.32s;
-    }
-
-    .bounce2 {
-      animation-delay: -0.16s;
-    }
-
-    .bounce3 {
-      animation-delay: 0;
-    }
-  }
-
-  @keyframes bouncedelay {
-
-    0%,
-    80%,
-    100% {
-      transform: scale(0);
-    }
-
-    40% {
-      transform: scale(1);
+      &:hover,
+      &:focus {
+        background-color: $veil-primary-hover;
+        outline: none;
+        box-shadow: 0 4px 12px rgba(red($veil-primary-hover), green($veil-primary-hover), blue($veil-primary-hover), 0.5);
+      }
     }
   }
+}
 
-  .result {
-    font-size: 16px;
-    margin: 24px 0;
-    color: $black-primary-hover;
+// Laptop
+@media screen and (min-width: 730px) and (max-width: 919px) {
+  .verify-wrapper {
+    background: #fff;
+    border: 1px solid $light-gray-disabled;
+    border-radius: 8px;
+    box-shadow: $box-shadow-global;
+    padding: 28px;
+    max-width: 360px;
+    margin: 32px auto;
+    text-align: center;
+    font-family: inherit;
+    color: $black-primary;
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: $black-primary;
+    }
+
+    .spinner {
+      margin: 32px auto;
+      width: 60px;
+      text-align: center;
+
+      div {
+        width: 18px;
+        height: 18px;
+        background-color: $veil-primary;
+        border-radius: 100%;
+        display: inline-block;
+        animation: bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 4px;
+      }
+
+      .bounce1 {
+        animation-delay: -0.32s;
+      }
+
+      .bounce2 {
+        animation-delay: -0.16s;
+      }
+
+      .bounce3 {
+        animation-delay: 0;
+      }
+    }
+
+    @keyframes bouncedelay {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .result {
+      font-size: 15px;
+      margin: 20px 0;
+      color: $black-primary-hover;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 7px 14px;
+      background-color: $veil-primary;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $veil-primary-hover;
+        outline: none;
+        box-shadow: 0 4px 12px rgba(red($veil-primary-hover), green($veil-primary-hover), blue($veil-primary-hover), 0.5);
+      }
+    }
   }
+}
 
-  .back-btn {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 8px 16px;
-    background-color: $veil-primary;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+// Tablet
+@media screen and (min-width: 600px) and (max-width: 729px) {
+  .verify-wrapper {
+    background: #fff;
+    border: 1px solid $light-gray-disabled;
+    border-radius: 8px;
+    box-shadow: $box-shadow-global;
+    padding: 24px;
+    max-width: 340px;
+    margin: 28px auto;
+    text-align: center;
+    font-family: inherit;
+    color: $black-primary;
 
-    &:hover,
-    &:focus {
-      background-color: $veil-primary-hover;
-      outline: none;
-      box-shadow: 0 4px 12px rgba(red($veil-primary-hover), green($veil-primary-hover), blue($veil-primary-hover), 0.5);
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: $black-primary;
+    }
+
+    .spinner {
+      margin: 28px auto;
+      width: 55px;
+      text-align: center;
+
+      div {
+        width: 14px;
+        height: 14px;
+        background-color: $veil-primary;
+        border-radius: 100%;
+        display: inline-block;
+        animation: bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 4px;
+      }
+
+      .bounce1 {
+        animation-delay: -0.32s;
+      }
+
+      .bounce2 {
+        animation-delay: -0.16s;
+      }
+
+      .bounce3 {
+        animation-delay: 0;
+      }
+    }
+
+    @keyframes bouncedelay {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .result {
+      font-size: 14px;
+      margin: 18px 0;
+      color: $black-primary-hover;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 12px;
+      background-color: $veil-primary;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $veil-primary-hover;
+        outline: none;
+        box-shadow: 0 4px 12px rgba(red($veil-primary-hover), green($veil-primary-hover), blue($veil-primary-hover), 0.5);
+      }
+    }
+  }
+}
+
+// Smartphone
+@media screen and (max-width: 599px) {
+  .verify-wrapper {
+    background: #fff;
+    border: 1px solid $light-gray-disabled;
+    border-radius: 8px;
+    box-shadow: $box-shadow-global;
+    padding: 20px;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: inherit;
+    color: $black-primary;
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: $black-primary;
+    }
+
+    .spinner {
+      margin: 24px auto;
+      width: 50px;
+      text-align: center;
+
+      div {
+        width: 12px;
+        height: 12px;
+        background-color: $veil-primary;
+        border-radius: 100%;
+        display: inline-block;
+        animation: bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 4px;
+      }
+
+      .bounce1 {
+        animation-delay: -0.32s;
+      }
+
+      .bounce2 {
+        animation-delay: -0.16s;
+      }
+
+      .bounce3 {
+        animation-delay: 0;
+      }
+    }
+
+    @keyframes bouncedelay {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .result {
+      font-size: 13px;
+      margin: 16px 0;
+      color: $black-primary-hover;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 10px;
+      font-size: 14px;
+      background-color: $veil-primary;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(red($veil-primary), green($veil-primary), blue($veil-primary), 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $veil-primary-hover;
+        outline: none;
+        box-shadow: 0 4px 12px rgba(red($veil-primary-hover), green($veil-primary-hover), blue($veil-primary-hover), 0.5);
+      }
     }
   }
 }
