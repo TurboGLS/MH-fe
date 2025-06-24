@@ -1,5 +1,9 @@
 @import '../../../styles/variables';
 
+body {
+    overflow: hidden;
+}
+
 // Desktop
 @media screen and (min-width: 920px) {
     .pageBlock {
