@@ -24,14 +24,14 @@ export const logoutInterceptor: HttpInterceptorFn = (req, next) => {
         // se la chiamata originale torna 401 faccio la chiamata di refresh
         return authSrv.refresh()
           .pipe(
+            switchMap(_ => {
+              return http.request(req.clone());
+            }),
             catchError(_ => {
               authSrv.logout();
               notificationSrv.setMessage('Sessione scaduta. Effettua nuovamente il login.');
               router.navigate(['/login']);
               return throwError(() => response)
-            }),
-            switchMap(_ => {
-              return http.request(req.clone());
             })
           )
       }
