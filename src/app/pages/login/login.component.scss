@@ -1,14 +1,10 @@
 @import '../../../styles/variables';
 
-body {
-    overflow: hidden;
-}
-
 // Desktop
 @media screen and (min-width: 920px) {
     .pageBlock {
         position: relative;
-        min-height: 1000px;
+        min-height: 100vh;
         background: $light-gray;
         display: flex;
         align-items: center;
@@ -219,7 +215,7 @@ body {
 @media screen and (min-width: 730px) and (max-width: 919px) {
     .pageBlock {
         position: relative;
-        min-height: 1000px;
+        min-height: 100vh;
         background: $light-gray;
         display: flex;
         align-items: center;
@@ -430,7 +426,7 @@ body {
 @media screen and (min-width: 600px) and (max-width: 729px) {
     .pageBlock {
         position: relative;
-        min-height: 1000px;
+        min-height: 100vh;
         background: $light-gray;
         display: flex;
         align-items: center;
@@ -641,7 +637,7 @@ body {
 @media screen and (max-width: 599px) {
     .pageBlock {
         position: relative;
-        min-height: 1000px;
+        min-height: 100vh;
         background: $light-gray;
         display: flex;
         align-items: center;
