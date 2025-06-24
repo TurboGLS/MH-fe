@@ -4,11 +4,13 @@ import { AuthService } from '../services/auth.service';
 import { catchError, switchMap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { NotificationService } from '../services/notification.service';
+import { Router } from '@angular/router';
 
 export const logoutInterceptor: HttpInterceptorFn = (req, next) => {
   const authSrv = inject(AuthService);
   const http = inject(HttpClient);
   const notificationSrv = inject(NotificationService);
+  const router = inject(Router);
 
   // Entra in gioco sulla risposta delle API
   const excludedRequests = [`${environment.apiUrl}/login`, `${environment.apiUrl}/refresh`];
@@ -25,6 +27,7 @@ export const logoutInterceptor: HttpInterceptorFn = (req, next) => {
             catchError(_ => {
               authSrv.logout();
               notificationSrv.setMessage('Sessione scaduta. Effettua nuovamente il login.');
+              router.navigate(['/login']);
               return throwError(() => response)
             }),
             switchMap(_ => {
