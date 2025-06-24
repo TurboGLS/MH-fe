@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { Device } from '../entities/device.entity';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +20,6 @@ export class VarlistService {
 
   // richiamo api per ottere il menu cascade in base alla categoria scelta
   deviceInfo(category: string) {
-    return this.http.get<Device[]>(`${environment.apiUrl}/device/categoriaInfo?categoria=${category}`);
+    return this.http.get<string[]>(`${environment.apiUrl}/device/categoriaInfo?categoria=${category}`);
   }
 }

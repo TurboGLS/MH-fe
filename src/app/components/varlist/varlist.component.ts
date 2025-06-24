@@ -28,8 +28,8 @@ export class VarlistComponent implements OnInit, OnDestroy {
     rows: this.fb.array([])
   });
 
-  // Array di array di Device per ogni riga
-  modelsPerRow: Device[][] = [];
+  // Array di stringhe dei Modelli dei Device per ogni riga
+  modelsPerRow: string[][] = [];
 
   get rows(): FormArray {
     return this.varlistForm.get('rows') as FormArray;
@@ -66,16 +66,16 @@ export class VarlistComponent implements OnInit, OnDestroy {
           catchError(() => {
             this.modelsPerRow[rowIndex] = [];
             newRow.get('model')?.disable();
-            return of([] as Device[]);
+            return of([] as string[]);
           })
         );
       } else {
         this.modelsPerRow[rowIndex] = [];
         newRow.get('model')?.disable();
-        return of([] as Device[]);
+        return of([] as string[]);
       }
     })
-  ).subscribe(data => {
+  ).subscribe((data: string[]) => {
       this.modelsPerRow[rowIndex] = data;
       if (data.length > 0) {
         newRow.get('model')?.enable();
