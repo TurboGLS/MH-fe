@@ -24,7 +24,7 @@
         <td>
           <select formControlName="model">
             <option value="">-- Seleziona modello --</option>
-            <option *ngFor="let m of modelsPerRow[i]" [value]="m.Modello">{{ m.Modello }}</option>
+            <option *ngFor="let m of modelsPerRow[i]" [value]="m">{{ m }}</option>
           </select>
           <div *ngIf="isInvalid(i, 'model')" class="text-danger">
             {{ getErrorMessage(i, 'model') }}
